@@ -185,14 +185,17 @@ function Step1(props) {
     data.append("comment7", formData.comment7);
     data.append("adge_Id", generatedId);
     axios
-      .post("http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question", data)
+      .post(
+        "http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question",
+        data
+      )
       .then(async (response) => {
         setFormData(response?.data?.results?.data);
         await handleSetData(response?.data?.results?.data);
         console.log(response?.data?.results?.data);
         Swal.fire({
-          title: "Product Created!",
-          text: "Your new product has been created successfully.",
+          title: "Question Saved!",
+          text: "Your question has been created successfully.",
           icon: "success",
           confirmButtonColor: "#3085d6",
           confirmButtonText: "OK",
@@ -214,10 +217,10 @@ function Step1(props) {
           <h2>Data Governance</h2>
         </div>
         <div className="QuestionsStrip mb-2">
-          <div className="QuestionDiv">
+          <div className="QuestionDiv col-11">
             <div className="heading">
               <div className="NumberDiv">DG.1.1</div>
-              <div className="float-start">
+              <div className="float-start" style={{marginTop:"10px"}}>
                 The Entity shall establish an organisational structure to
                 support the Data Management Programme.{" "}
                 <span className="badge bg-danger">Danger</span>{" "}
@@ -470,7 +473,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.2</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11 " style={{marginTop:"10px"}}>
                 The Entity shall convene the Data Governance Board to manage
                 delegated authority and responsibility within the Entity. The
                 Board will be the final arbiter within the Entity for all
@@ -727,7 +730,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.3</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11" style={{marginTop:"10px"}}>
                 The Entity shall appoint a Data Manager. The Data Manager shall
                 have delegated authority from the Data Governance Board.{" "}
                 <span className="badge bg-danger">Danger</span>{" "}
@@ -984,7 +987,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.4</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11" style={{marginTop:"10px"}}>
                 The Entity shall identify and appoint Data Architects to support
                 the Data Manager.{" "}
                 <span className="badge bg-danger">Danger</span>{" "}
@@ -1247,7 +1250,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.5</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11" style={{marginTop:"10px"}}>
                 The Entity shall identify and appoint Data Stewards to support
                 the Data Manager in both the business and technical areas of the
                 organisation <span className="badge bg-danger">Danger</span>{" "}
@@ -1500,7 +1503,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.6</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11" style={{marginTop:"10px"}}>
                 The Entity shall identify and appoint Data Owners (who are
                 responsible for a particular dataset) to support the Data
                 Stewards. Data Owners will be drawn from both the business and
@@ -1758,7 +1761,7 @@ function Step1(props) {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.7</div>
-              <div className="float-start col-11">
+              <div className="float-start col-11" style={{marginTop:"10px"}}>
                 The Entity shall regularly undertake monitoring and compliance
                 checking to ensure that information systems and data related
                 processes are implemented in accordance with established policy,
@@ -2007,7 +2010,7 @@ function Step1(props) {
               </div>
             </div>
           </div>
-          {/* <div className="d-flex justify-content-center mt-2">
+          <div className="d-flex justify-content-center mt-2">
             <button
               type="button"
               className="btn btn-primary"
@@ -2015,7 +2018,7 @@ function Step1(props) {
             >
               Save
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </>

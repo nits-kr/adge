@@ -29,17 +29,7 @@ function ProgressBar() {
   return (
     <>
       <div className="step-progress">
-        <StepZilla steps={steps} nextTextOnFinalActionStep={"Submit"} onStepChange={(step) => console.log(step)} />
-        {/* <div className="d-flex justify-content-end">
-          <div>
-            <button type="button" className="btn btn-primary mr-2 mx-2">
-              Draft
-            </button>
-            <button type="button" className="btn btn-primary mx-2">
-              Submit
-            </button>
-          </div>
-        </div> */}
+        <StepZilla steps={steps} nextTextOnFinalActionStep={"Next"} onStepChange={(step) => console.log(step)} />
       </div>
     </>
   );

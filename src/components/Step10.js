@@ -180,14 +180,14 @@ function Step10() {
         setFormData(response?.data?.results?.data);
         console.log(response?.data?.results?.data);
         Swal.fire({
-          title: "Product Created!",
-          text: "Your new product has been created successfully.",
+          title: "Question Created!",
+          text: "Your new Question has been created successfully.",
           icon: "success",
           confirmButtonColor: "#3085d6",
           confirmButtonText: "OK",
         }).then((result) => {
           if (result.isConfirmed) {
-            // window.location.reload(); // refresh the page after success message is closed
+            window.location.href = "/home";
           }
         });
       })
@@ -205,7 +205,7 @@ function Step10() {
           <div className="QuestionDiv">
             <div className="heading">
               <div className="NumberDiv">DG.1.1</div>
-              <div className="float-start">
+              <div className="float-start col-11">
                 The Entity shall provide definitions of quality data. These
                 definitions shall be used to determine whether data is of
                 sufficient quality for the purposes of the Entity's business.
@@ -2088,8 +2088,18 @@ function Step10() {
               type="button"
               className="btn btn-primary"
               onClick={handleOnSave}
+              style={{marginRight:"85px", marginBottom:"-40px"}}
             >
-              Save
+              Save as draft
+            </button>
+          </div>
+          <div className="d-flex justify-content-end">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={handleOnSave}
+            >
+              Submit
             </button>
           </div>
         </div>
