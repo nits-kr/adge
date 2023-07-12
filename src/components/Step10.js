@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 // import Header from "../Header";
@@ -26,6 +26,7 @@ function Step10() {
   const [yesbuttonValue5, setYesbuttonValue5] = useState("");
   const [yesbuttonValue6, setYesbuttonValue6] = useState("");
   const [yesbuttonValue7, setYesbuttonValue7] = useState("");
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -187,7 +188,8 @@ function Step10() {
           confirmButtonText: "OK",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = "/home";
+            // window.location.href = "/adge/home";
+            navigate("/adge/home")
           }
         });
       })
@@ -2087,7 +2089,7 @@ function Step10() {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={handleOnSave}
+              // onClick={handleOnSave}
               style={{marginRight:"85px", marginBottom:"-40px"}}
             >
               Save as draft

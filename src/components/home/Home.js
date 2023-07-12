@@ -300,7 +300,7 @@ function Home() {
                                   // onClick={() => setItemId3(item?._id)}
                                   onClick={() => {
                                     // setItemId(item._id);
-                                    window.location.href = "/adge-question";
+                                    window.location.href = "/adge/adge-question";
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faCopy} /> Submit
@@ -391,7 +391,7 @@ function Home() {
                                   // onClick={() => setItemId(currentItem._id)}
                                   onClick={() => {
                                     setItemId(currentItem._id);
-                                    window.location.href = "/adge-question";
+                                    window.location.href = "/adge/adge-question";
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faEye} /> View
@@ -486,7 +486,7 @@ function Home() {
                   />
                 </div>
                 <div className="form-group mb-0 col-auto">
-                  <Link to="/adge-question">
+                  <Link to="/adge/adge-question">
                     <button
                       className="comman_btn2  text-light"
                       style={{

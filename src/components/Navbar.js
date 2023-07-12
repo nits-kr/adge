@@ -9,22 +9,22 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav ">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/home">
+                <Link className="nav-link active" aria-current="page" to="/adge/home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
+                <Link className="nav-link" to="/adge/dashboard">
                   Dashboard
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/audit-report">
+                <Link className="nav-link" to="/adge/audit-report">
                   Reports
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/auditior-question#">
+                <Link className="nav-link" to="/adge/auditior-question#">
                   History
                 </Link>
               </li>

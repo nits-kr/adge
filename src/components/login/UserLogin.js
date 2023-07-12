@@ -19,7 +19,7 @@ function UserLogin() {
         text: "You have successfully logged in.",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/home");
+          navigate("/adge/home");
         }
       });
     }

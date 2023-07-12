@@ -18,44 +18,44 @@ function App() {
           <Route
             exact
             className="active"
-            path="/"
+            path="/adge"
             element={<UserLogin />}
           />
-          <Route exact className="active" path="/home" element={<Home />} />
+          <Route  className="active" path="/adge/home" element={<Home />} />
           <Route
-            exact
+            
             className="active"
-            path="/dashboard"
+            path="/adge/dashboard"
             element={<DashboardUser />}
           />
           <Route
-            exact
+            
             className="active"
-            path="/dashboard-reviewer"
+            path="/adge/dashboard-reviewer"
             element={<DasboardReviewer />}
           />
           <Route
-            exact
+            
             className="active"
-            path="/auditior-question"
+            path="/adge/auditior-question"
             element={<AuditorQuestions />}
           />
           <Route
-            exact
+            
             className="active"
-            path="/adge-question"
+            path="/adge/adge-question"
             element={<AdgeQuestions />}
           />
           <Route
-            exact
+            
             className="active"
-            path="/header"
+            path="/adge/header"
             element={<Header/>}
           />
           <Route
-            exact
+            
             className="active"
-            path="/audit-report"
+            path="/adge/audit-report"
             element={<AuditReport/>}
           />
           

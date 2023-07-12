@@ -188,7 +188,7 @@ function DashboardUser() {
                             <h6>{dashBoardTotal?.data?.results?.total}</h6>
                           </div>
                           <div className="card-icon rounded-circle d-flex align-items-center justify-content-center float-end">
-                            <img src="img/total-icon.svg" alt="" />
+                            <img src="../img/total-icon.svg" alt="" />
                           </div>
                         </div>
                       </div>
@@ -231,7 +231,7 @@ function DashboardUser() {
                             <h6>{dashBoardTotal?.data?.results?.approved}</h6>
                           </div>
                           <div className="card-icon rounded-circle d-flex align-items-center justify-content-center float-end">
-                            <img src="img/approved-icon.svg" alt="" />
+                            <img src="../img/approved-icon.svg" alt="" />
                           </div>
                         </div>
                       </div>
@@ -274,7 +274,7 @@ function DashboardUser() {
                             <h6>{dashBoardTotal?.data?.results?.rejected}</h6>
                           </div>
                           <div className="card-icon rounded-circle d-flex align-items-center justify-content-center float-end">
-                            <img src="img/rejected-icon.svg" alt="" />
+                            <img src="../img/rejected-icon.svg" alt="" />
                           </div>
                         </div>
                       </div>
@@ -316,7 +316,7 @@ function DashboardUser() {
                             <h6>{dashBoardTotal?.data?.results?.pending}</h6>
                           </div>
                           <div className="card-icon rounded-circle d-flex align-items-center justify-content-center float-end">
-                            <img src="img/pending-icon.svg" alt="" />
+                            <img src="../img/pending-icon.svg" alt="" />
                           </div>
                         </div>
                       </div>
