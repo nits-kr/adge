@@ -15,7 +15,7 @@ function AuditorQuestions() {
     <>
       <Header />
       <Navbar />
-      <div className="modal fade" id="ExtralargeModal" tabIndex={-1}>
+      {/* <div className="modal fade" id="ExtralargeModal" tabIndex={-1}>
         <div className="modal-dialog modal-xl modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
@@ -99,12 +99,16 @@ function AuditorQuestions() {
           <div className="Title">Reviewer Name</div>
           <p>You</p>
         </div>
-      </aside>
+      </aside> */}
       <main id="main" className="main mainNew">
         <div className="container">
           <div className="card  StaticCard">
             <div className="card-body">
-              <div className="step-progress">
+            <h5 className="card-title float-start">
+                      {" "}
+                      <strong>History</strong>{" "}
+                    </h5>
+              {/* <div className="step-progress">
                 <div className="StepsHeader">
                   <div className="step-slider">
                     <div data-id="step1" className="step-slider-item">
@@ -4557,7 +4561,7 @@ function AuditorQuestions() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

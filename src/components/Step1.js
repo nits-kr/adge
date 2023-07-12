@@ -2098,6 +2098,13 @@ function Step1(props) {
           <div className="d-flex justify-content-center mt-2">
             <button
               type="button"
+              className="btn btn-primary me-2"
+              // onClick={handleOnSave}
+            >
+              Save as Draft
+            </button>
+            <button
+              type="button"
               className="btn btn-primary"
               onClick={handleOnSave}
             >

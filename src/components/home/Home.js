@@ -229,7 +229,7 @@ function Home() {
                           <th scope="col">Date</th>
                           <th scope="col">User</th>
                           <th scope="col">Score</th>
-                          <th scope="col">Scheduled</th>
+                          <th scope="col" style={{textAlign:"center"}}>Scheduled</th>
                           <th scope="col">Status</th>
                           <th
                             scope="col"
