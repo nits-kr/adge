@@ -2192,7 +2192,7 @@ function Step10() {
               type="button"
               className="btn btn-primary"
               // onClick={handleOnSave}
-              style={{ marginRight: "85px", marginBottom: "-40px" }}
+              style={{ marginRight: "85px", marginBottom: "-40px", height:"38px" }}
             >
               Save as draft
             </button>
