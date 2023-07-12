@@ -13,12 +13,26 @@ import { useGetAllPostGovernerQuery } from "../services/Post";
 function Step10() {
   const [generatedId, setGeneratedId] = useState("");
   const [yesbutton1, setYesbutton1] = useState();
+  const [colorChange1, setColorChange1] = useState(false);
+  const [colorChange2, setColorChange2] = useState(false);
   const [yesbutton2, setYesbutton2] = useState();
+  const [colorChange3, setColorChange3] = useState(false);
+  const [colorChange4, setColorChange4] = useState(false);
   const [yesbutton3, setYesbutton3] = useState();
+  const [colorChange5, setColorChange5] = useState(false);
+  const [colorChange6, setColorChange6] = useState(false);
   const [yesbutton4, setYesbutton4] = useState();
+  const [colorChange7, setColorChange7] = useState(false);
+  const [colorChange8, setColorChange8] = useState(false);
   const [yesbutton5, setYesbutton5] = useState();
+  const [colorChange9, setColorChange9] = useState(false);
+  const [colorChange10, setColorChange10] = useState(false);
   const [yesbutton6, setYesbutton6] = useState();
+  const [colorChange11, setColorChange11] = useState(false);
+  const [colorChange12, setColorChange12] = useState(false);
   const [yesbutton7, setYesbutton7] = useState();
+  const [colorChange13, setColorChange13] = useState(false);
+  const [colorChange14, setColorChange14] = useState(false);
   const [yesbuttonValue1, setYesbuttonValue1] = useState("");
   const [yesbuttonValue2, setYesbuttonValue2] = useState("");
   const [yesbuttonValue3, setYesbuttonValue3] = useState("");
@@ -26,7 +40,7 @@ function Step10() {
   const [yesbuttonValue5, setYesbuttonValue5] = useState("");
   const [yesbuttonValue6, setYesbuttonValue6] = useState("");
   const [yesbuttonValue7, setYesbuttonValue7] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -34,6 +48,63 @@ function Step10() {
   const [blogList, setBlogList] = useState();
   console.log("blog list", blogList);
   console.log("form data new", formData);
+
+  const handlecolorchange2 = () => {
+    setColorChange1(false);
+    setColorChange2(true);
+  };
+  const handlecolorchange1 = () => {
+    setColorChange1(true);
+    setColorChange2(false);
+  };
+  const handlecolorchange4 = () => {
+    setColorChange3(false);
+    setColorChange4(true);
+  };
+  const handlecolorchange3 = () => {
+    setColorChange3(true);
+    setColorChange4(false);
+  };
+  const handlecolorchange6 = () => {
+    setColorChange5(false);
+    setColorChange6(true);
+  };
+  const handlecolorchange5 = () => {
+    setColorChange5(true);
+    setColorChange6(false);
+  };
+  const handlecolorchange8 = () => {
+    setColorChange7(false);
+    setColorChange8(true);
+  };
+  const handlecolorchange7 = () => {
+    setColorChange7(true);
+    setColorChange8(false);
+  };
+  const handlecolorchange10 = () => {
+    setColorChange9(false);
+    setColorChange10(true);
+  };
+  const handlecolorchange9 = () => {
+    setColorChange9(true);
+    setColorChange10(false);
+  };
+  const handlecolorchange12 = () => {
+    setColorChange11(false);
+    setColorChange12(true);
+  };
+  const handlecolorchange11 = () => {
+    setColorChange11(true);
+    setColorChange12(false);
+  };
+  const handlecolorchange14 = () => {
+    setColorChange13(false);
+    setColorChange14(true);
+  };
+  const handlecolorchange13 = () => {
+    setColorChange13(true);
+    setColorChange14(false);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -52,10 +123,8 @@ function Step10() {
   const handleYesbutton1 = () => {
     if (yesbutton1 === true) {
       setYesbuttonValue1("yes");
-      alert("yes");
     } else if (yesbutton1 === false) {
       setYesbuttonValue1("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -64,10 +133,8 @@ function Step10() {
   const handleYesbutton2 = () => {
     if (yesbutton2 === true) {
       setYesbuttonValue2("yes");
-      alert("yes");
     } else if (yesbutton2 === false) {
       setYesbuttonValue2("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -76,10 +143,8 @@ function Step10() {
   const handleYesbutton3 = () => {
     if (yesbutton3 === true) {
       setYesbuttonValue3("yes");
-      alert("yes");
     } else if (yesbutton3 === false) {
       setYesbuttonValue3("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -88,10 +153,8 @@ function Step10() {
   const handleYesbutton4 = () => {
     if (yesbutton4 === true) {
       setYesbuttonValue4("yes");
-      alert("yes");
     } else if (yesbutton4 === false) {
       setYesbuttonValue4("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -100,10 +163,8 @@ function Step10() {
   const handleYesbutton5 = () => {
     if (yesbutton5 === true) {
       setYesbuttonValue5("yes");
-      alert("yes");
     } else if (yesbutton5 === false) {
       setYesbuttonValue5("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -112,10 +173,8 @@ function Step10() {
   const handleYesbutton6 = () => {
     if (yesbutton6 === true) {
       setYesbuttonValue6("yes");
-      alert("yes");
     } else if (yesbutton6 === false) {
       setYesbuttonValue6("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -124,10 +183,8 @@ function Step10() {
   const handleYesbutton7 = () => {
     if (yesbutton7 === true) {
       setYesbuttonValue7("yes");
-      alert("yes");
     } else if (yesbutton7 === false) {
       setYesbuttonValue7("no");
-      alert("no");
     }
   };
   useEffect(() => {
@@ -176,7 +233,10 @@ function Step10() {
     data.append("qcomment7", formData.comment7);
     data.append("adge_Id", generatedId);
     axios
-      .post("http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question", data)
+      .post(
+        "http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question",
+        data
+      )
       .then((response) => {
         setFormData(response?.data?.results?.data);
         console.log(response?.data?.results?.data);
@@ -189,7 +249,7 @@ function Step10() {
         }).then((result) => {
           if (result.isConfirmed) {
             // window.location.href = "/adge/home";
-            navigate("/adge/home")
+            navigate("/adge/home");
           }
         });
       })
@@ -269,18 +329,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange1 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton1(true);
+                        handlecolorchange1();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange2 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton1(false);
+                        handlecolorchange2();
                       }}
                     >
                       No
@@ -578,18 +644,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange3 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton2(true);
+                        handlecolorchange3();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange4 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton2(false);
+                        handlecolorchange4();
                       }}
                     >
                       No
@@ -834,18 +906,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange5 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton3(true);
+                        handlecolorchange5();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange6 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton3(false);
+                        handlecolorchange6();
                       }}
                     >
                       No
@@ -1102,18 +1180,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange7 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton4(true);
+                        handlecolorchange7();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange8 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton4(false);
+                        handlecolorchange8();
                       }}
                     >
                       No
@@ -1352,18 +1436,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange9 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton5(true);
+                        handlecolorchange9();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange10 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton5(false);
+                        handlecolorchange10();
                       }}
                     >
                       No
@@ -1610,18 +1700,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange11 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton6(true);
+                        handlecolorchange11();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange12 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton6(false);
+                        handlecolorchange12();
                       }}
                     >
                       No
@@ -1862,18 +1958,24 @@ function Step10() {
                   >
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange13 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton7(true);
+                        handlecolorchange13();
                       }}
                     >
                       Yes
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className={
+                        colorChange14 ? "btn btn-primary" : "btn btn-secondary"
+                      }
                       onClick={() => {
                         setYesbutton7(false);
+                        handlecolorchange14();
                       }}
                     >
                       No
@@ -2090,7 +2192,7 @@ function Step10() {
               type="button"
               className="btn btn-primary"
               // onClick={handleOnSave}
-              style={{marginRight:"85px", marginBottom:"-40px"}}
+              style={{ marginRight: "85px", marginBottom: "-40px" }}
             >
               Save as draft
             </button>
