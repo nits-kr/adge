@@ -14,10 +14,12 @@ import { useGetAllPostHomeQuery } from "../../services/Post";
 import { useCreateFormMutation } from "../../services/Post";
 import { useViewDetailsMutation } from "../../services/Post";
 import { useUpdateDuplicateMutation } from "../../services/Post";
+import { useAdgeHomeSubmitMutation } from "../../services/Post";
 function Home() {
   const [createForm] = useCreateFormMutation();
   const [viewDetails] = useViewDetailsMutation();
   const [updateDuplicate] = useUpdateDuplicateMutation();
+  const [homeSubmit, res] = useAdgeHomeSubmitMutation();
   // console.log("useViewDetailsMutation", useViewDetailsMutation);
   console.log("create form", createForm);
   console.log("create form details", createForm?.data?.results?.saveData);
@@ -99,6 +101,35 @@ function Home() {
   // useEffect(() => {
   //   handleSaveChanges2()
   // },[itemId])
+  useEffect(() => {
+    if (res.isSuccess) {
+      Swal.fire({
+        icon: "success",
+        title: "Submitted!",
+        text: "Your submission has been successful.",
+        timer: 3000,
+        timerProgressBar: true,
+        onClose: () => {
+          window.location.reload(); // Reload the page
+        },
+      });
+    }
+  }, [res.isSuccess]);
+
+  const handleSaveChanges4 = () => {
+    const editAddress = {
+      id: itemId3,
+    };
+    homeSubmit(editAddress);
+  };
+
+  const handleSubmit = () => {
+    if (itemId3) {
+      handleSaveChanges4();
+    }
+  };
+
+  console.log("item id 3", itemId3);
   const handleSaveChanges2 = () => {
     const editAddress = {
       id: itemId,
@@ -138,6 +169,7 @@ function Home() {
                   <label
                     htmlFor="inputEmail3"
                     className="col-sm-3 col-form-label"
+                    style={{marginTop:"-20px"}}
                   >
                     Title
                   </label>
@@ -162,9 +194,9 @@ function Home() {
                         type="checkbox"
                         id="gridCheck1"
                       />
-                      <label className="form-check-label" htmlFor="gridCheck1">
+                      {/* <label className="form-check-label" htmlFor="gridCheck1">
                         Example checkbox
-                      </label>
+                      </label> */}
                     </div>
                   </div>
                 </fieldset>
@@ -229,7 +261,9 @@ function Home() {
                           <th scope="col">Date</th>
                           <th scope="col">User</th>
                           <th scope="col">Score</th>
-                          <th scope="col" style={{textAlign:"center"}}>Scheduled</th>
+                          <th scope="col" style={{ textAlign: "center" }}>
+                            Scheduled
+                          </th>
                           <th scope="col">Status</th>
                           <th
                             scope="col"
@@ -293,14 +327,27 @@ function Home() {
                               </td>
                               <td>{item?.status}</td>
                               <td style={{ textAlign: "center" }}>
-                                <Link
+                                {/* <Link
                                   type="button"
-                                  to="question3.html"
+                                  to="#"
+                                  // to={`/adge/auditior-question/${item._id}`}
                                   className="btn btn-sm tableBtn-blue mx-1"
                                   // onClick={() => setItemId3(item?._id)}
                                   onClick={() => {
-                                    // setItemId(item._id);
-                                    window.location.href = "/adge/adge-question";
+                                    setItemId3(item?._id);
+                                    // window.location.href = `/adge/auditior-question/${item._id}`;
+                                  }}
+                                  // onClick={() => review(item._id)}
+                                >
+                                  <FontAwesomeIcon icon={faCopy} /> Submit
+                                </Link> */}
+                                <Link
+                                  type="button"
+                                  to="#"
+                                  className="btn btn-sm tableBtn-blue mx-1"
+                                  onClick={() => {
+                                    setItemId3(item?._id);
+                                    handleSubmit();
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faCopy} /> Submit
@@ -340,8 +387,12 @@ function Home() {
                                     to="#"
                                     data-bs-toggle="dropdown"
                                   >
-                                    {currentItem.to?.slice(0, 10)} to{" "}
-                                    {currentItem.from?.slice(0, 10)}
+                                    {currentItem.to && currentItem.from
+                                      ? `${currentItem.to.slice(
+                                          0,
+                                          10
+                                        )}  To ${currentItem.from.slice(0, 10)}`
+                                      : ""}
                                   </Link>
 
                                   <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile text-start">
@@ -354,10 +405,14 @@ function Home() {
                                       </div>
                                       <div className="form-group text-start">
                                         <small>Scheduled date</small>
-                                        <h6 className="text-black">
-                                          {currentItem.from?.slice(0, 10)} to{" "}
-                                          {currentItem.to?.slice(0, 10)}
-                                        </h6>
+                                        {currentItem.from && currentItem.to ? (
+                                          <h6 className="text-black">
+                                            {currentItem.from.slice(0, 10)} to{" "}
+                                            {currentItem.to.slice(0, 10)}
+                                          </h6>
+                                        ) : (
+                                          <h6 className="text-black">-</h6>
+                                        )}
                                       </div>
                                       <div className="form-group text-start">
                                         <small>Owner</small>
@@ -373,6 +428,7 @@ function Home() {
                                   </ul>
                                 </div>
                               </td>
+
                               <td>{currentItem.status}</td>
                               <td style={{ textAlign: "center" }}>
                                 <button
@@ -391,7 +447,8 @@ function Home() {
                                   // onClick={() => setItemId(currentItem._id)}
                                   onClick={() => {
                                     setItemId(currentItem._id);
-                                    window.location.href = "/adge/adge-question";
+                                    window.location.href =
+                                      "/adge/adge-question";
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faEye} /> View

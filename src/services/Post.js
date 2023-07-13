@@ -89,6 +89,16 @@ export const PostApi = createApi({
         };
       },
     }),
+    adgeHomeSubmit: builder.mutation({
+      query: (body) => {
+        const { id } = body;
+        console.log("viewDetails id", id);
+        return {
+          url: `/adda/update-submit/${id}`,
+          method: "post",
+        };
+      },
+    }),
     updateDuplicate: builder.mutation({
       query: (body) => {
         console.log("update address", body);
@@ -117,4 +127,5 @@ export const {
   useViewDetailsMutation,
   useUpdateDuplicateMutation,
   useSaveDraftMutation,
+  useAdgeHomeSubmitMutation,
 } = PostApi;

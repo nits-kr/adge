@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import AuditReport from "./report/AuditReport";
 import Certificate from "./components/Certficate";
 import ActionPlan from "./components/ActionPlan";
+import History from "./components/History";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
           <Route
             
             className="active"
-            path="/adge/auditior-question"
+            path="/adge/auditior-question/:id"
             element={<AuditorQuestions />}
           />
           <Route
@@ -72,7 +73,12 @@ function App() {
             path="/action"
             element={<ActionPlan/>}
           />
-          
+          <Route
+            
+            className="active"
+            path="/history"
+            element={<History/>}
+          />          
         </Routes>
       </BrowserRouter>
     </>
