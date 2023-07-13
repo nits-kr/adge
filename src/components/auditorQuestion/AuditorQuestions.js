@@ -21,7 +21,10 @@ function AuditorQuestions() {
       `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/update-question/${id}`
     );
     setAgentDetails(data?.results?.updateData);
-    console.log(" auditor question Question Details", data?.results?.updateData);
+    console.log(
+      " auditor question Question Details",
+      data?.results?.updateData
+    );
   };
   return (
     <>
@@ -116,10 +119,10 @@ function AuditorQuestions() {
         <div className="container">
           <div className="card  StaticCard">
             <div className="card-body">
-            <h5 className="card-title float-start">
-                      {" "}
-                      <strong>History</strong>{" "}
-                    </h5>
+              <h5 className="card-title float-start">
+                {" "}
+                <strong>History</strong>{" "}
+              </h5>
               <div className="step-progress">
                 <div className="StepsHeader">
                   <div className="step-slider">
@@ -196,7 +199,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-success">YES</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus1
+                                    ? agentDetails.qstatus1
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -261,13 +268,13 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value1"
                                   type="file"
                                 />
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc1}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -277,7 +284,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName1" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -346,22 +353,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                            {agentDetails?.qcomment1}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -375,8 +379,8 @@ function AuditorQuestions() {
                                             <span className="count">1</span>{" "}
                                             <span aria-hidden="true"> · </span>{" "}
                                             <span>26m</span>{" "}
-                                          </div>
-                                          <ul className="child_replay">
+                                          </div> */}
+                                          {/* <ul className="child_replay">
                                             <li className="box_reply row">
                                               <div className="avatar_comment col-md-1">
                                                 {" "}
@@ -425,11 +429,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -462,7 +466,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -507,7 +511,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-danger">NO</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus2
+                                    ? agentDetails.qstatus2
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -515,10 +523,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample2"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample2"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -530,10 +538,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample2"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample2"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -572,7 +580,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value2"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -580,7 +588,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc2}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -590,7 +598,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName2" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -660,22 +668,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment2}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -739,11 +744,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -776,7 +781,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -820,7 +825,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-success">YES</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus3
+                                    ? agentDetails.qstatus3
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -828,10 +837,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample3"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample3"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -843,10 +852,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample3"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample3"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -885,7 +894,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value3"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -893,7 +902,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc3}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -903,7 +912,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName3" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -973,22 +982,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment3}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -1052,11 +1058,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -1089,7 +1095,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -1143,7 +1149,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-success">YES</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus4
+                                    ? agentDetails.qstatus4
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -1151,10 +1161,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample4"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample4"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -1166,7 +1176,7 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample4"
                                 role="button"
                                 aria-expanded="false"
                                 aria-controls="collapseExample"
@@ -1208,7 +1218,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value4"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -1216,7 +1226,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc4}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -1226,7 +1236,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName4" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -1296,22 +1306,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment4}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -1375,11 +1382,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -1412,7 +1419,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -1452,7 +1459,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-danger">NO</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus5
+                                    ? agentDetails.qstatus5
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -1460,10 +1471,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample5"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample5"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -1475,7 +1486,7 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample5"
                                 role="button"
                                 aria-expanded="false"
                                 aria-controls="collapseExample"
@@ -1517,7 +1528,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value5"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -1525,7 +1536,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc5}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -1535,7 +1546,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName5" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -1605,22 +1616,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment5}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -1684,11 +1692,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -1721,7 +1729,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -1768,7 +1776,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-success">YES</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus6
+                                    ? agentDetails.qstatus6
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -1776,10 +1788,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample6"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample6"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -1791,10 +1803,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample6"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample6"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -1833,7 +1845,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value6"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -1841,7 +1853,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc6}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -1851,7 +1863,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName6" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -1921,22 +1933,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment6}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -2000,11 +2009,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -2037,7 +2046,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>
@@ -2076,7 +2085,11 @@ function AuditorQuestions() {
                                 role="group"
                                 aria-label="Basic example"
                               >
-                                <h4 className="text-success">YES</h4>
+                                <h4 className="text-danger">
+                                  {agentDetails?.qstatus7
+                                    ? agentDetails.qstatus7
+                                    : "No"}
+                                </h4>
                               </div>
                             </div>
                             <div className="col-lg-6 mt-4">
@@ -2084,10 +2097,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample7"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample7"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -2099,10 +2112,10 @@ function AuditorQuestions() {
                               <Link
                                 className="AttachBut2"
                                 data-bs-toggle="collapse"
-                                to="#collapseExample"
+                                to="#collapseExample7"
                                 role="button"
                                 aria-expanded="false"
-                                aria-controls="collapseExample"
+                                aria-controls="collapseExample7"
                               >
                                 {" "}
                                 <FontAwesomeIcon
@@ -2141,7 +2154,7 @@ function AuditorQuestions() {
                               <div className="form">
                                 <input
                                   name="file"
-                                  id="entry_value"
+                                  id="entry_value7"
                                   //   ref="fileInput"
                                   type="file"
                                   //   onchange="getFileName()"
@@ -2149,7 +2162,7 @@ function AuditorQuestions() {
                                 <div>
                                   {" "}
                                   <img
-                                    src="upload.png"
+                                    src={agentDetails?.qdoc7}
                                     alt="upload"
                                     width="4%"
                                     className=""
@@ -2159,7 +2172,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName" className="text-primary ">
+                                <span id="fileName7" className="text-primary ">
                                   {" "}
                                 </span>{" "}
                               </div>
@@ -2229,22 +2242,19 @@ function AuditorQuestions() {
                                   <div className="row">
                                     <ul id="list_comment" className="col-md-12">
                                       <li className="box_result row">
-                                        <div className="avatar_comment col-md-1">
+                                        {/* <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
                                             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                             alt="avatar"
                                           />{" "}
-                                        </div>
+                                        </div> */}
                                         <div className="result_comment col-md-11">
-                                          <h4>Nath Ryuzaki</h4>
+                                          {/* <h4>Nath Ryuzaki</h4> */}
                                           <p>
-                                            Lorem Ipsum is simply dummy text of
-                                            the printing and typesetting
-                                            industry. Lorem Ipsum has been the
-                                            industry's.
+                                          {agentDetails?.qcomment7}
                                           </p>
-                                          <div className="tools_comment">
+                                          {/* <div className="tools_comment">
                                             {" "}
                                             <Link className="like" to="#">
                                               Like
@@ -2308,11 +2318,11 @@ function AuditorQuestions() {
                                                 <ul className="child_replay"></ul>
                                               </div>
                                             </li>
-                                          </ul>
+                                          </ul> */}
                                         </div>
                                       </li>
 
-                                      <li className="box_result row">
+                                      {/* <li className="box_result row">
                                         <div className="avatar_comment col-md-1">
                                           {" "}
                                           <img
@@ -2345,7 +2355,7 @@ function AuditorQuestions() {
                                           </div>
                                           <ul className="child_replay"></ul>
                                         </div>
-                                      </li>
+                                      </li> */}
                                     </ul>
                                   </div>
                                 </div>

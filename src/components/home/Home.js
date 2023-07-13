@@ -169,7 +169,7 @@ function Home() {
                   <label
                     htmlFor="inputEmail3"
                     className="col-sm-3 col-form-label"
-                    style={{marginTop:"-20px"}}
+                    style={{ marginTop: "-20px" }}
                   >
                     Title
                   </label>
@@ -441,18 +441,16 @@ function Home() {
                                 >
                                   <FontAwesomeIcon icon={faCopy} /> Duplicate
                                 </button>
-                                <button
-                                  className="btn btn-sm tableBtn-Gray"
-                                  fdprocessedid="nnhqma"
-                                  // onClick={() => setItemId(currentItem._id)}
+                                <Link
+                                  type="button"
+                                  to={`/adge/auditior-question/${currentItem._id}`}
+                                  className="btn btn-sm tableBtn-blue mx-1"
                                   onClick={() => {
-                                    setItemId(currentItem._id);
-                                    window.location.href =
-                                      "/adge/adge-question";
+                                    setItemId3(currentItem?._id);
                                   }}
                                 >
                                   <FontAwesomeIcon icon={faEye} /> View
-                                </button>
+                                </Link>
                               </td>
                             </tr>
                           );
