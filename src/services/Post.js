@@ -79,6 +79,16 @@ export const PostApi = createApi({
         };
       },
     }),
+    saveDraft: builder.mutation({
+      query: (body) => {
+        const { id } = body;
+        console.log("viewDetails id", id);
+        return {
+          url: `/adda/save-draft/${id}`,
+          method: "post",
+        };
+      },
+    }),
     updateDuplicate: builder.mutation({
       query: (body) => {
         console.log("update address", body);
@@ -106,4 +116,5 @@ export const {
   useCreateFormMutation,
   useViewDetailsMutation,
   useUpdateDuplicateMutation,
+  useSaveDraftMutation,
 } = PostApi;

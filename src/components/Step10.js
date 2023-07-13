@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload, faComment } from "@fortawesome/free-solid-svg-icons";
 // import { useGetAllPostGovernerQuery } from "../../services/Post";
 // import ProgressBar from "../ProgressBar";
-import { useGetAllPostGovernerQuery } from "../services/Post";
+// import { useGetAllPostGovernerQuery } from "../services/Post";
+import { useSaveDraftMutation } from "../services/Post";
 
 function Step10() {
+  const [saveDraft, res] = useSaveDraftMutation();
   const [generatedId, setGeneratedId] = useState("");
   const [yesbutton1, setYesbutton1] = useState();
   const [colorChange1, setColorChange1] = useState(false);
@@ -44,7 +46,7 @@ function Step10() {
 
   const [formData, setFormData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-  const blog = useGetAllPostGovernerQuery();
+  // const blog = useGetAllPostGovernerQuery();
   const [blogList, setBlogList] = useState();
   console.log("blog list", blogList);
   console.log("form data new", formData);
@@ -105,6 +107,22 @@ function Step10() {
     setColorChange13(true);
     setColorChange14(false);
   };
+
+  const handleSaveChanges2 = () => {
+    const editAddress = {
+      id: generatedId,
+    };
+    saveDraft(editAddress);
+  
+    Swal.fire({
+      icon: 'success',
+      title: 'Draft Saved',
+      text: 'Your changes have been saved as a draft.',
+      timer: 3000,
+      timerProgressBar: true,
+    });
+  };
+  console.log(generatedId);
 
   useEffect(() => {
     setTimeout(() => {
@@ -187,13 +205,13 @@ function Step10() {
       setYesbuttonValue7("no");
     }
   };
-  useEffect(() => {
-    if (blog?.data?.results) {
-      setBlogList(blog?.data?.results);
-    } else {
-      setBlogList(blog?.data?.results);
-    }
-  }, [blog]);
+  // useEffect(() => {
+  //   if (blog?.data?.results) {
+  //     setBlogList(blog?.data?.results);
+  //   } else {
+  //     setBlogList(blog?.data?.results);
+  //   }
+  // }, [blog]);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -451,7 +469,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -547,7 +565,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -769,7 +787,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -865,7 +883,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1032,7 +1050,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1128,7 +1146,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1301,7 +1319,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1397,7 +1415,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1561,7 +1579,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1657,7 +1675,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1825,7 +1843,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1921,7 +1939,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -2083,7 +2101,7 @@ function Step10() {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -2179,7 +2197,7 @@ function Step10() {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -2193,6 +2211,7 @@ function Step10() {
               className="btn btn-primary"
               // onClick={handleOnSave}
               style={{ marginRight: "85px", marginBottom: "-40px", height:"38px" }}
+              onClick={handleSaveChanges2}
             >
               Save as draft
             </button>

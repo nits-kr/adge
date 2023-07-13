@@ -8,10 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload, faComment } from "@fortawesome/free-solid-svg-icons";
 // import { useGetAllPostGovernerQuery } from "../../services/Post";
 // import ProgressBar from "../ProgressBar";
-import { useGetAllPostGovernerQuery } from "../services/Post";
+// import { useGetAllPostGovernerQuery } from "../services/Post";
+import { useSaveDraftMutation } from "../services/Post";
 
 function Step1(props) {
   console.log("step 1", props);
+  const [saveDraft, res] = useSaveDraftMutation();
   const [generatedId, setGeneratedId] = useState("");
   const [yesbutton1, setYesbutton1] = useState();
   const [colorChange1, setColorChange1] = useState(false);
@@ -41,12 +43,12 @@ function Step1(props) {
   const [yesbuttonValue5, setYesbuttonValue5] = useState("");
   const [yesbuttonValue6, setYesbuttonValue6] = useState("");
   const [yesbuttonValue7, setYesbuttonValue7] = useState("");
-
+  const [itemId, setItemId] = useState("")
   const [formData, setFormData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
-  const blog = useGetAllPostGovernerQuery();
-  const [blogList, setBlogList] = useState();
-  console.log("blog list", blogList);
+  // const blog = useGetAllPostGovernerQuery();
+  // const [blogList, setBlogList] = useState();
+  // console.log("blog list", blogList);
   console.log("form data new", formData);
 
   const handlecolorchange2 = () => {
@@ -105,6 +107,22 @@ function Step1(props) {
     setColorChange13(true);
     setColorChange14(false);
   }
+
+  const handleSaveChanges2 = () => {
+    const editAddress = {
+      id: generatedId,
+    };
+    saveDraft(editAddress);
+  
+    Swal.fire({
+      icon: 'success',
+      title: 'Draft Saved',
+      text: 'Your changes have been saved as a draft.',
+      timer: 3000,
+      timerProgressBar: true,
+    });
+  };
+  console.log(generatedId);
 
   useEffect(() => {
     setTimeout(() => {
@@ -202,13 +220,13 @@ function Step1(props) {
       
     }
   };
-  useEffect(() => {
-    if (blog?.data?.results) {
-      setBlogList(blog?.data?.results);
-    } else {
-      setBlogList(blog?.data?.results);
-    }
-  }, [blog]);
+  // useEffect(() => {
+  //   if (blog?.data?.results) {
+  //     setBlogList(blog?.data?.results);
+  //   } else {
+  //     setBlogList(blog?.data?.results);
+  //   }
+  // }, [blog]);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -439,7 +457,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -535,7 +553,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -698,7 +716,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -794,7 +812,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -957,7 +975,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1053,7 +1071,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1222,7 +1240,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1318,7 +1336,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1477,7 +1495,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1573,7 +1591,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1737,7 +1755,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -1833,7 +1851,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -1991,7 +2009,7 @@ function Step1(props) {
                         </div>
                       </div>
                       <div className="row">
-                        <ul id="list_comment" className="col-md-12">
+                        {/* <ul id="list_comment" className="col-md-12">
                           <li className="box_result row">
                             <div className="avatar_comment col-md-1">
                               <img
@@ -2087,7 +2105,7 @@ function Step1(props) {
                               <ul className="child_replay" />
                             </div>
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -2099,7 +2117,7 @@ function Step1(props) {
             <button
               type="button"
               className="btn btn-primary me-2"
-              // onClick={handleOnSave}
+              onClick={handleSaveChanges2}
             >
               Save as Draft
             </button>
