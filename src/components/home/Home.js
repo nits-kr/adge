@@ -228,7 +228,7 @@ function Home() {
               <div className="col-lg-12">
                 <div className="card StaticCard">
                   <div className="card-body" style={{ flex: "1" }}>
-                    <h5 className="card-title float-start">Home</h5>
+                    {/* <h5 className="card-title float-start">Home</h5>
                     <button
                       type="button"
                       className="btn btn-sm DefaultBtn float-end mt-4"
@@ -249,7 +249,44 @@ function Home() {
                       >
                         <FontAwesomeIcon icon={faFile} /> Create Form
                       </Link>
-                    </button>
+                    </button> */}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <h5
+                        className="card-title float-start"
+                        style={{ marginBottom: "0px", padding: "0px" }}
+                      >
+                        Home
+                      </h5>
+                      <div>
+                        <button
+                          type="button"
+                          className="btn btn-sm DefaultBtn float-end"
+                          fdprocessedid="bfs61e"
+                        >
+                          <FontAwesomeIcon icon={faDownload} /> Download
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-sm DefaultBtn float-end me-2"
+                          fdprocessedid="bfs61e"
+                        >
+                          <Link
+                            // data-bs-toggle="modal"
+                            // data-bs-target="#staticBackdrop"
+                            className="comman_btn2 table_viewbtn"
+                            to="/users"
+                          >
+                            <FontAwesomeIcon icon={faFile} /> Create Form
+                          </Link>
+                        </button>
+                      </div>
+                    </div>
                     <table
                       className="table table-sm table-hover table-striped CustomTable"
                       id="UserTable"
@@ -258,20 +295,21 @@ function Home() {
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Title</th>
-                          <th scope="col">Date</th>
-                          <th scope="col">User</th>
-                          <th scope="col">Score</th>
+                          <th scope="col" style={{textAlign:"center"}}>Date</th>
+                          <th scope="col" style={{textAlign:"center"}}>User</th>
+                          <th scope="col" style={{textAlign:"center"}}>Score</th>
                           <th scope="col" style={{ textAlign: "center" }}>
                             Scheduled
                           </th>
-                          <th scope="col">Status</th>
+                          <th scope="col" style={{textAlign:"center"}}>Status</th>
                           <th
                             scope="col"
-                            align="center"
-                            className="text-center"
+                            // align="end"
+                            className="text-end"
                             style={{
-                              textAlign: "center !important",
-                              width: 200,
+                              textAlign: "end !important",
+                              padding: "3px 25px !important",
+                              // width: 200,
                             }}
                           >
                             Action
@@ -281,13 +319,13 @@ function Home() {
                       <tbody>
                         {scheduledList?.list?.map((item, index) => {
                           return (
-                            <tr className="yellow" key={index}>
+                            <tr className="heading10" key={index}>
                               <th scope="row">AUD45461</th>
                               <td> {item?.title} </td>
-                              <td>{item?.createdAt?.slice(0, 10)}</td>
-                              <td>{item?.userName}</td>
+                              <td style={{textAlign:"center"}}>{item?.createdAt?.slice(0, 10)}</td>
+                              <td style={{textAlign:"center"}}>{item?.userName}</td>
                               <td></td>
-                              <td>
+                              <td style={{textAlign:"center"}}>
                                 <div className="nav-item dropdown pe-3">
                                   <Link
                                     className=""
@@ -325,8 +363,8 @@ function Home() {
                                   </ul>
                                 </div>
                               </td>
-                              <td>{item?.status}</td>
-                              <td style={{ textAlign: "center" }}>
+                              <td style={{textAlign:"center"}}>{item?.status}</td>
+                              <td style={{ textAlign: "end" }}>
                                 {/* <Link
                                   type="button"
                                   to="#"
@@ -377,10 +415,10 @@ function Home() {
                             <tr key={index}>
                               <th scope="row">AUD45461</th>
                               <td>{currentItem.title}</td>
-                              <td>{currentItem.createdAt?.slice(0, 10)}</td>
-                              <td>{currentItem.userName}</td>
+                              <td style={{textAlign:"center"}}>{currentItem.createdAt?.slice(0, 10)}</td>
+                              <td style={{textAlign:"center"}}>{currentItem.userName}</td>
                               <td></td>
-                              <td>
+                              <td style={{textAlign:"center"}}>
                                 <div className="nav-item dropdown pe-3">
                                   <Link
                                     className=""
@@ -429,8 +467,8 @@ function Home() {
                                 </div>
                               </td>
 
-                              <td>{currentItem.status}</td>
-                              <td style={{ textAlign: "center" }}>
+                              <td style={{textAlign:"center"}}>{currentItem.status}</td>
+                              <td style={{ textAlign: "end" }}>
                                 <button
                                   type="button"
                                   className="btn btn-sm tableBtn-Gray mx-1"

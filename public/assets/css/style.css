@@ -1383,7 +1383,7 @@ h6 {
 .CustomTable th {
   background-color: #5058dd;
   color: #ffffff;
-  padding: 4px 10px !important;
+  padding: 4px 25px !important;
   vertical-align: middle !important;
   height: 50px;
   
@@ -2394,4 +2394,10 @@ ol.progtrckr li.progtrckr-done:before {
 
 ol.progtrckr li.progtrckr-done:hover:before {
   color: #333;
+}
+.table-striped > tbody .heading10 th {
+  background-color:#fff7cc !important
+}
+.table-striped > tbody .heading10 td {
+  background-color:#fff7cc !important
 }
