@@ -9,6 +9,57 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+body {
+  font-family: 'Circular Std' !important;
+}
+th{
+  font-weight: bold !important;
+}
+td{
+  font-weight: 300 !important;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../CircularSpotifyText-Light.woff2') format('woff2'),
+      url('../CircularSpotifyText-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/CircularStd-Medium.woff2') format('woff2'),
+      url('../fonts/CircularStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/CircularStd-Black.woff2') format('woff2'),
+      url('../fonts/CircularStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circula';
+  src: url('../fonts/Circula-Medium.woff2') format('woff2'),
+      url('../fonts/Circula-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../fonts/CircularStd-Bold.woff2') format('woff2'),
+      url('../fonts/CircularStd-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   scroll-behavior: smooth;
 }
@@ -18,10 +69,10 @@
  
   color: #444444;
 } */
-body {
+/* body {
   font-family: "Roboto", sans-serif !important;
   font-size: 14px !important;
-}
+} */
 
 a {
   color: #4154f1;
@@ -39,7 +90,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Circular Std' !important;
 }
 
 /*--------------------------------------------------------------
@@ -247,9 +298,11 @@ h6 {
 .card-title {
   padding: 10px 0 10px 0;
   font-size: 16px;
-  font-weight: 500;
-  color: #707070;
-  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  color: #4e4949;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Circular Std' !important;
+  /* font-weight: bold !important; */
   border-bottom: 1px solid #e9e9e9;
 }
 
@@ -261,7 +314,8 @@ h6 {
 
 .card-body {
   padding: 0 20px 10px 20px;
-  font-family: "Roboto";
+  /* font-family: "Roboto"; */
+  font-family: 'Circular Std' !important;
 }
 
 .card-img-overlay {
@@ -2399,5 +2453,6 @@ ol.progtrckr li.progtrckr-done:hover:before {
   background-color:#fff7cc !important
 }
 .table-striped > tbody .heading10 td {
-  background-color:#fff7cc !important
+  background-color:#fff7cc !important;
+  color: #070707;
 }

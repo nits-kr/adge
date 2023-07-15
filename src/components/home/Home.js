@@ -228,33 +228,13 @@ function Home() {
               <div className="col-lg-12">
                 <div className="card StaticCard">
                   <div className="card-body" style={{ flex: "1" }}>
-                    {/* <h5 className="card-title float-start">Home</h5>
-                    <button
-                      type="button"
-                      className="btn btn-sm DefaultBtn float-end mt-4"
-                      fdprocessedid="bfs61e"
-                    >
-                      <FontAwesomeIcon icon={faDownload} /> Download
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-sm DefaultBtn float-end mt-4 me-2"
-                      fdprocessedid="bfs61e"
-                    >
-                      <Link
-                        data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop"
-                        className="comman_btn2 table_viewbtn"
-                        to=""
-                      >
-                        <FontAwesomeIcon icon={faFile} /> Create Form
-                      </Link>
-                    </button> */}
                     <div
                       style={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
+                        marginBottom:"10px",
+                        marginTop:"10px"
                       }}
                     >
                       <h5
@@ -277,10 +257,10 @@ function Home() {
                           fdprocessedid="bfs61e"
                         >
                           <Link
-                            // data-bs-toggle="modal"
-                            // data-bs-target="#staticBackdrop"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
                             className="comman_btn2 table_viewbtn"
-                            to="/users"
+                            to=""
                           >
                             <FontAwesomeIcon icon={faFile} /> Create Form
                           </Link>
@@ -295,13 +275,21 @@ function Home() {
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Title</th>
-                          <th scope="col" style={{textAlign:"center"}}>Date</th>
-                          <th scope="col" style={{textAlign:"center"}}>User</th>
-                          <th scope="col" style={{textAlign:"center"}}>Score</th>
+                          <th scope="col" style={{ textAlign: "center" }}>
+                            Date
+                          </th>
+                          <th scope="col" style={{ textAlign: "center" }}>
+                            User
+                          </th>
+                          <th scope="col" style={{ textAlign: "center" }}>
+                            Score
+                          </th>
                           <th scope="col" style={{ textAlign: "center" }}>
                             Scheduled
                           </th>
-                          <th scope="col" style={{textAlign:"center"}}>Status</th>
+                          <th scope="col" style={{ textAlign: "center" }}>
+                            Status
+                          </th>
                           <th
                             scope="col"
                             // align="end"
@@ -322,10 +310,14 @@ function Home() {
                             <tr className="heading10" key={index}>
                               <th scope="row">AUD45461</th>
                               <td> {item?.title} </td>
-                              <td style={{textAlign:"center"}}>{item?.createdAt?.slice(0, 10)}</td>
-                              <td style={{textAlign:"center"}}>{item?.userName}</td>
+                              <td style={{ textAlign: "center" }}>
+                                {item?.createdAt?.slice(0, 10)}
+                              </td>
+                              <td style={{ textAlign: "center" }}>
+                                {item?.userName}
+                              </td>
                               <td></td>
-                              <td style={{textAlign:"center"}}>
+                              <td style={{ textAlign: "center" }}>
                                 <div className="nav-item dropdown pe-3">
                                   <Link
                                     className=""
@@ -363,7 +355,9 @@ function Home() {
                                   </ul>
                                 </div>
                               </td>
-                              <td style={{textAlign:"center"}}>{item?.status}</td>
+                              <td style={{ textAlign: "center" }}>
+                                {item?.status}
+                              </td>
                               <td style={{ textAlign: "end" }}>
                                 {/* <Link
                                   type="button"
@@ -415,10 +409,14 @@ function Home() {
                             <tr key={index}>
                               <th scope="row">AUD45461</th>
                               <td>{currentItem.title}</td>
-                              <td style={{textAlign:"center"}}>{currentItem.createdAt?.slice(0, 10)}</td>
-                              <td style={{textAlign:"center"}}>{currentItem.userName}</td>
+                              <td style={{ textAlign: "center" }}>
+                                {currentItem.createdAt?.slice(0, 10)}
+                              </td>
+                              <td style={{ textAlign: "center" }}>
+                                {currentItem.userName}
+                              </td>
                               <td></td>
-                              <td style={{textAlign:"center"}}>
+                              <td style={{ textAlign: "center" }}>
                                 <div className="nav-item dropdown pe-3">
                                   <Link
                                     className=""
@@ -467,7 +465,9 @@ function Home() {
                                 </div>
                               </td>
 
-                              <td style={{textAlign:"center"}}>{currentItem.status}</td>
+                              <td style={{ textAlign: "center" }}>
+                                {currentItem.status}
+                              </td>
                               <td style={{ textAlign: "end" }}>
                                 <button
                                   type="button"
