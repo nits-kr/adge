@@ -443,7 +443,7 @@ function AdgeQuestions2() {
         }).then((result) => {
           if (result.isConfirmed) {
             // window.location.reload(); // refresh the page after success message is closed
-            navigate('/adge/home');
+            navigate("/adge/home");
           }
         });
       })
@@ -454,8 +454,8 @@ function AdgeQuestions2() {
   return (
     <>
       {/* ======= Header ======= */}
-      <Header/>
-      <Navbar/>
+      <Header />
+      <Navbar />
       <main id="main" className="main pb-5">
         <div className="container-fluid">
           <div className="card  StaticCard">
@@ -3101,7 +3101,9 @@ function AdgeQuestions2() {
                                     Data quality definitions shall include – but
                                     are not limited to – the minimum measures of
                                     data quality for
-                                    <span className="badge bg-danger">Danger</span>
+                                    <span className="badge bg-danger">
+                                      Danger
+                                    </span>
                                     <span className="badge bg-secondary">
                                       Secondary
                                     </span>
@@ -4966,30 +4968,69 @@ function AdgeQuestions2() {
                       Prev
                     </button>
                     {page === 10 ? (
-                      <button
-                        type="button"
-                        className="active"
-                        name="next"
-                        onClick={() => {
-                          page === 10 ? setPage(10) : setPage(page + 1);
-                        //   handleSaveChanges2();
-                        handleOnSave();
-                        }}
-                      >
-                        Submit
-                      </button>
+                      <div>
+                        <button
+                          type="button"
+                          className="active me-2"
+                          name="draft"
+                          onClick={() => {
+                            handleSaveChanges2();
+                            // handle saving as draft logic here
+                          }}
+                        >
+                          Save as Draft
+                        </button>
+                        <button
+                          type="button"
+                          className="active"
+                          name="next"
+                          onClick={() => {
+                            setPage(10);
+                            // handle submission logic here
+                            handleOnSave();
+                          }}
+                        >
+                          Submit
+                        </button>
+                        <button
+                          type="button"
+                          className="active bg-danger text-light ms-2"
+                          name="next"
+                          onClick={() => {
+                            setPage(10);
+                            // handle submission logic here
+                            // handleOnSave();
+                            window.location.href = "/adge/home";
+                          }}
+                        >
+                          Reject
+                        </button>
+                      </div>
                     ) : (
-                      <button
-                        type="button"
-                        className="active"
-                        name="next"
-                        onClick={() => {
-                          page === 10 ? setPage(10) : setPage(page + 1);
-                          // handleSaveChanges2();
-                        }}
-                      >
-                        Next
-                      </button>
+                      <div>
+                        <button
+                          type="button"
+                          className="active me-2"
+                          name="draft"
+                          onClick={() => {
+                            handleSaveChanges2();
+                            // handle saving as draft logic here
+                          }}
+                        >
+                          Save as Draft
+                        </button>
+                        <button
+                          type="button"
+                          className="active"
+                          name="next"
+                          onClick={() => {
+                            page === 10 ? setPage(10) : setPage(page + 1);
+                            // handleSaveChanges2();
+                          }}
+                        >
+                          Next
+                        </button>
+                      </div>
                     )}
 
                     <button type="button" className="active out" name="finish">
@@ -4999,6 +5040,10 @@ function AdgeQuestions2() {
                       type="button"
                       className="active out bg-danger"
                       name="finish"
+                      onClick={() => {
+                        // navigate to home page logic here
+                        window.location.href = "/adge/home";
+                      }}
                     >
                       Reject
                     </button>
