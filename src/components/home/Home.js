@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { ErrorMessage } from "@hookform/error-message"
+import { useForm } from "react-hook-form"
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,6 +10,7 @@ import {
   faDownload,
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
+import { ErrorMessage } from "@hookform/error-message"
 import Header from "../Header";
 import Navbar from "../Navbar";
 import { useGetAllPostHomeQuery } from "../../services/Post";
@@ -30,8 +33,13 @@ function Home() {
   const [itemId2, setItemId2] = useState("");
   const [itemId3, setItemId3] = useState("");
 
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState(""); 
   const [scheduledList, setScheduledList] = useState();
+  const { register, handleSubmit, formState: { errors }} = useForm({
+    shouldUseNativeValidation: true,
+  })
+  const navigate = useNavigate();
+  console.log("errors", errors);
   useEffect(() => {
     if (blog?.data?.results) {
       setScheduledList(blog?.data?.results);
@@ -65,15 +73,15 @@ function Home() {
   //     console.error("Error creating form:", error);
   //   }
   // };
-  const handleSaveChanges1 = async () => {
+  const handleSaveChanges1 = async (data) => {
     const editAddress = {
-      title: title,
-      userName: userName,
+      title: data?.title,
+      userName: data?.userName,
     };
-
+    console.log("data", data);
     try {
       const response = await createForm(editAddress);
-      const generatedId = response?.data?.results?.saveData?._id; // Assuming the generated ID is available in the response
+      const generatedId = response?.data?.results?.saveData?._id;
       console.log("generatedId", generatedId);
       // Store the generated ID in local storage
       localStorage.setItem("generatedId", generatedId);
@@ -83,10 +91,10 @@ function Home() {
         text: "The form has been successfully created.",
         icon: "success",
       }).then(() => {
-        window.location.reload(); // Reload the page
+        navigate("/adge/adge-question") 
       });
     } catch (error) {
-      // Handle any errors that occurred during form creation
+      
       console.error("Error creating form:", error);
     }
   };
@@ -123,11 +131,11 @@ function Home() {
     homeSubmit(editAddress);
   };
 
-  const handleSubmit = () => {
-    if (itemId3) {
-      handleSaveChanges4();
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (itemId3) {
+  //     handleSaveChanges4();
+  //   }
+  // };
 
   console.log("item id 3", itemId3);
   const handleSaveChanges2 = () => {
@@ -554,7 +562,8 @@ function Home() {
             <div className="modal-body">
               <form
                 className="form-design p-3 help-support-form row align-items-end justify-content-center"
-                action=""
+                // action=""
+                onSubmit={handleSubmit(handleSaveChanges1)}
               >
                 <div className="form-group col-12">
                   <label htmlFor="nameEn">Title</label>
@@ -563,9 +572,14 @@ function Home() {
                     className="form-control mt-2"
                     name="title"
                     id="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    // value={title}
+                    // onChange={(e) => setTitle(e.target.value)}
+                    {...register("Title", {
+                      required: "Please enter your Title .", 
+                    })} 
+                    // required
                   />
+                  <ErrorMessage errors={errors} name="Title" />
                 </div>
                 <div className="form-group col-12 my-2">
                   <label htmlFor="nameAr">User name</label>
@@ -574,13 +588,20 @@ function Home() {
                     className="form-control mt-2"
                     name="userName"
                     id="userName"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
+                    // value={userName}
+                    // onChange={(e) => setUserName(e.target.value)}
+                    {...register("userName", {
+                      required: "Please enter your user name.", 
+                    })} 
+                    
+                    // required
                   />
+                   <ErrorMessage errors={errors} name="userName" />
                 </div>
                 <div className="form-group mb-0 col-auto">
-                  <Link to="/adge/adge-question">
+                
                     <button
+                    type="submit"
                       className="comman_btn2  text-light"
                       style={{
                         border: "none",
@@ -589,11 +610,11 @@ function Home() {
                         height: "40px",
                         backgroundColor: "#5058DD",
                       }}
-                      onClick={handleSaveChanges1}
+                      // onClick={handleSaveChanges1}
                     >
                       Continue
                     </button>
-                  </Link>
+                
                 </div>
               </form>
             </div>
