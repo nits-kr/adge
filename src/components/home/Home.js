@@ -400,11 +400,11 @@ function Home() {
                       </thead>
 
                       <tbody>
-                        {scheduledList?.data2?.flatMap((item, index) => {
+                        {scheduledList?.listData?.flatMap((item, index) => {
                           if (item.length === 0) {
                             return null;
                           }
-                          const currentItem = item[0];
+                          const currentItem = item;
                           return (
                             <tr key={index}>
                               <th scope="row">AUD45461</th>
@@ -415,7 +415,7 @@ function Home() {
                               <td style={{ textAlign: "center" }}>
                                 {currentItem.userName}
                               </td>
-                              <td></td>
+                              <td style={{textAlign:"center"}}> {currentItem?.score} </td>
                               <td style={{ textAlign: "center" }}>
                                 <div className="nav-item dropdown pe-3">
                                   <Link
