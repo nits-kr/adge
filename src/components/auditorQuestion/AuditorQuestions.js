@@ -284,7 +284,7 @@ function AuditorQuestions() {
                                     Browse
                                   </button>
                                 </div>
-                                <span id="fileName1" className="text-primary ">
+                                <span id="fileName1" className="text-primary " >
                                   {" "}
                                 </span>{" "}
                               </div>

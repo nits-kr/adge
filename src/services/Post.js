@@ -81,11 +81,12 @@ export const PostApi = createApi({
     }),
     saveDraft: builder.mutation({
       query: (body) => {
-        const { id } = body;
+        const { id, ...data } = body;
         console.log("viewDetails id", id);
         return {
-          url: `/adda/save-draft/${id}`,
+          url: `/adda/adge-question/${id}`,
           method: "post",
+          body: data,
         };
       },
     }),
@@ -111,6 +112,44 @@ export const PostApi = createApi({
         };
       },
     }),
+    addApprove: builder.mutation({
+      query: (body) => {
+        const { id } = body;
+        console.log("viewDetails id", id);
+        return {
+          url: `/adda/submit-data/${id}`,
+          method: "post",
+        };
+      },
+    }),
+    questionList: builder.mutation({
+      query: (body) => {
+        const { id } = body;
+        console.log("viewDetails id question list", id);
+        return {
+          url: `/adda/adge-questionList/${id}`,
+          method: "post",
+        };
+      },
+    }),
+    updateQuestionList: builder.mutation({
+      query: (body) => {
+        console.log("update address", body);
+        const { id, ...data } = body;
+        console.log("update address body data", data);
+        return {
+          url: `/adda/update-question/${id}`,
+          method: "post",
+          body: data,
+        };
+      },
+    }),
+    deleteHomeForm: builder.mutation({
+      query: (id) => ({
+        url: `/adda/delete-form/${id}`,
+        method: "post",
+      }),
+    }),
   }),
 });
 
@@ -128,4 +167,8 @@ export const {
   useUpdateDuplicateMutation,
   useSaveDraftMutation,
   useAdgeHomeSubmitMutation,
+  useAddApproveMutation,
+  useQuestionListMutation,
+  useUpdateQuestionListMutation,
+  useDeleteHomeFormMutation,
 } = PostApi;

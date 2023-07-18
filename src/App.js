@@ -13,6 +13,7 @@ import Certificate from "./components/Certficate";
 import ActionPlan from "./components/ActionPlan";
 import History from "./components/History";
 import AdgeQuestions2 from "./components/adgeQustion/AdgeQuestion2";
+import AuditorQuestions2 from "./components/auditorQuestion/AuditorQuestions2";
 
 function App() {
   return (
@@ -42,8 +43,9 @@ function App() {
             
             className="active"
             path="/adge/auditior-question/:id"
-            element={<AuditorQuestions />}
+            element={<AuditorQuestions2/>}
           />
+          
           <Route
             
             className="active"

@@ -1437,7 +1437,7 @@ h6 {
 .CustomTable th {
   background-color: #5058dd;
   color: #ffffff;
-  padding: 4px 25px !important;
+  padding: 4px 62px !important;
   vertical-align: middle !important;
   height: 50px;
   
@@ -2018,7 +2018,7 @@ label {
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 10px;
+  top: -15px;
   transition: all 0.2s ease;
 }
 

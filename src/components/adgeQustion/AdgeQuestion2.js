@@ -11,6 +11,7 @@ import Navbar from "../Navbar";
 function AdgeQuestions2() {
   const [page, setPage] = useState(1);
   const [saveDraft, res] = useSaveDraftMutation();
+
   const [generatedId, setGeneratedId] = useState("");
   const [yesbutton1, setYesbutton1] = useState();
   const [colorChange1, setColorChange1] = useState(false);
@@ -71,6 +72,19 @@ function AdgeQuestions2() {
   const [itemId, setItemId] = useState("");
   const [formData, setFormData] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage2, setSelectedImage2] = useState(null);
+  const [selectedImage3, setSelectedImage3] = useState(null);
+  const [selectedImage4, setSelectedImage4] = useState(null);
+  const [selectedImage5, setSelectedImage5] = useState(null);
+  const [selectedImage6, setSelectedImage6] = useState(null);
+  const [selectedImage7, setSelectedImage7] = useState(null);
+  const [selectedImage8, setSelectedImage8] = useState(null);
+  const [selectedImage9, setSelectedImage9] = useState(null);
+  const [selectedImage10, setSelectedImage10] = useState(null);
+  const [selectedImage11, setSelectedImage11] = useState(null);
+  const [selectedImage12, setSelectedImage12] = useState(null);
+  const [selectedImage13, setSelectedImage13] = useState(null);
+  const [selectedImage14, setSelectedImage14] = useState(null);
   // const blog = useGetAllPostGovernerQuery();
   // const [blogList, setBlogList] = useState();
   // console.log("blog list", blogList);
@@ -189,20 +203,65 @@ function AdgeQuestions2() {
     qsetColorChange14(false);
   };
 
-  const handleSaveChanges2 = () => {
-    const editAddress = {
-      id: generatedId,
-    };
-    saveDraft(editAddress);
-
-    Swal.fire({
-      icon: "success",
-      title: "Draft Saved",
-      text: "Your changes have been saved as a draft.",
-      timer: 3000,
-      timerProgressBar: true,
-    });
-  };
+//   const handleSaveChanges2 = () => {
+//     const data = new FormData();
+//     data.append("doc1", formData?.file1);
+//     data.append("status1", yesbuttonValue1);
+//     data.append("comment1", formData?.comment1);
+//     data.append("doc2", formData?.file2);
+//     data.append("status2", yesbuttonValue2);
+//     data.append("comment2", formData?.comment2);
+//     data.append("doc3", formData?.file3);
+//     data.append("status3", yesbuttonValue3);
+//     data.append("comment3", formData?.comment3);
+//     data.append("doc4", formData?.file4);
+//     data.append("status4", yesbuttonValue4);
+//     data.append("comment4", formData?.comment4);
+//     data.append("doc5", formData?.file5);
+//     data.append("status5", yesbuttonValue5);
+//     data.append("comment5", formData?.comment5);
+//     data.append("doc6", formData?.file6);
+//     data.append("status6", yesbuttonValue6);
+//     data.append("comment6", formData?.comment6);
+//     data.append("doc7", formData?.file7);
+//     data.append("status7", yesbuttonValue7);
+//     data.append("comment7", formData?.comment7);
+//     data.append("qdoc1", formData?.qfile1);
+//     data.append("qstatus1", qyesbuttonValue1);
+//     data.append("qcomment1", formData?.qcomment1);
+//     data.append("qdoc2", formData?.qfile2);
+//     data.append("qstatus2", qyesbuttonValue2);
+//     data.append("qcomment2", formData?.qcomment2);
+//     data.append("qdoc3", formData?.qfile3);
+//     data.append("qstatus3", qyesbuttonValue3);
+//     data.append("qcomment3", formData?.qcomment3);
+//     data.append("qdoc4", formData?.qfile4);
+//     data.append("qstatus4", qyesbuttonValue4);
+//     data.append("qcomment4", formData?.qcomment4);
+//     data.append("qdoc5", formData?.qfile5);
+//     data.append("qstatus5", qyesbuttonValue5);
+//     data.append("qcomment5", formData?.qcomment5);
+//     data.append("qdoc6", formData?.qfile6);
+//     data.append("qstatus6", qyesbuttonValue6);
+//     data.append("qcomment6", formData?.qcomment6);
+//     data.append("qdoc7", formData?.qfile7);
+//     data.append("qstatus7", qyesbuttonValue7);
+//     data.append("qcomment7", formData?.qcomment7);
+//     console.log("data",data);
+//     const editAddress = {
+//       id: generatedId,
+//       data: data
+//     };
+//     saveDraft(editAddress);
+// // navigate("/adge/home")
+//     Swal.fire({
+//       icon: "success",
+//       title: "Draft Saved",
+//       text: "Your changes have been saved as a draft.",
+//       timer: 3000,
+//       timerProgressBar: true,
+//     });
+//   };
   console.log(generatedId);
 
   useEffect(() => {
@@ -366,11 +425,12 @@ function AdgeQuestions2() {
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
-      setSelectedImage(reader.result);
+      setSelectedImage({ ...selectedImage, [key]: e.target.files[0] });
     };
     reader.readAsDataURL(file);
     setFormData({ ...formData, [key]: e.target.files[0] });
   };
+
   console.log("file upload", formData);
   const handleSetData = async (data) => {
     try {
@@ -380,54 +440,125 @@ function AdgeQuestions2() {
     }
   };
 
-  const handleOnSave = () => {
+  const handleSaveChanges2 = () => {
     const data = new FormData();
-    data.append("doc1", formData.file1);
+    data.append("doc1", formData?.file1?.length ? formData?.file1 : "");
     data.append("status1", yesbuttonValue1);
-    data.append("comment1", formData.comment1);
-    data.append("doc2", formData.file2);
+    data.append("comment1", formData?.comment1?.length ? formData?.comment1 : "");
+    data.append("doc2", formData?.file2?.length ? formData?.file2 : "");
     data.append("status2", yesbuttonValue2);
-    data.append("comment2", formData.comment2);
-    data.append("doc3", formData.file3);
+    data.append("comment2", formData?.comment2?.length ? formData?.comment2 : "");
+    data.append("doc3", formData?.file3?.length ? formData?.file3 : "");
     data.append("status3", yesbuttonValue3);
-    data.append("comment3", formData.comment3);
-    data.append("doc4", formData.file4);
+    data.append("comment3", formData?.comment3?.length ? formData?.comment3 : "");
+    data.append("doc4", formData?.file4?.length ? formData?.file4 : "");
     data.append("status4", yesbuttonValue4);
-    data.append("comment4", formData.comment4);
-    data.append("doc5", formData.file5);
+    data.append("comment4", formData?.comment4?.length ? formData?.comment4 : "");
+    data.append("doc5", formData?.file5?.length ? formData?.file5 : "");
     data.append("status5", yesbuttonValue5);
-    data.append("comment5", formData.comment5);
-    data.append("doc6", formData.file6);
+    data.append("comment5", formData?.comment5?.length ? formData?.comment5 : "");
+    data.append("doc6", formData?.file6?.length ? formData?.file6 : "");
     data.append("status6", yesbuttonValue6);
-    data.append("comment6", formData.comment6);
-    data.append("doc7", formData.file7);
+    data.append("comment6", formData?.comment6?.length ? formData?.comment6 : "");
+    data.append("doc7", formData?.file7?.length ? formData?.file7 : "");
     data.append("status7", yesbuttonValue7);
-    data.append("comment7", formData.comment7);
-    data.append("qdoc1", formData.qfile1);
+    data.append("comment7", formData?.comment7?.length ? formData?.comment7 : "");
+    data.append("qdoc1", formData?.qfile1?.length ? formData?.qfile1 : "");
     data.append("qstatus1", qyesbuttonValue1);
-    data.append("qcomment1", formData.qcomment1);
-    data.append("qdoc2", formData.qfile2);
+    data.append("qcomment1", formData?.qcomment1?.length ? formData?.qcomment1 : "");
+    data.append("qdoc2", formData?.qfile2?.length ? formData?.qfile2 : "");
     data.append("qstatus2", qyesbuttonValue2);
-    data.append("qcomment2", formData.qcomment2);
-    data.append("qdoc3", formData.qfile3);
+    data.append("qcomment2", formData?.qcomment2?.length ? formData?.qcomment2 : "");
+    data.append("qdoc3", formData?.qfile3?.length ? formData?.qfile3 : "" );
     data.append("qstatus3", qyesbuttonValue3);
-    data.append("qcomment3", formData.qcomment3);
-    data.append("qdoc4", formData.qfile4);
+    data.append("qcomment3", formData?.qcomment3?.length ? formData?.qcomment3 : "");
+    data.append("qdoc4", formData?.qfile4?.length ? formData?.qfile4 : "");
     data.append("qstatus4", qyesbuttonValue4);
-    data.append("qcomment4", formData.qcomment4);
-    data.append("qdoc5", formData.qfile5);
+    data.append("qcomment4", formData?.qcomment4?.length ? formData?.qcomment4 : "");
+    data.append("qdoc5", formData?.qfile5?.length ? formData?.qfile5 : "");
     data.append("qstatus5", qyesbuttonValue5);
-    data.append("qcomment5", formData.qcomment5);
-    data.append("qdoc6", formData.qfile6);
+    data.append("qcomment5", formData?.qcomment5?.length ? formData?.qcomment5 : "");
+    data.append("qdoc6", formData?.qfile6?.length ? formData?.qfile6 : "");
     data.append("qstatus6", qyesbuttonValue6);
-    data.append("qcomment6", formData.qcomment6);
-    data.append("qdoc7", formData.qfile7);
+    data.append("qcomment6", formData?.qcomment6?.length ? formData?.qcomment6 : "");
+    data.append("qdoc7", formData?.qfile7?.length ? formData?.qfile7 : "");
     data.append("qstatus7", qyesbuttonValue7);
-    data.append("qcomment7", formData.qcomment7);
-    data.append("adge_Id", generatedId);
+    data.append("qcomment7", formData?.qcomment7?.length ? formData?.qcomment7 : "");
+    // data.append("adge_Id", generatedId);
     axios
       .post(
-        "http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question",
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/adge-question/${generatedId}`,
+        data
+      )
+      .then(async (response) => {
+        setFormData(response?.data?.results?.data);
+        await handleSetData(response?.data?.results?.data);
+        console.log(response?.data?.results?.data);
+        Swal.fire({
+          title: "Question Saved!",
+          text: "Your question has been created successfully.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // window.location.reload(); // refresh the page after success message is closed
+            navigate("/adge/home");
+          }
+        });
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  };
+  const handleOnSave = () => {
+    const data = new FormData();
+    data.append("doc1", formData?.file1);
+    data.append("status1", yesbuttonValue1);
+    data.append("comment1", formData?.comment1);
+    data.append("doc2", formData?.file2);
+    data.append("status2", yesbuttonValue2);
+    data.append("comment2", formData?.comment2);
+    data.append("doc3", formData?.file3);
+    data.append("status3", yesbuttonValue3);
+    data.append("comment3", formData?.comment3);
+    data.append("doc4", formData?.file4);
+    data.append("status4", yesbuttonValue4);
+    data.append("comment4", formData?.comment4);
+    data.append("doc5", formData?.file5);
+    data.append("status5", yesbuttonValue5);
+    data.append("comment5", formData?.comment5);
+    data.append("doc6", formData?.file6);
+    data.append("status6", yesbuttonValue6);
+    data.append("comment6", formData?.comment6);
+    data.append("doc7", formData?.file7);
+    data.append("status7", yesbuttonValue7);
+    data.append("comment7", formData?.comment7);
+    data.append("qdoc1", formData?.qfile1);
+    data.append("qstatus1", qyesbuttonValue1);
+    data.append("qcomment1", formData?.qcomment1);
+    data.append("qdoc2", formData?.qfile2);
+    data.append("qstatus2", qyesbuttonValue2);
+    data.append("qcomment2", formData?.qcomment2);
+    data.append("qdoc3", formData?.qfile3);
+    data.append("qstatus3", qyesbuttonValue3);
+    data.append("qcomment3", formData?.qcomment3);
+    data.append("qdoc4", formData?.qfile4);
+    data.append("qstatus4", qyesbuttonValue4);
+    data.append("qcomment4", formData?.qcomment4);
+    data.append("qdoc5", formData?.qfile5);
+    data.append("qstatus5", qyesbuttonValue5);
+    data.append("qcomment5", formData?.qcomment5);
+    data.append("qdoc6", formData?.qfile6);
+    data.append("qstatus6", qyesbuttonValue6);
+    data.append("qcomment6", formData?.qcomment6);
+    data.append("qdoc7", formData?.qfile7);
+    data.append("qstatus7", qyesbuttonValue7);
+    data.append("qcomment7", formData?.qcomment7);
+    // data.append("adge_Id", generatedId);
+    axios
+      .post(
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${generatedId}`,
         data
       )
       .then(async (response) => {
@@ -588,10 +719,10 @@ function AdgeQuestions2() {
                                     structure to support the Data Management
                                     Programme.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -688,17 +819,19 @@ function AdgeQuestions2() {
                                           id="file1"
                                           onChange={(e) =>
                                             handleFileChange(e, "file1")
+
                                           }
+
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                          {selectedImage?.file1 && (
+                                            selectedImage?.file1 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                         
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -744,7 +877,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment1"
-                                                value={formData.comment1}
+                                                value={formData?.comment1}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -986,14 +1119,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file2 && (
+                                            selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -1038,7 +1170,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment2"
-                                                value={formData.comment2}
+                                                value={formData?.comment2}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -1282,14 +1414,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file3 && (
+                                            selectedImage?.file3 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -1335,7 +1466,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment3"
-                                                value={formData.comment3}
+                                                value={formData?.comment3}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -1594,14 +1725,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file4 && (
+                                            selectedImage?.file4 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -1646,7 +1776,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment4"
-                                                value={formData.comment4}
+                                                value={formData?.comment4}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -1884,14 +2014,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file5 && (
+                                            selectedImage?.file5 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -1936,7 +2065,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment5"
-                                                value={formData.comment5}
+                                                value={formData?.comment5}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -2179,14 +2308,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file6 && (
+                                            selectedImage?.file6 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -2231,7 +2359,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment6"
-                                                value={formData.comment6}
+                                                value={formData?.comment6}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -2472,14 +2600,13 @@ function AdgeQuestions2() {
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.file7 && (
+                                            selectedImage?.file7 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -2524,7 +2651,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment7"
-                                                value={formData.comment7}
+                                                value={formData?.comment7}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -2892,22 +3019,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file1"
+                                          name="qfile1"
                                           type="file"
-                                          id="file1"
+                                          id="qfile1"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file1")
+                                            handleFileChange(e, "qfile1")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile1 && (
+                                            selectedImage?.qfile1 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -2953,7 +3079,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment1"
-                                                value={formData.comment1}
+                                                value={formData?.comment1}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3258,22 +3384,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file2"
+                                          name="qfile2"
                                           type="file"
-                                          id="file2"
+                                          id="qfile2"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file2")
+                                            handleFileChange(e, "qfile2")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile2 && (
+                                            selectedImage?.qfile2 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -3318,7 +3443,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment2"
-                                                value={formData.comment2}
+                                                value={formData?.comment2}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3551,22 +3676,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file3"
+                                          name="qfile3"
                                           type="file"
-                                          id="file3"
+                                          id="qfile3"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file3")
+                                            handleFileChange(e, "qfile3")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile3 && (
+                                            selectedImage?.qfile3 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -3612,7 +3736,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment3"
-                                                value={formData.comment3}
+                                                value={formData?.comment3}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3860,22 +3984,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file4"
+                                          name="qfile4"
                                           type="file"
-                                          id="file4"
+                                          id="qfile4"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file4")
+                                            handleFileChange(e, "qfile4")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile4 && (
+                                            selectedImage?.qfile4 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -3920,7 +4043,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment4"
-                                                value={formData.comment4}
+                                                value={formData?.comment4}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4147,22 +4270,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file5"
+                                          name="qfile5"
                                           type="file"
-                                          id="file5"
+                                          id="qfile5"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file5")
+                                            handleFileChange(e, "qfile5")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile5 && (
+                                            selectedImage?.qfile5 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -4207,7 +4329,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment5"
-                                                value={formData.comment5}
+                                                value={formData?.comment5}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4439,22 +4561,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file6"
+                                          name="qfile6"
                                           type="file"
-                                          id="file6"
+                                          id="qfile6"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file6")
+                                            handleFileChange(e, "qfile6")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile6 && (
+                                            selectedImage?.qfile6 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -4499,7 +4620,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment6"
-                                                value={formData.comment6}
+                                                value={formData?.comment6}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4729,22 +4850,21 @@ function AdgeQuestions2() {
                                     <form action="">
                                       <div className="form">
                                         <input
-                                          name="file7"
+                                          name="qfile7"
                                           type="file"
-                                          id="file7"
+                                          id="qfile7"
                                           onChange={(e) =>
-                                            handleFileChange(e, "file7")
+                                            handleFileChange(e, "qfile7")
                                           }
                                         />
                                         <div>
-                                          <img
-                                            src="upload.png"
-                                            alt="upload"
-                                            width="4%"
-                                            className=""
-                                          />
-                                          Upload your files here or
-                                          <button className="btn bg-color-dblue btn-primary">
+                                        {selectedImage?.qfile7 && (
+                                            selectedImage?.qfile7 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
                                             Browse
                                           </button>
                                         </div>
@@ -4789,7 +4909,7 @@ function AdgeQuestions2() {
                                                 className="commentar"
                                                 placeholder="Add a comment..."
                                                 name="comment7"
-                                                value={formData.comment7}
+                                                value={formData?.comment7}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4967,12 +5087,12 @@ function AdgeQuestions2() {
                     >
                       Prev
                     </button>
-                    {page === 10 ? (
-                      <div>
-                        <button
+                    <div className=" d-flex justify-content-end">
+                    <button
                           type="button"
-                          className="active me-2"
+                          className="active mx-2"
                           name="draft"
+                          
                           onClick={() => {
                             handleSaveChanges2();
                             // handle saving as draft logic here
@@ -4980,6 +5100,9 @@ function AdgeQuestions2() {
                         >
                           Save as Draft
                         </button>
+                    {page === 10 ? (
+                      <div>
+                      
                         <button
                           type="button"
                           className="active"
@@ -5008,7 +5131,7 @@ function AdgeQuestions2() {
                       </div>
                     ) : (
                       <div>
-                        <button
+                        {/* <button
                           type="button"
                           className="active me-2"
                           name="draft"
@@ -5018,7 +5141,7 @@ function AdgeQuestions2() {
                           }}
                         >
                           Save as Draft
-                        </button>
+                        </button> */}
                         <button
                           type="button"
                           className="active"
@@ -5032,6 +5155,8 @@ function AdgeQuestions2() {
                         </button>
                       </div>
                     )}
+                    </div>
+                    
 
                     <button type="button" className="active out" name="finish">
                       Submit
