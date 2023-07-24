@@ -442,46 +442,47 @@ function AdgeQuestions2() {
 
   const handleSaveChanges2 = () => {
     const data = new FormData();
-    data.append("doc1", formData?.file1?.length ? formData?.file1 : "");
+    data.append("doc1", formData?.file1 ? formData?.file1 : "");
+    console.log("formData",formData);
     data.append("status1", yesbuttonValue1);
     data.append("comment1", formData?.comment1?.length ? formData?.comment1 : "");
-    data.append("doc2", formData?.file2?.length ? formData?.file2 : "");
+    data.append("doc2", formData?.file2 ? formData?.file2 : "");
     data.append("status2", yesbuttonValue2);
     data.append("comment2", formData?.comment2?.length ? formData?.comment2 : "");
-    data.append("doc3", formData?.file3?.length ? formData?.file3 : "");
+    data.append("doc3", formData?.file3 ? formData?.file3 : "");
     data.append("status3", yesbuttonValue3);
     data.append("comment3", formData?.comment3?.length ? formData?.comment3 : "");
-    data.append("doc4", formData?.file4?.length ? formData?.file4 : "");
+    data.append("doc4", formData?.file4 ? formData?.file4 : "");
     data.append("status4", yesbuttonValue4);
     data.append("comment4", formData?.comment4?.length ? formData?.comment4 : "");
-    data.append("doc5", formData?.file5?.length ? formData?.file5 : "");
+    data.append("doc5", formData?.file5 ? formData?.file5 : "");
     data.append("status5", yesbuttonValue5);
     data.append("comment5", formData?.comment5?.length ? formData?.comment5 : "");
-    data.append("doc6", formData?.file6?.length ? formData?.file6 : "");
+    data.append("doc6", formData?.file6 ? formData?.file6 : "");
     data.append("status6", yesbuttonValue6);
     data.append("comment6", formData?.comment6?.length ? formData?.comment6 : "");
-    data.append("doc7", formData?.file7?.length ? formData?.file7 : "");
+    data.append("doc7", formData?.file7 ? formData?.file7 : "");
     data.append("status7", yesbuttonValue7);
     data.append("comment7", formData?.comment7?.length ? formData?.comment7 : "");
-    data.append("qdoc1", formData?.qfile1?.length ? formData?.qfile1 : "");
+    data.append("qdoc1", formData?.qfile1 ? formData?.qfile1 : "");
     data.append("qstatus1", qyesbuttonValue1);
     data.append("qcomment1", formData?.qcomment1?.length ? formData?.qcomment1 : "");
-    data.append("qdoc2", formData?.qfile2?.length ? formData?.qfile2 : "");
+    data.append("qdoc2", formData?.qfile2 ? formData?.qfile2 : "");
     data.append("qstatus2", qyesbuttonValue2);
     data.append("qcomment2", formData?.qcomment2?.length ? formData?.qcomment2 : "");
-    data.append("qdoc3", formData?.qfile3?.length ? formData?.qfile3 : "" );
+    data.append("qdoc3", formData?.qfile3 ? formData?.qfile3 : "" );
     data.append("qstatus3", qyesbuttonValue3);
     data.append("qcomment3", formData?.qcomment3?.length ? formData?.qcomment3 : "");
-    data.append("qdoc4", formData?.qfile4?.length ? formData?.qfile4 : "");
+    data.append("qdoc4", formData?.qfile4 ? formData?.qfile4 : "");
     data.append("qstatus4", qyesbuttonValue4);
     data.append("qcomment4", formData?.qcomment4?.length ? formData?.qcomment4 : "");
-    data.append("qdoc5", formData?.qfile5?.length ? formData?.qfile5 : "");
+    data.append("qdoc5", formData?.qfile5 ? formData?.qfile5 : "");
     data.append("qstatus5", qyesbuttonValue5);
     data.append("qcomment5", formData?.qcomment5?.length ? formData?.qcomment5 : "");
-    data.append("qdoc6", formData?.qfile6?.length ? formData?.qfile6 : "");
+    data.append("qdoc6", formData?.qfile6 ? formData?.qfile6 : "");
     data.append("qstatus6", qyesbuttonValue6);
     data.append("qcomment6", formData?.qcomment6?.length ? formData?.qcomment6 : "");
-    data.append("qdoc7", formData?.qfile7?.length ? formData?.qfile7 : "");
+    data.append("qdoc7", formData?.qfile7 ? formData?.qfile7 : "");
     data.append("qstatus7", qyesbuttonValue7);
     data.append("qcomment7", formData?.qcomment7?.length ? formData?.qcomment7 : "");
     // data.append("adge_Id", generatedId);
@@ -504,6 +505,7 @@ function AdgeQuestions2() {
           if (result.isConfirmed) {
             // window.location.reload(); // refresh the page after success message is closed
             navigate("/adge/home");
+            window.location.reload();
           }
         });
       })
@@ -819,9 +821,7 @@ function AdgeQuestions2() {
                                           id="file1"
                                           onChange={(e) =>
                                             handleFileChange(e, "file1")
-
                                           }
-
                                         />
                                         <div>
                                           {selectedImage?.file1 && (

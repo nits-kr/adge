@@ -91,7 +91,22 @@ function AuditorQuestions2() {
   const [qyesbuttonValue5, qsetYesbuttonValue5] = useState("");
   const [qyesbuttonValue6, qsetYesbuttonValue6] = useState("");
   const [qyesbuttonValue7, qsetYesbuttonValue7] = useState("");
-  const [formData, setFormData] = useState([]);
+  const [formData, setFormData] = useState([]); 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const handleFileChange = (e, key) => {
+    const file = e.target.files[0];
+    console.log("file", file);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setSelectedImage({ ...selectedImage, [key]: e.target.files[0] });
+    };
+    reader.readAsDataURL(file);
+    setFormData({ ...formData, [key]: e.target.files[0] });
+  };
+  console.log("file upload", formData);
   // const blog = useGetAllPostGovernerQuery();
   // const [blogList, setBlogList] = useState();
   // console.log("blog list", blogList);
@@ -349,7 +364,7 @@ function AuditorQuestions2() {
       qsetYesbuttonValue7("no");
     }
   };
- 
+
   const handleSaveChanges2 = () => {
     const editAddress = {
       id: id,
@@ -372,16 +387,14 @@ function AuditorQuestions2() {
     setActiveStep(step);
   };
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const storedItemId = localStorage.getItem("currentItemId");
-      if (storedItemId) {
-        setItemId(storedItemId);
-        console.log("currentItemId at auditior:", storedItemId);
+    setTimeout(() => {
+      const storedId = localStorage.getItem("generatedId");
+      console.log("stored id", storedId);
+      if (storedId) {
+        setGeneratedId(storedId);
       }
-    }, 100);
-    return () => clearTimeout(timer);
+    }, 500);
   }, []);
-  console.log("item id at auditior", itemId);
   useEffect(() => {
     userDetails();
   }, []);
@@ -393,6 +406,142 @@ function AuditorQuestions2() {
     console.log(" auditor question Question Details", data?.results?.listData);
   };
 
+  const handleSetData = async (data) => {
+    try {
+      await localStorage.setItem("governer", data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleOnSave = () => {
+    const data = new FormData();
+    data.append("doc1", formData?.file1);
+    data.append("status1", yesbuttonValue1 ? yesbuttonValue1 : agentDetails?.status1);
+    data.append("comment1", formData?.comment1);
+    data.append("doc2", formData?.file2);
+    data.append("status2", yesbuttonValue2 ? yesbuttonValue2 : agentDetails?.status2);
+    data.append("comment2", formData?.comment2);
+    data.append("doc3", formData?.file3);
+    data.append("status3", yesbuttonValue3 ? yesbuttonValue3 : agentDetails?.status3);
+    data.append("comment3", formData?.comment3);
+    data.append("doc4", formData?.file4);
+    data.append("status4", yesbuttonValue4 ? yesbuttonValue4 : agentDetails?.status4);
+    data.append("comment4", formData?.comment4);
+    data.append("doc5", formData?.file5);
+    data.append("status5", yesbuttonValue5 ? yesbuttonValue5 : agentDetails?.status5);
+    data.append("comment5", formData?.comment5);
+    data.append("doc6", formData?.file6);
+    data.append("status6", yesbuttonValue6 ? yesbuttonValue6 : agentDetails?.status6);
+    data.append("comment6", formData?.comment6);
+    data.append("doc7", formData?.file7);
+    data.append("status7", yesbuttonValue7 ? yesbuttonValue7 : agentDetails?.status7);
+    data.append("comment7", formData?.comment7);
+    data.append("qdoc1", formData?.qfile1);
+    data.append("qstatus1", qyesbuttonValue1 ? qyesbuttonValue1 : agentDetails?.qstatus1);
+    data.append("qcomment1", formData?.qcomment1);
+    data.append("qdoc2", formData?.qfile2);
+    data.append("qstatus2", qyesbuttonValue2 ? qyesbuttonValue2 : agentDetails?.qstatus2);
+    data.append("qcomment2", formData?.qcomment2);
+    data.append("qdoc3", formData?.qfile3);
+    data.append("qstatus3", qyesbuttonValue3 ? qyesbuttonValue3 : agentDetails?.qstatus3);
+    data.append("qcomment3", formData?.qcomment3);
+    data.append("qdoc4", formData?.qfile4);
+    data.append("qstatus4", qyesbuttonValue4 ? qyesbuttonValue4 : agentDetails?.qstatus4);
+    data.append("qcomment4", formData?.qcomment4);
+    data.append("qdoc5", formData?.qfile5);
+    data.append("qstatus5", qyesbuttonValue5 ? qyesbuttonValue5 : agentDetails?.qstatus5);
+    data.append("qcomment5", formData?.qcomment5);
+    data.append("qdoc6", formData?.qfile6);
+    data.append("qstatus6", qyesbuttonValue6 ? qyesbuttonValue6 : agentDetails?.qstatus6);
+    data.append("qcomment6", formData?.qcomment6);
+    data.append("qdoc7", formData?.qfile7);
+    data.append("qstatus7", qyesbuttonValue7 ? qyesbuttonValue7 : agentDetails?.qstatus7);
+    data.append("qcomment7", formData?.qcomment7);
+    // data.append("adge_Id", generatedId);
+    axios
+      .post(
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${generatedId}`,
+        data
+      )
+      .then(async (response) => {
+        setFormData(response?.data?.results?.data);
+        await handleSetData(response?.data?.results?.data);
+        console.log(response?.data?.results?.data);
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  };
+  const handleOnSave1 = () => {
+    const data = new FormData();
+    data.append("doc1", formData?.file1 ? formData?.file1 : agentDetails?.doc1);
+    data.append("status1", yesbuttonValue1 ? yesbuttonValue1 : agentDetails?.status1);
+    data.append("comment1", formData?.comment1);
+    data.append("doc2", formData?.file2 ? formData?.file2 : agentDetails?.doc2);
+    data.append("status2", yesbuttonValue2 ? yesbuttonValue2 : agentDetails?.status2);
+    data.append("comment2", formData?.comment2);
+    data.append("doc3", formData?.file3 ? formData?.file3 : agentDetails?.doc3);
+    data.append("status3", yesbuttonValue3 ? yesbuttonValue3 : agentDetails?.status3);
+    data.append("comment3", formData?.comment3);
+    data.append("doc4", formData?.file4  ? formData?.file4 : agentDetails?.doc4);
+    data.append("status4", yesbuttonValue4 ? yesbuttonValue4 : agentDetails?.status4);
+    data.append("comment4", formData?.comment4);
+    data.append("doc5", formData?.file5 ? formData?.file5 : agentDetails?.doc5);
+    data.append("status5", yesbuttonValue5 ? yesbuttonValue5 : agentDetails?.status5);
+    data.append("comment5", formData?.comment5);
+    data.append("doc6", formData?.file6 ? formData?.file6 : agentDetails?.doc6);
+    data.append("status6", yesbuttonValue6 ? yesbuttonValue6 : agentDetails?.status6);
+    data.append("comment6", formData?.comment6);
+    data.append("doc7", formData?.file7  ? formData?.file7 : agentDetails?.doc7);
+    data.append("status7", yesbuttonValue7 ? yesbuttonValue7 : agentDetails?.status7);
+    data.append("comment7", formData?.comment7);
+    data.append("qdoc1", formData?.qfile1 ? formData?.qfile1 : agentDetails?.qdoc1);
+    data.append("qstatus1", qyesbuttonValue1 ? qyesbuttonValue1 : agentDetails?.qstatus1);
+    data.append("qcomment1", formData?.qcomment1);
+    data.append("qdoc2", formData?.qfile2 ? formData?.qfile2 : agentDetails?.qdoc2);
+    data.append("qstatus2", qyesbuttonValue2 ? qyesbuttonValue2 : agentDetails?.qstatus2);
+    data.append("qcomment2", formData?.qcomment2);
+    data.append("qdoc3", formData?.qfile3 ? formData?.qfile3 : agentDetails?.qdoc3);
+    data.append("qstatus3", qyesbuttonValue3 ? qyesbuttonValue3 : agentDetails?.qstatus3);
+    data.append("qcomment3", formData?.qcomment3);
+    data.append("qdoc4", formData?.qfile4 ? formData?.qfile4 : agentDetails?.qdoc4);
+    data.append("qstatus4", qyesbuttonValue4 ? qyesbuttonValue4 : agentDetails?.qstatus4);
+    data.append("qcomment4", formData?.qcomment4);
+    data.append("qdoc5", formData?.qfile5 ? formData?.qfile5 : agentDetails?.qdoc5);
+    data.append("qstatus5", qyesbuttonValue5 ? qyesbuttonValue5 : agentDetails?.qstatus5);
+    data.append("qcomment5", formData?.qcomment5);
+    data.append("qdoc6", formData?.qfile6 ? formData?.qfile6 : agentDetails?.qdoc6);
+    data.append("qstatus6", qyesbuttonValue6 ? qyesbuttonValue6 : agentDetails?.qstatus6);
+    data.append("qcomment6", formData?.qcomment6);
+    data.append("qdoc7", formData?.qfile7  ? formData?.qfile7 : agentDetails?.qdoc7);
+    data.append("qstatus7", qyesbuttonValue7 ? qyesbuttonValue7 : agentDetails?.qstatus7);
+    data.append("qcomment7", formData?.qcomment7);
+    axios
+      .post(
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${generatedId}`,
+        data
+      )
+      .then(async (response) => {
+        setFormData(response?.data?.results?.data);
+        await handleSetData(response?.data?.results?.data);
+        console.log(response?.data?.results?.data);
+        Swal.fire({
+          title: "Question Saved!",
+          text: "Your question has been created successfully.",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // window.location.reload(); // refresh the page after success message is closed
+            navigate("/adge/home");
+          }
+        });
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  };
 
   return (
     <>
@@ -648,47 +797,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                          
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange1 ||
+                                                    agentDetails?.status1 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton1(true);
+                                                    handlecolorchange1();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange1 || agentDetails?.status1 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton1(true);
-                                                      handlecolorchange1();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange2 || agentDetails?.status1 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton1(false);
-                                                      handlecolorchange2();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange2 ||
+                                                    agentDetails?.status1 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton1(false);
+                                                    handlecolorchange2();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                       
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -707,10 +857,13 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {/* {array?.length} */}
+                                          {
+                                          (agentDetails?.doc1) === "" ? 0 :
+                                          [agentDetails?.doc1].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -725,9 +878,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment1) === "" ? 0 :
+                                          [agentDetails?.comment1].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -781,8 +936,21 @@ function AuditorQuestions2() {
                                           name="file"
                                           id="entry_value1"
                                           type="file"
+                                           onChange={(e) =>
+                                            handleFileChange(e, "file1")
+                                            // alert("file")
+                                          }
                                         />
-                                        <div>
+                                       
+                                        <span
+                                          id="fileName1"
+                                          className="text-primary "
+                                        >
+                                          {" "}
+                                        </span>{" "}
+                                      </div>
+                                    </form>
+                                    <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -790,7 +958,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc1 ? (
+                                          {agentDetails?.doc1 || formData?.file1?.length ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc1} </p>
                                               <Link
@@ -804,23 +972,49 @@ function AuditorQuestions2() {
                                             </div>
                                           ) : (
                                             // If doc1 does not exist or is null
-                                            <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            // <div>
+                                            //   <span>Not Uploaded...</span>
+                                            //   Upload your files here or
+                                            //   <button
+                                            //     className="btn bg-color-dblue btn-primary"
+                                            //     style={{ marginLeft: "5px" }}
+                                            //   >
+                                            //     Browse
+                                            //   </button>
+                                            // </div>
+                                            // <form action="">
+                                      <div>
+                                        {/* <input
+                                          name="file1"
+                                          type="file"
+                                          id="file1"
+                                          
+                                          // onChange={(e) =>
+                                          //   handleFileChange(e, "file1")
+                                          //   // alert("file")
+                                          // }
+                                          
+                                        /> */}
+                                        <div>
+                                          {selectedImage?.file1 && (
+                                            selectedImage?.file1 ? "File Uploaded Successfully!" : " Upload your files here.."
                                           )}
+                                         
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
+                                            Browse
+                                          </button>
                                         </div>
                                         <span
-                                          id="fileName1"
+                                          id="fileName"
                                           className="text-primary "
-                                        >
-                                          {" "}
-                                        </span>{" "}
+                                        ></span>
                                       </div>
-                                    </form>
+                                     // </form>
+                                          )}
+                                        </div>
                                     <div className="SmallHead">Comments</div>
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
@@ -1042,172 +1236,6 @@ function AuditorQuestions2() {
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                              <div className="QuestionDiv">
-                                <div className="heading">
-                                  <div className="NumberDiv">DG.1.2</div>
-                                  <div className="float-start col-11">
-                                    The Entity shall convene the Data Governance
-                                    Board to manage delegated authority and
-                                    responsibility within the Entity. The Board
-                                    will be the final arbiter within the Entity
-                                    for all matters relating to data management.{" "}
-                                    <span className="badge bg-danger">
-                                      High
-                                    </span>{" "}
-                                    <span className="badge bg-secondary">
-                                      Mandatory
-                                    </span>
-                                    <ul>
-                                      <li>
-                                        This Board should have representatives
-                                        from each area affected by data
-                                        management initiatives, with the Data
-                                        Manager responsible for the execution of
-                                        the Boards actions through the programme
-                                        management function of the Entit
-                                      </li>
-                                      <li>
-                                        The Data Governance Board shall meet
-                                        regularly (weekly, initially) to provide
-                                        independent oversight and support for
-                                        the Data Management initiatives being
-                                        undertaken by the Entity
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div
-                                    className="row"
-                                    style={{ clear: "both" }}
-                                  >
-                                    <div className="col-lg-2 mt-4 offset-1">
-                                      <div
-                                        className="btn-group CustomBtnGroup"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <h4 className="text-success">
-                                          
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
-                                                >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange3 || agentDetails?.status2 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton2(true);
-                                                      handlecolorchange3();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange4 || agentDetails?.status2 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton2(false);
-                                                      handlecolorchange4();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                         
-                                        </h4>
-                                      </div>
-                                    </div>
-                                    <div className="col-lg-6 mt-4">
-                                      {" "}
-                                      <Link
-                                        className="AttachBut2"
-                                        data-bs-toggle="collapse"
-                                        to="#collapseExample2"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="collapseExample2"
-                                      >
-                                        {" "}
-                                        <FontAwesomeIcon
-                                          icon={faLink}
-                                          style={{ color: "#0058f0" }}
-                                        />{" "}
-                                        {/* <span className="badge badge-number">
-                                          {" "}
-                                          4
-                                        </span>{" "} */}
-                                      </Link>{" "}
-                                      <Link
-                                        className="AttachBut2"
-                                        data-bs-toggle="collapse"
-                                        to="#collapseExample2"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="collapseExample2"
-                                      >
-                                        {" "}
-                                        <FontAwesomeIcon
-                                          icon={faComment}
-                                          style={{ color: "#005cfa" }}
-                                        />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
-                                      </Link>{" "}
-                                    </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange3
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton2(true);
-                                            handlecolorchange3();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange4
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton2(false);
-                                            handlecolorchange4();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
-                                  </div>
                                   <div
                                     className="collapse AttachDiv"
                                     id="collapseExample2"
@@ -1217,41 +1245,18 @@ function AuditorQuestions2() {
                                         <input
                                           name="file"
                                           id="entry_value2"
+                                          style={{
+                                            width: "10rem",
+                                            backgroundColor: "black",
+                                          }}
                                           //   ref="fileInput"
                                           type="file"
                                           //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file2")
+                                            // alert("file")
+                                          }
                                         />
-                                         <div>
-                                          {" "}
-                                          {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                          {agentDetails?.doc2 ? (
-                                            <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc2} </p>
-                                              <Link
-                                                to={agentDetails.doc2}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
-                                            </div>
-                                          ) : (
-                                            // If doc1 does not exist or is null
-                                            <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
-                                          )}
-                                        </div>
                                         <span
                                           id="fileName2"
                                           className="text-primary "
@@ -1260,6 +1265,41 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </div>
                                     </form>
+                                    <div>
+                                      {" "}
+                                      {/* <img
+                                            src={agentDetails?.doc1}
+                                            alt="Not Uploaded..."
+                                            width="4%"
+                                            className=""
+                                          />{" "} */}
+                                      {agentDetails?.doc2 || formData?.file2 ? (
+                                        <div className="d-flex justify-content-center">
+                                          <p> {agentDetails?.doc2} </p>
+                                          <Link
+                                            to={agentDetails?.doc2}
+                                            className="mx-3 "
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
+                                        </div>
+                                      ) : (
+                                        <div>
+                                          {selectedImage?.file2 && (
+                                            selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                         
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
+                                            Browse
+                                          </button>
+                                        </div>
+                                      )}
+                                    </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
@@ -1338,7 +1378,471 @@ function AuditorQuestions2() {
                                                 <div className="result_comment col-md-11">
                                                   {/* <h4>Nath Ryuzaki</h4> */}
                                                   <p>
-                                                    {agentDetails?.qcomment2}
+                                                    {agentDetails?.comment2}
+                                                  </p>
+                                                  {/* <div className="tools_comment">
+                                                    {" "}
+                                                    <Link
+                                                      className="like"
+                                                      to="#"
+                                                    >
+                                                      Like
+                                                    </Link>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <Link
+                                                      className="replay"
+                                                      to="#"
+                                                    >
+                                                      Reply
+                                                    </Link>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <i className="fa fa-thumbs-o-up" />{" "}
+                                                    <span className="count">
+                                                      1
+                                                    </span>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <span>26m</span>{" "}
+                                                  </div> */}
+                                                  {/* <ul className="child_replay">
+                                                    <li className="box_reply row">
+                                                      <div className="avatar_comment col-md-1">
+                                                        {" "}
+                                                        <img
+                                                          src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                          alt="avatar"
+                                                        />{" "}
+                                                      </div>
+                                                      <div className="result_comment col-md-11">
+                                                        <h4>Sugito</h4>
+                                                        <p>
+                                                          Lorem Ipsum is simply
+                                                          dummy text of the
+                                                          printing and
+                                                          typesetting industry.
+                                                          Lorem Ipsum has been
+                                                          the industry's.
+                                                        </p>
+                                                        <div className="tools_comment">
+                                                          {" "}
+                                                          <Link
+                                                            className="like"
+                                                            to="#"
+                                                          >
+                                                            Like
+                                                          </Link>{" "}
+                                                          <span aria-hidden="true">
+                                                            {" "}
+                                                            ·{" "}
+                                                          </span>{" "}
+                                                          <Link
+                                                            className="replay"
+                                                            to="#"
+                                                          >
+                                                            Reply
+                                                          </Link>{" "}
+                                                          <span aria-hidden="true">
+                                                            {" "}
+                                                            ·{" "}
+                                                          </span>{" "}
+                                                          <i className="fa fa-thumbs-o-up" />{" "}
+                                                          <span className="count">
+                                                            1
+                                                          </span>{" "}
+                                                          <span aria-hidden="true">
+                                                            {" "}
+                                                            ·{" "}
+                                                          </span>{" "}
+                                                          <span>26m</span>{" "}
+                                                        </div>
+                                                        <ul className="child_replay"></ul>
+                                                      </div>
+                                                    </li>
+                                                  </ul> */}
+                                                </div>
+                                              </li>
+
+                                              {/* <li className="box_result row">
+                                                <div className="avatar_comment col-md-1">
+                                                  {" "}
+                                                  <img
+                                                    src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                    alt="avatar"
+                                                  />{" "}
+                                                </div>
+                                                <div className="result_comment col-md-11">
+                                                  <h4>Gung Wah</h4>
+                                                  <p>
+                                                    Lorem Ipsum is simply dummy
+                                                    text of the printing and
+                                                    typesetting industry. Lorem
+                                                    Ipsum has been the
+                                                    industry's.
+                                                  </p>
+                                                  <div className="tools_comment">
+                                                    {" "}
+                                                    <Link
+                                                      className="like"
+                                                      to="#"
+                                                    >
+                                                      Like
+                                                    </Link>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <Link
+                                                      className="replay"
+                                                      to="#"
+                                                    >
+                                                      Reply
+                                                    </Link>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <i className="fa fa-thumbs-o-up" />{" "}
+                                                    <span className="count">
+                                                      1
+                                                    </span>{" "}
+                                                    <span aria-hidden="true">
+                                                      {" "}
+                                                      ·{" "}
+                                                    </span>{" "}
+                                                    <span>26m</span>{" "}
+                                                  </div>
+                                                  <ul className="child_replay"></ul>
+                                                </div>
+                                              </li> */}
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="QuestionDiv">
+                                <div className="heading">
+                                  <div className="NumberDiv">DG.1.2</div>
+                                  <div className="float-start col-11">
+                                    The Entity shall convene the Data Governance
+                                    Board to manage delegated authority and
+                                    responsibility within the Entity. The Board
+                                    will be the final arbiter within the Entity
+                                    for all matters relating to data management.{" "}
+                                    <span className="badge bg-danger">
+                                      High
+                                    </span>{" "}
+                                    <span className="badge bg-secondary">
+                                      Mandatory
+                                    </span>
+                                    <ul>
+                                      <li>
+                                        This Board should have representatives
+                                        from each area affected by data
+                                        management initiatives, with the Data
+                                        Manager responsible for the execution of
+                                        the Boards actions through the programme
+                                        management function of the Entit
+                                      </li>
+                                      <li>
+                                        The Data Governance Board shall meet
+                                        regularly (weekly, initially) to provide
+                                        independent oversight and support for
+                                        the Data Management initiatives being
+                                        undertaken by the Entity
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div
+                                    className="row"
+                                    style={{ clear: "both" }}
+                                  >
+                                    <div className="col-lg-2 mt-4 offset-1">
+                                      <div
+                                        className="btn-group CustomBtnGroup"
+                                        role="group"
+                                        aria-label="Basic example"
+                                      >
+                                        <h4 className="text-success">
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange3 ||
+                                                    agentDetails?.status2 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton2(true);
+                                                    handlecolorchange3();
+                                                  }}
+                                                >
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange4 ||
+                                                    agentDetails?.status2 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton2(false);
+                                                    handlecolorchange4();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </h4>
+                                      </div>
+                                    </div>
+                                    <div className="col-lg-6 mt-4">
+                                      {" "}
+                                      <Link
+                                        className="AttachBut2"
+                                        data-bs-toggle="collapse"
+                                        to="#collapseExample2"
+                                        role="button"
+                                        aria-expanded="false"
+                                        aria-controls="collapseExample2"
+                                      >
+                                        {" "}
+                                        <FontAwesomeIcon
+                                          icon={faLink}
+                                          style={{ color: "#0058f0" }}
+                                        />{" "}
+                                        <span className="badge badge-number">
+                                          {" "}
+                                          {
+                                          (agentDetails?.doc2) === "" ? 0 :
+                                          [agentDetails?.doc2].length}
+                                        </span>{" "}
+                                      </Link>{" "}
+                                      <Link
+                                        className="AttachBut2"
+                                        data-bs-toggle="collapse"
+                                        to="#collapseExample2"
+                                        role="button"
+                                        aria-expanded="false"
+                                        aria-controls="collapseExample2"
+                                      >
+                                        {" "}
+                                        <FontAwesomeIcon
+                                          icon={faComment}
+                                          style={{ color: "#005cfa" }}
+                                        />{" "}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment2) === "" ? 0 :
+                                          [agentDetails?.comment2].length}
+                                        </span>{" "}
+                                      </Link>{" "}
+                                    </div>
+                                    {/* <div className="col-lg-3 mt-4 text-end">
+                                      <div
+                                        className="btn-group CustomBtnGroup2"
+                                        role="group"
+                                        aria-label="Basic example"
+                                      >
+                                        <button
+                                          type="button"
+                                          className={
+                                            colorChange3
+                                              ? "btn btn-primary"
+                                              : "btn btn-secondary"
+                                          }
+                                          onClick={() => {
+                                            setAcceptbutton2(true);
+                                            handlecolorchange3();
+                                          }}
+                                        >
+                                          <FontAwesomeIcon icon={faCheck} />{" "}
+                                          Accept
+                                        </button>
+                                        <button
+                                          type="button"
+                                          className={
+                                            colorChange4
+                                              ? "btn btn-primary"
+                                              : "btn btn-secondary"
+                                          }
+                                          onClick={() => {
+                                            setAcceptbutton2(false);
+                                            handlecolorchange4();
+                                          }}
+                                        >
+                                          <FontAwesomeIcon icon={faXmark} />{" "}
+                                          Reject
+                                        </button>
+                                      </div>
+                                    </div> */}
+                                  </div>
+                                  <div
+                                    className="collapse AttachDiv"
+                                    id="collapseExample2"
+                                  >
+                                    <form action="">
+                                      <div className="form">
+                                        <input
+                                          name="file"
+                                          id="entry_value2"
+                                          style={{
+                                            width: "10rem",
+                                            backgroundColor: "black",
+                                          }}
+                                          //   ref="fileInput"
+                                          type="file"
+                                          //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file2")
+                                            // alert("file")
+                                          }
+                                        />
+                                        <span
+                                          id="fileName2"
+                                          className="text-primary "
+                                        >
+                                          {" "}
+                                        </span>{" "}
+                                      </div>
+                                    </form>
+                                    <div>
+                                      {" "}
+                                      {/* <img
+                                            src={agentDetails?.doc1}
+                                            alt="Not Uploaded..."
+                                            width="4%"
+                                            className=""
+                                          />{" "} */}
+                                      {agentDetails?.doc2 || formData?.file2 ? (
+                                        <div className="d-flex justify-content-center">
+                                          <p> {agentDetails?.doc2} </p>
+                                          <Link
+                                            to={agentDetails?.doc2}
+                                            className="mx-3 "
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
+                                        </div>
+                                      ) : (
+                                        <div>
+                                          {selectedImage?.file2 && (
+                                            selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                         
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
+                                            Browse
+                                          </button>
+                                        </div>
+                                      )}
+                                    </div>
+                                    <div className="SmallHead">Comments</div>
+
+                                    <div className="container">
+                                      <div className="col-md-12" id="fbcomment">
+                                        <div className="header_comment">
+                                          <div className="">
+                                            <div className="float-start">
+                                              {" "}
+                                              <span className="count_comment">
+                                                {agentDetails?.comment2}
+                                              </span>{" "}
+                                            </div>
+                                            <div className="float-end">
+                                              {" "}
+                                              <span className="sort_title">
+                                                Sort by
+                                              </span>
+                                              <select className="sort_by">
+                                                <option>Top</option>
+                                                <option>Newest</option>
+                                                <option>Oldest</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="body_comment">
+                                          <div className="row">
+                                            <div className="avatar_comment col-md-1">
+                                              {" "}
+                                              <img
+                                                src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                alt="avatar"
+                                              />{" "}
+                                            </div>
+                                            <div className="box_comment col-md-11">
+                                              <textarea
+                                                className="commentar"
+                                                placeholder="Add a comment..."
+                                                defaultValue={""}
+                                              />
+                                              <div className="box_post">
+                                                <div className="pull-right">
+                                                  {" "}
+                                                  <span>
+                                                    {" "}
+                                                    <img
+                                                      src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                      alt="avatar"
+                                                    />{" "}
+                                                    <i className="fa fa-caret-down" />{" "}
+                                                  </span>
+                                                  <button
+                                                    // onClick="submit_comment()"
+                                                    type="button"
+                                                    value={1}
+                                                  >
+                                                    Post
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className="row">
+                                            <ul
+                                              id="list_comment"
+                                              className="col-md-12"
+                                            >
+                                              <li className="box_result row">
+                                                {/* <div className="avatar_comment col-md-1">
+                                                  {" "}
+                                                  <img
+                                                    src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
+                                                    alt="avatar"
+                                                  />{" "}
+                                                </div> */}
+                                                <div className="result_comment col-md-11">
+                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <p>
+                                                    {agentDetails?.comment2}
                                                   </p>
                                                   {/* <div className="tools_comment">
                                                     {" "}
@@ -1534,47 +2038,49 @@ function AuditorQuestions2() {
                                         role="group"
                                         aria-label="Basic example"
                                       >
-                                       <h4 className="text-success">
-                                        
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                        <h4 className="text-success">
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange5 ||
+                                                    agentDetails?.status3 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton3(true);
+                                                    handlecolorchange5();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange5 || agentDetails?.status3 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton3(true);
-                                                      handlecolorchange5();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange6 || agentDetails?.status3 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton3(false);
-                                                      handlecolorchange6();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange6 ||
+                                                    agentDetails?.status3 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton3(false);
+                                                    handlecolorchange6();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                      
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -1593,10 +2099,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.doc3) === "" ? 0 :
+                                          [agentDetails?.doc3].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -1611,9 +2119,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment3) === "" ? 0 :
+                                          [agentDetails?.comment3].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -1666,9 +2176,11 @@ function AuditorQuestions2() {
                                           id="entry_value3"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file3")
+                                          }
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -1676,7 +2188,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc3 ? (
+                                          {agentDetails?.doc3 || formData?.file3 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc3} </p>
                                               <Link
@@ -1689,14 +2201,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                          {selectedImage?.file3 && (
+                                            selectedImage?.file3 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                          )}
+                                         
+                                          <button
+                                            className="btn bg-color-dblue btn-primary"
+                                            style={{ marginLeft: "5px" }}
+                                          >
+                                            Browse
+                                          </button>
+                                        </div>
                                           )}
                                         </div>
                                         <span
@@ -1997,46 +2513,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange7 ||
+                                                    agentDetails?.status4 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton4(true);
+                                                    handlecolorchange7();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange7 || agentDetails?.status4 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton4(true);
-                                                      handlecolorchange7();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange8 || agentDetails?.status4 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton4(false);
-                                                      handlecolorchange8();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange8 ||
+                                                    agentDetails?.status4 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton4(false);
+                                                    handlecolorchange8();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                      
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -2055,10 +2573,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.doc4) === "" ? 0 :
+                                          [agentDetails?.doc4].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -2073,9 +2593,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment4) === "" ? 0 :
+                                          [agentDetails?.comment4].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -2129,8 +2651,12 @@ function AuditorQuestions2() {
                                           //   ref="fileInput"
                                           type="file"
                                           //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file4")
+                                            // alert("file")
+                                          }
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -2138,7 +2664,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc4 ? (
+                                          {agentDetails?.doc4 || formData?.file4 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc4} </p>
                                               <Link
@@ -2151,14 +2677,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.file4 && (
+                                              selectedImage?.file4 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -2439,46 +2969,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                          
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange9 ||
+                                                    agentDetails?.status5 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton5(true);
+                                                    handlecolorchange9();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange9 || agentDetails?.status5 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton5(true);
-                                                      handlecolorchange9();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange10 || agentDetails?.status6 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton5(false);
-                                                      handlecolorchange10();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange10 ||
+                                                    agentDetails?.status6 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton5(false);
+                                                    handlecolorchange10();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                        
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -2497,10 +3029,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.doc5) === "" ? 0 :
+                                          [agentDetails?.doc5].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -2515,9 +3049,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment5) === "" ? 0 :
+                                          [agentDetails?.comment5].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -2570,9 +3106,12 @@ function AuditorQuestions2() {
                                           id="entry_value5"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file5")
+                                            // alert("file")
+                                          }
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -2580,7 +3119,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc5 ? (
+                                          {agentDetails?.doc5 || formData?.file5 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc5} </p>
                                               <Link
@@ -2593,14 +3132,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.file5 && (
+                                              selectedImage?.file5 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -2885,46 +3428,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange11 ||
+                                                    agentDetails?.status6 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton6(true);
+                                                    handlecolorchange11();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange11 || agentDetails?.status6 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton6(true);
-                                                      handlecolorchange11();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange12 || agentDetails?.status6 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton6(false);
-                                                      handlecolorchange12();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange12 ||
+                                                    agentDetails?.status6 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton6(false);
+                                                    handlecolorchange12();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                        
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -2943,10 +3488,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.doc6) === "" ? 0 :
+                                          [agentDetails?.doc6].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -2961,9 +3508,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment6) === "" ? 0 :
+                                          [agentDetails?.comment6].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -3016,9 +3565,12 @@ function AuditorQuestions2() {
                                           id="entry_value6"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) =>
+                                            handleFileChange(e, "file6")
+                                            // alert("file")
+                                          }
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -3026,7 +3578,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc6 ? (
+                                          {agentDetails?.doc6 || formData?.file6 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc6} </p>
                                               <Link
@@ -3039,14 +3591,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.file6 && (
+                                              selectedImage?.file6 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -3329,46 +3885,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                          
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange13 ||
+                                                    agentDetails?.status7 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton7(true);
+                                                    handlecolorchange13();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange13 || agentDetails?.status7 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton7(true);
-                                                      handlecolorchange13();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      colorChange14 || agentDetails?.status7 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      setYesbutton7(false);
-                                                      handlecolorchange14();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    colorChange14 ||
+                                                    agentDetails?.status7 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    setYesbutton7(false);
+                                                    handlecolorchange14();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                         
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -3387,10 +3945,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.doc7) === "" ? 0 :
+                                          [agentDetails?.doc7].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -3405,9 +3965,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.comment7) === "" ? 0 :
+                                          [agentDetails?.comment7].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -3460,9 +4022,13 @@ function AuditorQuestions2() {
                                           id="entry_value7"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                        
+                                         onChange={(e) =>
+                                          handleFileChange(e, "file7")
+                                          // alert("file")
+                                        }
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -3470,7 +4036,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc7 ? (
+                                          {agentDetails?.doc7 || formData?.file7 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc7} </p>
                                               <Link
@@ -3483,14 +4049,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.file7 && (
+                                              selectedImage?.file7 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -3895,45 +4465,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange1 ||
+                                                    agentDetails?.qstatus1 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton1(true);
+                                                    qhandlecolorchange1();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange1 || agentDetails?.qstatus1 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton1(true);
-                                                      qhandlecolorchange1();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange2 || agentDetails?.qstatus1 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton1(false);
-                                                      qhandlecolorchange2();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange2 ||
+                                                    agentDetails?.qstatus1 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton1(false);
+                                                    qhandlecolorchange2();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                         
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -3952,10 +4525,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qcomment1) === "" ? 0 :
+                                          [agentDetails?.qcomment1].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -3970,9 +4545,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qdoc1) === "" ? 0 :
+                                          [agentDetails?.qdoc1].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -4024,8 +4601,9 @@ function AuditorQuestions2() {
                                           name="file"
                                           id="entry_value1"
                                           type="file"
+                                          onChange={(e) => handleFileChange(e, "qfile1")}
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -4033,7 +4611,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.qdoc1 ? (
+                                          {agentDetails?.qdoc1 || formData?.qfile1 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.qdoc1} </p>
                                               <Link
@@ -4046,14 +4624,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile1 && (
+                                              selectedImage?.qfile1 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -4405,46 +4987,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange3 ||
+                                                    agentDetails?.qstatus2 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton2(true);
+                                                    qhandlecolorchange3();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange3 || agentDetails?.qstatus2 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton2(true);
-                                                      qhandlecolorchange3();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange4 || agentDetails?.qstatus2 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton2(false);
-                                                      qhandlecolorchange4();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange4 ||
+                                                    agentDetails?.qstatus2 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton2(false);
+                                                    qhandlecolorchange4();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                       
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -4463,10 +5047,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc2) === "" ? 0 :
+                                          [agentDetails?.qdoc2].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -4481,9 +5067,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment2) === "" ? 0 :
+                                          [agentDetails?.qcomment2].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -4536,7 +5124,7 @@ function AuditorQuestions2() {
                                           id="entry_value2"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile2")}
                                         />
                                         <div>
                                           {" "}
@@ -4546,7 +5134,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.qdoc2 ? (
+                                          {agentDetails?.qdoc2 || formData?.qfile2 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.qdoc2} </p>
                                               <Link
@@ -4561,12 +5149,17 @@ function AuditorQuestions2() {
                                           ) : (
                                             // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile2 && (
+                                              selectedImage?.qfile2 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -4852,46 +5445,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange5 ||
+                                                    agentDetails?.qstatus3 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton3(true);
+                                                    qhandlecolorchange5();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange5 || agentDetails?.qstatus3 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton3(true);
-                                                      qhandlecolorchange5();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange6 || agentDetails?.qstatus3 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton3(false);
-                                                      qhandlecolorchange6();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange6 ||
+                                                    agentDetails?.qstatus3 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton3(false);
+                                                    qhandlecolorchange6();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                      
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -4910,10 +5505,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc3) === "" ? 0 :
+                                          [agentDetails?.qdoc3].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -4928,9 +5525,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment3) === "" ? 0 :
+                                          [agentDetails?.qcomment3].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -4983,9 +5582,9 @@ function AuditorQuestions2() {
                                           id="entry_value3"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile3")}
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -4993,7 +5592,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc3 ? (
+                                          {agentDetails?.doc3 || formData?.qfile3 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc3} </p>
                                               <Link
@@ -5006,14 +5605,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile3 && (
+                                              selectedImage?.qfile3 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -5314,45 +5917,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                          
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange7 ||
+                                                    agentDetails?.qstatus4 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton4(true);
+                                                    qhandlecolorchange7();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange7 || agentDetails?.qstatus4 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton4(true);
-                                                      qhandlecolorchange7();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange8 || agentDetails?.qstatus4 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton4(false);
-                                                      qhandlecolorchange8();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange8 ||
+                                                    agentDetails?.qstatus4 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton4(false);
+                                                    qhandlecolorchange8();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -5371,10 +5977,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc4) === "" ? 0 :
+                                          [agentDetails?.qdoc4].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -5389,9 +5997,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment4) === "" ? 0 :
+                                          [agentDetails?.qcomment4].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -5444,7 +6054,7 @@ function AuditorQuestions2() {
                                           id="entry_value4"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile4")}
                                         />
                                         <div>
                                           {" "}
@@ -5454,7 +6064,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc4 ? (
+                                          {agentDetails?.doc4 || formData?.qfile4 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc4} </p>
                                               <Link
@@ -5467,14 +6077,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile4 && (
+                                              selectedImage?.qfile4 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -5755,46 +6369,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange9 ||
+                                                    agentDetails?.qstatus5 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton5(true);
+                                                    qhandlecolorchange9();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange9 || agentDetails?.qstatus5 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton5(true);
-                                                      qhandlecolorchange9();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange10 || agentDetails?.qstatus5 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton5(false);
-                                                      qhandlecolorchange10();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange10 ||
+                                                    agentDetails?.qstatus5 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton5(false);
+                                                    qhandlecolorchange10();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                         
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -5813,10 +6429,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc5) === "" ? 0 :
+                                          [agentDetails?.qdoc5].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -5831,9 +6449,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment5) === "" ? 0 :
+                                          [agentDetails?.qcomment5].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -5885,9 +6505,9 @@ function AuditorQuestions2() {
                                           id="entry_value5"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile5s")}
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -5895,7 +6515,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc5 ? (
+                                          {agentDetails?.doc5 || formData?.qfile5 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc5} </p>
                                               <Link
@@ -5908,14 +6528,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile5 && (
+                                              selectedImage?.qfile5 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -6200,46 +6824,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange11 ||
+                                                    agentDetails?.qstatus6 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton6(true);
+                                                    qhandlecolorchange11();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange11 || agentDetails?.qstatus6 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton6(true);
-                                                      qhandlecolorchange11();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange12 || agentDetails?.qstatus6 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton6(false);
-                                                      qhandlecolorchange12();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange12 ||
+                                                    agentDetails?.qstatus6 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton6(false);
+                                                    qhandlecolorchange12();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                          
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -6258,10 +6884,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc6) === "" ? 0 :
+                                          [agentDetails?.qdoc6].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -6276,9 +6904,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment6) === "" ? 0 :
+                                          [agentDetails?.qcomment6].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -6331,9 +6961,9 @@ function AuditorQuestions2() {
                                           id="entry_value6"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile6")}
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -6341,7 +6971,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc6 ? (
+                                          {agentDetails?.doc6 || formData?.qfile6 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc6} </p>
                                               <Link
@@ -6354,14 +6984,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile6 && (
+                                              selectedImage?.qfile6 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -6644,46 +7278,48 @@ function AuditorQuestions2() {
                                         aria-label="Basic example"
                                       >
                                         <h4 className="text-success">
-                                         
-                                            <div style={{marginTop:"-35px"}}>
-                                              <div className="col-lg-4 mt-4 offset-1">
-                                                <div
-                                                  className="btn-group CustomBtnGroup"
-                                                  role="group"
-                                                  aria-label="Basic example"
+                                          <div style={{ marginTop: "-35px" }}>
+                                            <div className="col-lg-4 mt-4 offset-1">
+                                              <div
+                                                className="btn-group CustomBtnGroup"
+                                                role="group"
+                                                aria-label="Basic example"
+                                              >
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange13 ||
+                                                    agentDetails?.qstatus7 ===
+                                                      "yes"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton7(true);
+                                                    qhandlecolorchange13();
+                                                  }}
                                                 >
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange13 || agentDetails?.qstatus7 ==="yes"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton7(true);
-                                                      qhandlecolorchange13();
-                                                    }}
-                                                  >
-                                                    Yes
-                                                  </button>
-                                                  <button
-                                                    type="button"
-                                                    className={
-                                                      qcolorChange14 || agentDetails?.qstatus7 ==="no"
-                                                        ? "btn btn-primary"
-                                                        : "btn btn-secondary"
-                                                    }
-                                                    onClick={() => {
-                                                      qsetYesbutton7(false);
-                                                      qhandlecolorchange14();
-                                                    }}
-                                                  >
-                                                    No
-                                                  </button>
-                                                </div>
+                                                  Yes
+                                                </button>
+                                                <button
+                                                  type="button"
+                                                  className={
+                                                    qcolorChange14 ||
+                                                    agentDetails?.qstatus7 ===
+                                                      "no"
+                                                      ? "btn btn-primary"
+                                                      : "btn btn-secondary"
+                                                  }
+                                                  onClick={() => {
+                                                    qsetYesbutton7(false);
+                                                    qhandlecolorchange14();
+                                                  }}
+                                                >
+                                                  No
+                                                </button>
                                               </div>
                                             </div>
-                                        
+                                          </div>
                                         </h4>
                                       </div>
                                     </div>
@@ -6702,10 +7338,12 @@ function AuditorQuestions2() {
                                           icon={faLink}
                                           style={{ color: "#0058f0" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
+                                        <span className="badge badge-number">
                                           {" "}
-                                          4
-                                        </span>{" "} */}
+                                          {
+                                          (agentDetails?.qdoc7) === "" ? 0 :
+                                          [agentDetails?.qdoc7].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                       <Link
                                         className="AttachBut2"
@@ -6720,9 +7358,11 @@ function AuditorQuestions2() {
                                           icon={faComment}
                                           style={{ color: "#005cfa" }}
                                         />{" "}
-                                        {/* <span className="badge badge-number">
-                                          1
-                                        </span>{" "} */}
+                                        <span className="badge badge-number">
+                                        {
+                                          (agentDetails?.qcomment7) === "" ? 0 :
+                                          [agentDetails?.qcomment7].length}
+                                        </span>{" "}
                                       </Link>{" "}
                                     </div>
                                     {/* <div className="col-lg-3 mt-4 text-end">
@@ -6774,9 +7414,9 @@ function AuditorQuestions2() {
                                           id="entry_value7"
                                           //   ref="fileInput"
                                           type="file"
-                                          //   onchange="getFileName()"
+                                          onChange={(e) => handleFileChange(e, "qfile7")}
                                         />
-                                         <div>
+                                        <div>
                                           {" "}
                                           {/* <img
                                             src={agentDetails?.doc1}
@@ -6784,7 +7424,7 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc7 ? (
+                                          {agentDetails?.doc7 || formData?.qfile7 ? (
                                             <div className="d-flex justify-content-center">
                                               <p> {agentDetails.doc7} </p>
                                               <Link
@@ -6797,14 +7437,18 @@ function AuditorQuestions2() {
                                               </Link>
                                             </div>
                                           ) : (
-                                            // If doc1 does not exist or is null
                                             <div>
-                                              <span>Not Uploaded...</span>
-                                              Upload your files here or
-                                              <button className="btn bg-color-dblue btn-primary" style={{marginLeft:"5px"}}>
-                                                Browse
-                                              </button>
-                                            </div>
+                                            {selectedImage?.qfile7 && (
+                                              selectedImage?.qfile7 ? "File Uploaded Successfully!" : " Upload your files here.."
+                                            )}
+                                           
+                                            <button
+                                              className="btn bg-color-dblue btn-primary"
+                                              style={{ marginLeft: "5px" }}
+                                            >
+                                              Browse
+                                            </button>
+                                          </div>
                                           )}
                                         </div>
                                         <span
@@ -7079,8 +7723,9 @@ function AuditorQuestions2() {
                           name="next"
                           onClick={() => {
                             page === 10 ? setPage(10) : setPage(page + 1);
-                            handleSaveChanges2();
+                            // handleSaveChanges2();
                             // handleSaveChanges3();
+                            handleOnSave1();
                           }}
                         >
                           Submit
@@ -7105,6 +7750,7 @@ function AuditorQuestions2() {
                         onClick={() => {
                           page === 10 ? setPage(10) : setPage(page + 1);
                           // handleSaveChanges3();
+                          handleOnSave();
                         }}
                       >
                         Next
