@@ -59,25 +59,20 @@ function Home() {
   console.log("scheduled data list", scheduledList);
   const handleSaveChanges1 = async (e) => {
     e.preventDefault();
-
     setTitleError("");
     setUserNameError("");
-
     if (title.trim() === "") {
       setTitleError("Title is required.");
       return;
     }
-
     if (userName.trim() === "") {
       setUserNameError("Username is required.");
       return;
     }
-
     const editAddress = {
       title: title,
       userName: userName,
     };
-
     try {
       const response = await createForm(editAddress);
       const generatedId = response?.data?.results?.saveData?._id;
