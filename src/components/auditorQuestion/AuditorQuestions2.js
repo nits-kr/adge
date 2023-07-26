@@ -2178,9 +2178,9 @@ function AuditorQuestions2() {
                                           />{" "} */}
                                           {agentDetails?.doc3 || formData?.file3 ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc3} </p>
+                                              <p> {agentDetails?.doc3} </p>
                                               <Link
-                                                to={agentDetails.doc3}
+                                                to={agentDetails?.doc3}
                                                 className="mx-3 "
                                                 target="_blank"
                                                 rel="noopener noreferrer"
