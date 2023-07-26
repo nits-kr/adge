@@ -54,7 +54,7 @@ function DashboardUser() {
     },
     {
       name: "Camera",
-      color: "Black",
+      color: "#fc033d",
       brand: "Canon",
       price: 5990,
     },
