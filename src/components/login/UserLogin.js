@@ -152,7 +152,7 @@ function UserLogin() {
             </form>
           </div>
         </div>
-        <div className="col-lg-6  loginBg ">
+        <div className="col-lg-6  loginBg " >
           <img src="../img/login-img.png" alt="" />{" "}
         </div>
       </div>
