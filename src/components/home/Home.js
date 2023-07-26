@@ -248,7 +248,7 @@ function Home() {
                                   textAlign: "start",
                                 }}
                               >
-                                AUD45461
+                                {item?.uniQ_Id}
                               </td>
                               <td
                                 style={{
@@ -415,7 +415,7 @@ function Home() {
                         {scheduledList?.listData?.map((currentItem, index) => {
                           return (
                             <tr key={index}>
-                              <td scope="row">AUD45461</td>
+                              <td scope="row"> {currentItem?.uniQ_Id} </td>
                               <td>{currentItem.title}</td>
                               <td style={{ textAlign: "center" }}>
                                 {currentItem.createdAt?.slice(0, 10)}

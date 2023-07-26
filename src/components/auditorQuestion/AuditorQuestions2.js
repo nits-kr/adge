@@ -860,9 +860,7 @@ function AuditorQuestions2() {
                                         <span className="badge badge-number">
                                           {" "}
                                           {/* {array?.length} */}
-                                          {
-                                          (agentDetails?.doc1) === "" ? 0 :
-                                          [agentDetails?.doc1].length}
+                                          {agentDetails && (agentDetails.doc1 === "" || agentDetails.doc1 === "undefined") ? 0 : [agentDetails?.doc1].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -879,9 +877,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment1) === "" ? 0 :
-                                          [agentDetails?.comment1].length}
+                                        {agentDetails && (agentDetails.comment1 === "" || agentDetails.comment1 === "undefined") ? 0 : [agentDetails?.comment1].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -1636,9 +1632,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc2) === "" ? 0 :
-                                          [agentDetails?.doc2].length}
+                                          {agentDetails && (agentDetails.doc2 === "" || agentDetails.doc2 === "undefined") ? 0 : [agentDetails?.doc2].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -1655,9 +1649,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment2) === "" ? 0 :
-                                          [agentDetails?.comment2].length}
+                                        {agentDetails && (agentDetails.comment2 === "" || agentDetails.comment2 === "undefined") ? 0 : [agentDetails?.comment2].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -2101,9 +2093,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc3) === "" ? 0 :
-                                          [agentDetails?.doc3].length}
+                                          {agentDetails && (agentDetails.doc3 === "" || agentDetails.doc3 === "undefined") ? 0 : [agentDetails?.doc3].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2120,9 +2110,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment3) === "" ? 0 :
-                                          [agentDetails?.comment3].length}
+                                        {agentDetails && (agentDetails.comment3 === "" || agentDetails.comment3 === "undefined") ? 0 : [agentDetails?.comment3].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -2575,9 +2563,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc4) === "" ? 0 :
-                                          [agentDetails?.doc4].length}
+                                          {agentDetails && (agentDetails.doc4 === "" || agentDetails.doc4 === "undefined") ? 0 : [agentDetails?.doc4].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2594,9 +2580,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment4) === "" ? 0 :
-                                          [agentDetails?.comment4].length}
+                                        {agentDetails && (agentDetails.comment4 === "" || agentDetails.comment4 === "undefined") ? 0 : [agentDetails?.comment4].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3031,9 +3015,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc5) === "" ? 0 :
-                                          [agentDetails?.doc5].length}
+                                          {agentDetails && (agentDetails.doc5 === "" || agentDetails.doc5 === "undefined") ? 0 : [agentDetails?.doc5].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -3050,9 +3032,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment5) === "" ? 0 :
-                                          [agentDetails?.comment5].length}
+                                        {agentDetails && (agentDetails.comment5 === "" || agentDetails.comment5 === "undefined") ? 0 : [agentDetails?.comment5].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3490,9 +3470,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc6) === "" ? 0 :
-                                          [agentDetails?.doc6].length}
+                                          {agentDetails && (agentDetails.doc6 === "" || agentDetails.doc6 === "undefined") ? 0 : [agentDetails?.doc6].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -3509,9 +3487,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment6) === "" ? 0 :
-                                          [agentDetails?.comment6].length}
+                                        {agentDetails && (agentDetails.comment6 === "" || agentDetails.comment6 === "undefined") ? 0 : [agentDetails?.comment6].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3947,9 +3923,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.doc7) === "" ? 0 :
-                                          [agentDetails?.doc7].length}
+                                          {agentDetails && (agentDetails.doc7 === "" || agentDetails.doc7 === "undefined") ? 0 : [agentDetails?.doc7].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -3966,9 +3940,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.comment7) === "" ? 0 :
-                                          [agentDetails?.comment7].length}
+                                        {agentDetails && (agentDetails.comment7 === "" || agentDetails.comment7 === "undefined") ? 0 : [agentDetails?.comment7].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -4527,9 +4499,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qcomment1) === "" ? 0 :
-                                          [agentDetails?.qcomment1].length}
+                                          {agentDetails && (agentDetails.qdoc1 === "" || agentDetails.qdoc1 === "undefined") ? 0 : [agentDetails?.qdoc1].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -4546,9 +4516,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qdoc1) === "" ? 0 :
-                                          [agentDetails?.qdoc1].length}
+                                        {agentDetails && (agentDetails.qcomment1 === "" || agentDetails.qcomment1 === "undefined") ? 0 : [agentDetails?.qcomment1].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -5049,9 +5017,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc2) === "" ? 0 :
-                                          [agentDetails?.qdoc2].length}
+                                          {agentDetails && (agentDetails.qdoc2 === "" || agentDetails.qdoc2 === "undefined") ? 0 : [agentDetails?.qdoc2].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -5068,9 +5034,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment2) === "" ? 0 :
-                                          [agentDetails?.qcomment2].length}
+                                        {agentDetails && (agentDetails.qcomment2 === "" || agentDetails.qcomment2 === "undefined") ? 0 : [agentDetails?.qcomment2].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -5507,9 +5471,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc3) === "" ? 0 :
-                                          [agentDetails?.qdoc3].length}
+                                          {agentDetails && (agentDetails.qdoc3 === "" || agentDetails.qdoc3 === "undefined") ? 0 : [agentDetails?.qdoc3].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -5526,9 +5488,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment3) === "" ? 0 :
-                                          [agentDetails?.qcomment3].length}
+                                        {agentDetails && (agentDetails.qcomment3 === "" || agentDetails.qcomment3 === "undefined") ? 0 : [agentDetails?.qcomment3].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -5979,9 +5939,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc4) === "" ? 0 :
-                                          [agentDetails?.qdoc4].length}
+                                          {agentDetails && (agentDetails.qdoc4 === "" || agentDetails.qdoc4 === "undefined") ? 0 : [agentDetails?.qdoc4].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -5998,9 +5956,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment4) === "" ? 0 :
-                                          [agentDetails?.qcomment4].length}
+                                        {agentDetails && (agentDetails.qcomment4 === "" || agentDetails.qcomment4 === "undefined") ? 0 : [agentDetails?.qcomment4].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -6431,9 +6387,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc5) === "" ? 0 :
-                                          [agentDetails?.qdoc5].length}
+                                          {agentDetails && (agentDetails.qdoc5 === "" || agentDetails.qdoc5 === "undefined") ? 0 : [agentDetails?.qdoc5].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -6450,9 +6404,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment5) === "" ? 0 :
-                                          [agentDetails?.qcomment5].length}
+                                        {agentDetails && (agentDetails.qcomment5 === "" || agentDetails.qcomment5 === "undefined") ? 0 : [agentDetails?.qcomment5].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -6886,9 +6838,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc6) === "" ? 0 :
-                                          [agentDetails?.qdoc6].length}
+                                          {agentDetails && (agentDetails.qdoc6 === "" || agentDetails.qdoc6 === "undefined") ? 0 : [agentDetails?.qdoc6].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -6905,9 +6855,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment6) === "" ? 0 :
-                                          [agentDetails?.qcomment6].length}
+                                        {agentDetails && (agentDetails.qcomment6 === "" || agentDetails.qcomment6 === "undefined") ? 0 : [agentDetails?.qcomment6].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -7340,9 +7288,7 @@ function AuditorQuestions2() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {
-                                          (agentDetails?.qdoc7) === "" ? 0 :
-                                          [agentDetails?.qdoc7].length}
+                                          {agentDetails && (agentDetails.qdoc7 === "" || agentDetails.qdoc7 === "undefined") ? 0 : [agentDetails?.qdoc7].length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -7359,9 +7305,7 @@ function AuditorQuestions2() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                        {
-                                          (agentDetails?.qcomment7) === "" ? 0 :
-                                          [agentDetails?.qcomment7].length}
+                                        {agentDetails && (agentDetails.qcomment7 === "" || agentDetails.qcomment7 === "undefined") ? 0 : [agentDetails?.qcomment7].length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
