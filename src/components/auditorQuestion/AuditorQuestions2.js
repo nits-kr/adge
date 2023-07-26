@@ -460,7 +460,7 @@ function AuditorQuestions2() {
     // data.append("adge_Id", generatedId);
     axios
       .post(
-        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${generatedId}`,
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${id}`,
         data
       )
       .then(async (response) => {
@@ -518,7 +518,7 @@ function AuditorQuestions2() {
     data.append("qcomment7", formData?.qcomment7);
     axios
       .post(
-        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${generatedId}`,
+        `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${id}`,
         data
       )
       .then(async (response) => {
@@ -535,6 +535,7 @@ function AuditorQuestions2() {
           if (result.isConfirmed) {
             // window.location.reload(); // refresh the page after success message is closed
             navigate("/adge/home");
+            window.location.reload();
           }
         });
       })
