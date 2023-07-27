@@ -96,6 +96,10 @@ function AuditorQuestions2() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  const handlePostComment1 = () => {
+    console.log(formData.comment1);
+    // setFormData({ ...formData, comment1: "" });
+  };
   const handleFileChange = (e, key) => {
     const file = e.target.files[0];
     console.log("file", file);
@@ -293,7 +297,6 @@ function AuditorQuestions2() {
       setYesbuttonValue7("no");
     }
   };
-
   useEffect(() => {
     qhandleYesbutton1();
   }, [qyesbutton1]);
@@ -1053,23 +1056,16 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment1}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  {/* <span>
-                                                    {" "}
-                                                    <img
-                                                      src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                      alt="avatar"
-                                                    />{" "}
-                                                    <i className="fa fa-caret-down" />{" "}
-                                                  </span> */}
                                                   <button
-                                                    // onClick="submit_comment()"
                                                     type="button"
                                                     value={1}
+                                                    onClick={handlePostComment1}
                                                   >
                                                     Post
                                                   </button>
@@ -1511,7 +1507,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment2}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -1970,7 +1967,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment3}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -2446,7 +2444,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment4}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -2901,7 +2900,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment5}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -3360,7 +3360,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment6}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -3818,7 +3819,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.comment7}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -4392,7 +4394,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment1}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -4917,7 +4920,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment2}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -5374,7 +5378,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment3}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -5846,7 +5851,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment4}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -6297,7 +6303,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment5}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -6753,7 +6760,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment6}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
@@ -7206,7 +7214,8 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                defaultValue={""}
+                                                value={formData.qcomment7}
+                                                onChange={handleInputChange}
                                               />
                                               <div className="box_post">
                                                 <div className="pull-right">
