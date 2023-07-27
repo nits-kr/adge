@@ -1017,10 +1017,10 @@ function AdgeQuestions2() {
                                     will be the final arbiter within the Entity
                                     for all matters relating to data management.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -1309,10 +1309,10 @@ function AdgeQuestions2() {
                                     Data Manager shall have delegated authority
                                     from the Data Governance Board.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       The Data Manager shall:
@@ -1604,10 +1604,10 @@ function AdgeQuestions2() {
                                     The Entity shall identify and appoint Data
                                     Architects to support the Data Manager.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       The Data Architects shall:
@@ -1915,10 +1915,10 @@ function AdgeQuestions2() {
                                     the business and technical areas of the
                                     organisation{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -2206,10 +2206,10 @@ function AdgeQuestions2() {
                                     Owners will be drawn from both the business
                                     and technical areas of the organisation.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -2501,10 +2501,10 @@ function AdgeQuestions2() {
                                     established policy, standards and best
                                     practices
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       Such reviews should include coverage of:
@@ -2892,10 +2892,10 @@ function AdgeQuestions2() {
                                     audience) and data dictionary (technical
                                     audience).{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       Definitions shall exist for:
@@ -3231,7 +3231,7 @@ function AdgeQuestions2() {
                                       Danger
                                     </span>
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     .{" "}
                                     <ul>
@@ -3579,10 +3579,10 @@ function AdgeQuestions2() {
                                     Data Manager shall have delegated authority
                                     from the Data Governance Board..{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       The Data Manager shall:
@@ -3871,10 +3871,10 @@ function AdgeQuestions2() {
                                     The Entity shall identify and appoint Data
                                     Architects to support the Data Manager..{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       The Data Architects shall:
@@ -4179,10 +4179,10 @@ function AdgeQuestions2() {
                                     the business and technical areas of the
                                     organisation
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -4467,10 +4467,10 @@ function AdgeQuestions2() {
                                     Owners will be drawn from both the business
                                     and technical areas of the organisation.{" "}
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       <li>
@@ -4759,10 +4759,10 @@ function AdgeQuestions2() {
                                     established policy, standards and best
                                     practices
                                     <span className="badge bg-danger">
-                                      Danger
+                                      High
                                     </span>{" "}
                                     <span className="badge bg-secondary">
-                                      Secondary
+                                      Mandatory
                                     </span>
                                     <ul>
                                       Such reviews should include coverage of:
