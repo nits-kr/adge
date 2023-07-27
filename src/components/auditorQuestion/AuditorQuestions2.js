@@ -1020,10 +1020,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment1}
+                                              {agentDetails &&
+                                          (agentDetails.comment1 === "" ||
+                                            agentDetails.comment1 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment1}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -1033,7 +1037,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -1054,14 +1058,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -1073,25 +1077,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment1}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -1173,301 +1177,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
-                                                <div className="avatar_comment col-md-1">
-                                                  {" "}
-                                                  <img
-                                                    src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                    alt="avatar"
-                                                  />{" "}
-                                                </div>
-                                                <div className="result_comment col-md-11">
-                                                  <h4>Gung Wah</h4>
-                                                  <p>
-                                                    Lorem Ipsum is simply dummy
-                                                    text of the printing and
-                                                    typesetting industry. Lorem
-                                                    Ipsum has been the
-                                                    industry's.
-                                                  </p>
-                                                  <div className="tools_comment">
-                                                    {" "}
-                                                    <Link
-                                                      className="like"
-                                                      to="#">
-                                                      Like
-                                                    </Link>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <Link
-                                                      className="replay"
-                                                      to="#">
-                                                      Reply
-                                                    </Link>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <i className="fa fa-thumbs-o-up" />{" "}
-                                                    <span className="count">
-                                                      1
-                                                    </span>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <span>26m</span>{" "}
-                                                  </div>
-                                                  <ul className="child_replay"></ul>
-                                                </div>
-                                              </li> */}
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="collapse AttachDiv"
-                                    id="collapseExample2"
-                                  >
-                                    <form action="">
-                                      <div className="form">
-                                        <input
-                                          name="file"
-                                          id="entry_value2"
-                                          style={{
-                                            width: "10rem",
-                                            backgroundColor: "black",
-                                          }}
-                                          //   ref="fileInput"
-                                          type="file"
-                                          //   onchange="getFileName()"
-                                          onChange={(e) =>
-                                            handleFileChange(e, "file2")
-                                            // alert("file")
-                                          }
-                                        />
-                                        <span
-                                          id="fileName2"
-                                          className="text-primary "
-                                        >
-                                          {" "}
-                                        </span>{" "}
-                                      </div>
-                                    </form>
-                                    <div>
-                                      {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc2 || formData?.file2 ? (
-                                        <div className="d-flex justify-content-center">
-                                          <p> {agentDetails?.doc2} </p>
-                                          <Link
-                                            to={agentDetails?.doc2}
-                                            className="mx-3 "
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                          >
-                                            View Document
-                                          </Link>
-                                        </div>
-                                      ) : (
-                                        <div>
-                                          {selectedImage?.file2 && (
-                                            selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                          )}
-                                         
-                                          <button
-                                            className="btn bg-color-dblue btn-primary"
-                                            style={{ marginLeft: "5px" }}
-                                          >
-                                            Browse
-                                          </button>
-                                        </div>
-                                      )}
-                                    </div>
-                                    <div className="SmallHead">Comments</div>
-
-                                    <div className="container">
-                                      <div className="col-md-12" id="fbcomment">
-                                        <div className="header_comment">
-                                          <div className="">
-                                            <div className="float-start">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails?.comment2}
-                                              </span>{" "}
-                                            </div>
-                                            <div className="float-end">
-                                              {" "}
-                                              <span className="sort_title">
-                                                Sort by
-                                              </span>
-                                              <select className="sort_by">
-                                                <option>Top</option>
-                                                <option>Newest</option>
-                                                <option>Oldest</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div className="body_comment">
-                                          <div className="row">
-                                            <div className="avatar_comment col-md-1">
-                                              {" "}
-                                              <img
-                                                src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                alt="avatar"
-                                              />{" "}
-                                            </div>
-                                            <div className="box_comment col-md-11">
-                                              <textarea
-                                                className="commentar"
-                                                placeholder="Add a comment..."
-                                                defaultValue={""}
-                                              />
-                                              <div className="box_post">
-                                                <div className="pull-right">
-                                                  {" "}
-                                                  <span>
-                                                    {" "}
-                                                    <img
-                                                      src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                      alt="avatar"
-                                                    />{" "}
-                                                    <i className="fa fa-caret-down" />{" "}
-                                                  </span>
-                                                  <button
-                                                    // onClick="submit_comment()"
-                                                    type="button"
-                                                    value={1}
-                                                  >
-                                                    Post
-                                                  </button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div className="row">
-                                            <ul
-                                              id="list_comment"
-                                              className="col-md-12"
-                                            >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
-                                                  {" "}
-                                                  <img
-                                                    src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                    alt="avatar"
-                                                  />{" "}
-                                                </div> */}
-                                                <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
-                                                  <p>
-                                                    {agentDetails?.comment2}
-                                                  </p>
-                                                  {/* <div className="tools_comment">
-                                                    {" "}
-                                                    <Link
-                                                      className="like"
-                                                      to="#"
-                                                    >
-                                                      Like
-                                                    </Link>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <Link
-                                                      className="replay"
-                                                      to="#"
-                                                    >
-                                                      Reply
-                                                    </Link>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <i className="fa fa-thumbs-o-up" />{" "}
-                                                    <span className="count">
-                                                      1
-                                                    </span>{" "}
-                                                    <span aria-hidden="true">
-                                                      {" "}
-                                                      ·{" "}
-                                                    </span>{" "}
-                                                    <span>26m</span>{" "}
-                                                  </div> */}
-                                                  {/* <ul className="child_replay">
-                                                    <li className="box_reply row">
-                                                      <div className="avatar_comment col-md-1">
-                                                        {" "}
-                                                        <img
-                                                          src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                          alt="avatar"
-                                                        />{" "}
-                                                      </div>
-                                                      <div className="result_comment col-md-11">
-                                                        <h4>Sugito</h4>
-                                                        <p>
-                                                          Lorem Ipsum is simply
-                                                          dummy text of the
-                                                          printing and
-                                                          typesetting industry.
-                                                          Lorem Ipsum has been
-                                                          the industry's.
-                                                        </p>
-                                                        <div className="tools_comment">
-                                                          {" "}
-                                                          <Link
-                                                            className="like"
-                                                            to="#"
-                                                          >
-                                                            Like
-                                                          </Link>{" "}
-                                                          <span aria-hidden="true">
-                                                            {" "}
-                                                            ·{" "}
-                                                          </span>{" "}
-                                                          <Link
-                                                            className="replay"
-                                                            to="#"
-                                                          >
-                                                            Reply
-                                                          </Link>{" "}
-                                                          <span aria-hidden="true">
-                                                            {" "}
-                                                            ·{" "}
-                                                          </span>{" "}
-                                                          <i className="fa fa-thumbs-o-up" />{" "}
-                                                          <span className="count">
-                                                            1
-                                                          </span>{" "}
-                                                          <span aria-hidden="true">
-                                                            {" "}
-                                                            ·{" "}
-                                                          </span>{" "}
-                                                          <span>26m</span>{" "}
-                                                        </div>
-                                                        <ul className="child_replay"></ul>
-                                                      </div>
-                                                    </li>
-                                                  </ul> */}
-                                                </div>
-                                              </li>
-
-                                              {/* <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -1488,8 +1202,7 @@ function AuditorQuestions2() {
                                                     {" "}
                                                     <Link
                                                       className="like"
-                                                      to="#"
-                                                    >
+                                                      to="#">
                                                       Like
                                                     </Link>{" "}
                                                     <span aria-hidden="true">
@@ -1498,8 +1211,7 @@ function AuditorQuestions2() {
                                                     </span>{" "}
                                                     <Link
                                                       className="replay"
-                                                      to="#"
-                                                    >
+                                                      to="#">
                                                       Reply
                                                     </Link>{" "}
                                                     <span aria-hidden="true">
@@ -1518,9 +1230,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -1766,10 +1478,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment2}
+                                              {agentDetails &&
+                                          (agentDetails.comment2 === "" ||
+                                            agentDetails.comment2 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment2}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -1779,7 +1495,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -1800,14 +1516,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -1819,25 +1535,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.comment2}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -1868,8 +1584,8 @@ function AuditorQuestions2() {
                                                       ·{" "}
                                                     </span>{" "}
                                                     <span>26m</span>{" "}
-                                                  </div> */}
-                                                  {/* <ul className="child_replay">
+                                                  </div>
+                                                  <ul className="child_replay">
                                                     <li className="box_reply row">
                                                       <div className="avatar_comment col-md-1">
                                                         {" "}
@@ -1923,11 +1639,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -1978,9 +1694,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -2221,10 +1937,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment3}
+                                              {agentDetails &&
+                                          (agentDetails.comment3 === "" ||
+                                            agentDetails.comment3 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment3}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -2234,7 +1954,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -2255,14 +1975,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -2274,25 +1994,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment3}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -2378,11 +2098,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -2433,9 +2153,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -2693,10 +2413,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment4}
+                                              {agentDetails &&
+                                          (agentDetails.comment4 === "" ||
+                                            agentDetails.comment4 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment4}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -2706,7 +2430,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -2727,14 +2451,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -2746,25 +2470,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment4}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -2850,11 +2574,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -2905,9 +2629,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -3144,10 +2868,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment5}
+                                              {agentDetails &&
+                                          (agentDetails.comment5 === "" ||
+                                            agentDetails.comment5 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment5}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -3157,7 +2885,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -3178,14 +2906,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -3197,25 +2925,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment5}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -3301,11 +3029,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -3356,9 +3084,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -3599,10 +3327,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment6}
+                                              {agentDetails &&
+                                          (agentDetails.comment6 === "" ||
+                                            agentDetails.comment6 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment6}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -3612,7 +3344,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -3633,14 +3365,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -3652,25 +3384,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment6}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -3756,11 +3488,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -3811,9 +3543,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -4053,10 +3785,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.comment7}
+                                              {agentDetails &&
+                                          (agentDetails.comment7 === "" ||
+                                            agentDetails.comment7 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.comment7}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -4066,7 +3802,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -4087,14 +3823,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -4106,7 +3842,7 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
@@ -4120,11 +3856,11 @@ function AuditorQuestions2() {
                                                   />{" "}
                                                 </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment7}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -4210,11 +3946,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -4265,9 +4001,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -4623,10 +4359,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment1}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment1 === "" ||
+                                            agentDetails.qcomment1 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment1}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -4636,7 +4376,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -4657,14 +4397,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -4676,25 +4416,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment1}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -4776,11 +4516,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -4829,9 +4569,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -5144,10 +4884,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment2}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment2 === "" ||
+                                            agentDetails.qcomment2 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment2}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -5157,7 +4901,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -5178,14 +4922,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -5197,25 +4941,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment2}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -5246,8 +4990,8 @@ function AuditorQuestions2() {
                                                       ·{" "}
                                                     </span>{" "}
                                                     <span>26m</span>{" "}
-                                                  </div> */}
-                                                  {/* <ul className="child_replay">
+                                                  </div>
+                                                  <ul className="child_replay">
                                                     <li className="box_reply row">
                                                       <div className="avatar_comment col-md-1">
                                                         {" "}
@@ -5301,11 +5045,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -5356,9 +5100,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -5597,10 +5341,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment3}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment3 === "" ||
+                                            agentDetails.qcomment3 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment3}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -5610,7 +5358,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -5631,14 +5379,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -5650,25 +5398,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment3}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -5754,11 +5502,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -5809,9 +5557,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -6065,10 +5813,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment4}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment4 === "" ||
+                                            agentDetails.qcomment4 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment4}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -6078,7 +5830,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -6099,14 +5851,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -6118,25 +5870,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment4}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -6222,11 +5974,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -6277,9 +6029,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -6512,10 +6264,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment5}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment5 === "" ||
+                                            agentDetails.qcomment5 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment5}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -6525,7 +6281,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -6546,14 +6302,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -6565,25 +6321,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment5}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -6669,11 +6425,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -6724,9 +6480,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -6964,10 +6720,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment6}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment6 === "" ||
+                                            agentDetails.qcomment6 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment6}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -6977,7 +6737,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -6998,14 +6758,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -7017,25 +6777,25 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
                                             >
                                               <li className="box_result row">
-                                                {/* <div className="avatar_comment col-md-1">
+                                                <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
                                                     src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                     alt="avatar"
                                                   />{" "}
-                                                </div> */}
+                                                </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment6}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -7121,11 +6881,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -7176,9 +6936,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>
@@ -7413,10 +7173,14 @@ function AuditorQuestions2() {
                                             <div className="float-start">
                                               {" "}
                                               <span className="count_comment">
-                                                {agentDetails?.qcomment7}
+                                              {agentDetails &&
+                                          (agentDetails.qcomment7 === "" ||
+                                            agentDetails.qcomment7 === "undefined")
+                                            ? "No comment"
+                                            : agentDetails.qcomment7}
                                               </span>{" "}
                                             </div>
-                                            <div className="float-end">
+                                            {/* <div className="float-end">
                                               {" "}
                                               <span className="sort_title">
                                                 Sort by
@@ -7426,7 +7190,7 @@ function AuditorQuestions2() {
                                                 <option>Newest</option>
                                                 <option>Oldest</option>
                                               </select>
-                                            </div>
+                                            </div> */}
                                           </div>
                                         </div>
                                         <div className="body_comment">
@@ -7447,14 +7211,14 @@ function AuditorQuestions2() {
                                               <div className="box_post">
                                                 <div className="pull-right">
                                                   {" "}
-                                                  <span>
+                                                  {/* <span>
                                                     {" "}
                                                     <img
                                                       src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
                                                       alt="avatar"
                                                     />{" "}
                                                     <i className="fa fa-caret-down" />{" "}
-                                                  </span>
+                                                  </span> */}
                                                   <button
                                                     // onClick="submit_comment()"
                                                     type="button"
@@ -7466,7 +7230,7 @@ function AuditorQuestions2() {
                                               </div>
                                             </div>
                                           </div>
-                                          <div className="row">
+                                          {/* <div className="row">
                                             <ul
                                               id="list_comment"
                                               className="col-md-12"
@@ -7480,11 +7244,11 @@ function AuditorQuestions2() {
                                                   />{" "}
                                                 </div>
                                                 <div className="result_comment col-md-11">
-                                                  {/* <h4>Nath Ryuzaki</h4> */}
+                                                  <h4>Nath Ryuzaki</h4>
                                                   <p>
                                                     {agentDetails?.qcomment7}
                                                   </p>
-                                                  {/* <div className="tools_comment">
+                                                  <div className="tools_comment">
                                                     {" "}
                                                     <Link
                                                       className="like"
@@ -7570,11 +7334,11 @@ function AuditorQuestions2() {
                                                         <ul className="child_replay"></ul>
                                                       </div>
                                                     </li>
-                                                  </ul> */}
+                                                  </ul>
                                                 </div>
                                               </li>
 
-                                              {/* <li className="box_result row">
+                                              <li className="box_result row">
                                                 <div className="avatar_comment col-md-1">
                                                   {" "}
                                                   <img
@@ -7625,9 +7389,9 @@ function AuditorQuestions2() {
                                                   </div>
                                                   <ul className="child_replay"></ul>
                                                 </div>
-                                              </li> */}
+                                              </li>
                                             </ul>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       </div>
                                     </div>

@@ -208,7 +208,7 @@ function Home() {
                       <thead>
                         <tr>
                           <th scope="col">ID</th>
-                          <th scope="col">Title</th>
+                          <th scope="col" >Title</th>
                           <th scope="col" style={{ textAlign: "center" }}>
                             Date
                           </th>
