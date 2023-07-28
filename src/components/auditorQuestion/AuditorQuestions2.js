@@ -960,15 +960,23 @@ function AuditorQuestions2() {
                                           />{" "} */}
                                           {agentDetails?.doc1 || formData?.file1?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc1} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc1 === "" ||
+                                            agentDetails.doc1 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc1} </p>
                                               <Link
-                                                to={agentDetails.doc1}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc1}
+                                            className={agentDetails &&
+                                              (agentDetails.doc1 === "" ||
+                                                agentDetails.doc1 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             // If doc1 does not exist or is null
@@ -1438,12 +1446,20 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                      {agentDetails?.doc2 || formData?.file2 ? (
-                                        <div className="d-flex justify-content-center">
-                                          <p> {agentDetails?.doc2} </p>
-                                          <Link
-                                            to={agentDetails?.doc2}
-                                            className="mx-3 "
+                                      {agentDetails?.doc2 || formData?.file2?.length ? (
+                                            <div className="d-flex justify-content-center">
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc2 === "" ||
+                                            agentDetails.doc2 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc2} </p>
+                                              <Link
+                                            to={agentDetails.doc2}
+                                            className={agentDetails &&
+                                              (agentDetails.doc2 === "" ||
+                                                agentDetails.doc2 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
                                             target="_blank"
                                             rel="noopener noreferrer"
                                           >
@@ -1890,17 +1906,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc3 || formData?.file3 ? (
+                                          {agentDetails?.doc3 || formData?.file3?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails?.doc3} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc3 === "" ||
+                                            agentDetails.doc3 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc3} </p>
                                               <Link
-                                                to={agentDetails?.doc3}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc3}
+                                            className={agentDetails &&
+                                              (agentDetails.doc3 === "" ||
+                                                agentDetails.doc3 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -2367,17 +2391,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc4 || formData?.file4 ? (
+                                          {agentDetails?.doc4 || formData?.file4?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc4} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc4 === "" ||
+                                            agentDetails.doc4 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc4} </p>
                                               <Link
-                                                to={agentDetails.doc4}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc4}
+                                            className={agentDetails &&
+                                              (agentDetails.doc4 === "" ||
+                                                agentDetails.doc4 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -2823,17 +2855,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc5 || formData?.file5 ? (
+                                          {agentDetails?.doc5 || formData?.file5?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc5} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc5 === "" ||
+                                            agentDetails.doc5 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc5} </p>
                                               <Link
-                                                to={agentDetails.doc5}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc5}
+                                            className={agentDetails &&
+                                              (agentDetails.doc5 === "" ||
+                                                agentDetails.doc5 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -3283,17 +3323,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc6 || formData?.file6 ? (
+                                          {agentDetails?.doc6 || formData?.file6?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc6} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc6 === "" ||
+                                            agentDetails.doc6 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc6} </p>
                                               <Link
-                                                to={agentDetails.doc6}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc6}
+                                            className={agentDetails &&
+                                              (agentDetails.doc6 === "" ||
+                                                agentDetails.doc6 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -3742,17 +3790,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc7 || formData?.file7 ? (
+                                          {agentDetails?.doc7 || formData?.file7?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc7} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.doc7 === "" ||
+                                            agentDetails.doc7 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.doc7} </p>
                                               <Link
-                                                to={agentDetails.doc7}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.doc7}
+                                            className={agentDetails &&
+                                              (agentDetails.doc7 === "" ||
+                                                agentDetails.doc7 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -4318,17 +4374,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.qdoc1 || formData?.qfile1 ? (
+                                          {agentDetails?.qdoc1 || formData?.qfile1?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.qdoc1} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc1 === "" ||
+                                            agentDetails.qdoc1 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc1} </p>
                                               <Link
-                                                to={agentDetails.qdoc1}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc1}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc1 === "" ||
+                                                agentDetails.qdoc1 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -4394,7 +4458,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment1}
+                                                value={formData?.qcomment1}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4842,17 +4906,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.qdoc2 || formData?.qfile2 ? (
+                                          {agentDetails?.qdoc2 || formData?.qfile2?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.qdoc2} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc2 === "" ||
+                                            agentDetails.qdoc2 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc2} </p>
                                               <Link
-                                                to={agentDetails.qdoc2}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc2}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc2 === "" ||
+                                                agentDetails.qdoc2 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             // If doc1 does not exist or is null
@@ -4920,7 +4992,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment2}
+                                                value={formData?.qcomment2}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -5301,17 +5373,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc3 || formData?.qfile3 ? (
+                                          {agentDetails?.qdoc3 || formData?.qfile3?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc3} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc3 === "" ||
+                                            agentDetails.qdoc3 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc3} </p>
                                               <Link
-                                                to={agentDetails.doc3}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc3}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc3 === "" ||
+                                                agentDetails.qdoc3 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -5378,7 +5458,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment3}
+                                                value={formData?.qcomment3}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -5774,17 +5854,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc4 || formData?.qfile4 ? (
+                                          {agentDetails?.qdoc4 || formData?.qfile4?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc4} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc4 === "" ||
+                                            agentDetails.qdoc4 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc4} </p>
                                               <Link
-                                                to={agentDetails.doc4}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc4}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc4 === "" ||
+                                                agentDetails.qdoc4 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -5851,7 +5939,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment4}
+                                                value={formData?.qcomment4}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -6226,17 +6314,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc5 || formData?.qfile5 ? (
+                                          {agentDetails?.qdoc5 || formData?.qfile5?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc5} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc5 === "" ||
+                                            agentDetails.qdoc5 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc5} </p>
                                               <Link
-                                                to={agentDetails.doc5}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc5}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc5 === "" ||
+                                                agentDetails.qdoc5 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -6303,7 +6399,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment5}
+                                                value={formData?.qcomment5}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -6683,17 +6779,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc6 || formData?.qfile6 ? (
+                                          {agentDetails?.qdoc6 || formData?.qfile6?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc6} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc6 === "" ||
+                                            agentDetails.qdoc6 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc6} </p>
                                               <Link
-                                                to={agentDetails.doc6}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc6}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc6 === "" ||
+                                                agentDetails.qdoc6 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -6760,7 +6864,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment6}
+                                                value={formData?.qcomment6}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -7137,17 +7241,25 @@ function AuditorQuestions2() {
                                             width="4%"
                                             className=""
                                           />{" "} */}
-                                          {agentDetails?.doc7 || formData?.qfile7 ? (
+                                          {agentDetails?.qdoc7 || formData?.qfile7?.length ? (
                                             <div className="d-flex justify-content-center">
-                                              <p> {agentDetails.doc7} </p>
+                                              <p> {agentDetails &&
+                                          (agentDetails.qdoc7 === "" ||
+                                            agentDetails.qdoc7 === "undefined")
+                                            ? "File Not Uploaded"
+                                            : agentDetails.qdoc7} </p>
                                               <Link
-                                                to={agentDetails.doc7}
-                                                className="mx-3 "
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                              >
-                                                View Document
-                                              </Link>
+                                            to={agentDetails.qdoc7}
+                                            className={agentDetails &&
+                                              (agentDetails.qdoc7 === "" ||
+                                                agentDetails.qdoc7 === "undefined")
+                                                ? "d-none"
+                                                : "mx-2"} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Document
+                                          </Link>
                                             </div>
                                           ) : (
                                             <div>
@@ -7214,7 +7326,7 @@ function AuditorQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                value={formData.qcomment7}
+                                                value={formData?.qcomment7}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
