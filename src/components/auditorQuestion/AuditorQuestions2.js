@@ -6740,7 +6740,7 @@ function AuditorQuestions2() {
                         onClick={() => {
                           page === 10 ? setPage(10) : setPage(page + 1);
                           // handleSaveChanges3();
-                          handleOnSave();
+                          // handleOnSave();
                         }}
                       >
                         Next
