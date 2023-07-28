@@ -624,43 +624,43 @@ function AuditorQuestions2() {
       "status1",
       yesbuttonValue1 ? yesbuttonValue1 : agentDetails?.status1
     );
-    data.append("comment1", formData?.comment1);
+    data.append("comment1", formData?.comment1 ? formData?.comment1 : agentDetails?.comment1);
     data.append("doc2", formData?.file2 ? formData?.file2 : agentDetails?.doc2);
     data.append(
       "status2",
       yesbuttonValue2 ? yesbuttonValue2 : agentDetails?.status2
     );
-    data.append("comment2", formData?.comment2);
+    data.append("comment2", formData?.comment2 ? formData?.comment2 : agentDetails?.comment2);
     data.append("doc3", formData?.file3 ? formData?.file3 : agentDetails?.doc3);
     data.append(
       "status3",
       yesbuttonValue3 ? yesbuttonValue3 : agentDetails?.status3
     );
-    data.append("comment3", formData?.comment3);
+    data.append("comment3", formData?.comment3 ? formData?.comment3 : agentDetails?.comment3);
     data.append("doc4", formData?.file4 ? formData?.file4 : agentDetails?.doc4);
     data.append(
       "status4",
       yesbuttonValue4 ? yesbuttonValue4 : agentDetails?.status4
     );
-    data.append("comment4", formData?.comment4);
+    data.append("comment4", formData?.comment4 ? formData?.comment4 : agentDetails?.comment4);
     data.append("doc5", formData?.file5 ? formData?.file5 : agentDetails?.doc5);
     data.append(
       "status5",
       yesbuttonValue5 ? yesbuttonValue5 : agentDetails?.status5
     );
-    data.append("comment5", formData?.comment5);
+    data.append("comment5", formData?.comment5 ? formData?.comment5 : agentDetails?.comment5);
     data.append("doc6", formData?.file6 ? formData?.file6 : agentDetails?.doc6);
     data.append(
       "status6",
       yesbuttonValue6 ? yesbuttonValue6 : agentDetails?.status6
     );
-    data.append("comment6", formData?.comment6);
+    data.append("comment6", formData?.comment6 ? formData?.comment6 : agentDetails?.comment6);
     data.append("doc7", formData?.file7 ? formData?.file7 : agentDetails?.doc7);
     data.append(
       "status7",
       yesbuttonValue7 ? yesbuttonValue7 : agentDetails?.status7
     );
-    data.append("comment7", formData?.comment7);
+    data.append("comment7", formData?.comment7 ? formData?.comment7 : agentDetails?.comment7);
     data.append(
       "qdoc1",
       formData?.qfile1 ? formData?.qfile1 : agentDetails?.qdoc1
@@ -669,7 +669,7 @@ function AuditorQuestions2() {
       "qstatus1",
       qyesbuttonValue1 ? qyesbuttonValue1 : agentDetails?.qstatus1
     );
-    data.append("qcomment1", formData?.qcomment1);
+    data.append("qcomment1", formData?.qcomment1 ? formData?.qcomment1 : agentDetails?.qcomment1);
     data.append(
       "qdoc2",
       formData?.qfile2 ? formData?.qfile2 : agentDetails?.qdoc2
@@ -678,7 +678,7 @@ function AuditorQuestions2() {
       "qstatus2",
       qyesbuttonValue2 ? qyesbuttonValue2 : agentDetails?.qstatus2
     );
-    data.append("qcomment2", formData?.qcomment2);
+    data.append("qcomment2", formData?.qcomment2 ? formData?.qcomment2 : agentDetails?.qcomment2);
     data.append(
       "qdoc3",
       formData?.qfile3 ? formData?.qfile3 : agentDetails?.qdoc3
@@ -687,7 +687,7 @@ function AuditorQuestions2() {
       "qstatus3",
       qyesbuttonValue3 ? qyesbuttonValue3 : agentDetails?.qstatus3
     );
-    data.append("qcomment3", formData?.qcomment3);
+    data.append("qcomment3", formData?.qcomment3 ? formData?.qcomment3 : agentDetails?.qcomment3);
     data.append(
       "qdoc4",
       formData?.qfile4 ? formData?.qfile4 : agentDetails?.qdoc4
@@ -696,7 +696,7 @@ function AuditorQuestions2() {
       "qstatus4",
       qyesbuttonValue4 ? qyesbuttonValue4 : agentDetails?.qstatus4
     );
-    data.append("qcomment4", formData?.qcomment4);
+    data.append("qcomment4", formData?.qcomment4 ? formData?.qcomment4 :agentDetails?.qcomment4);
     data.append(
       "qdoc5",
       formData?.qfile5 ? formData?.qfile5 : agentDetails?.qdoc5
@@ -705,7 +705,7 @@ function AuditorQuestions2() {
       "qstatus5",
       qyesbuttonValue5 ? qyesbuttonValue5 : agentDetails?.qstatus5
     );
-    data.append("qcomment5", formData?.qcomment5);
+    data.append("qcomment5", formData?.qcomment5 ? formData?.qcomment5 : agentDetails?.qcomment5);
     data.append(
       "qdoc6",
       formData?.qfile6 ? formData?.qfile6 : agentDetails?.qdoc6
@@ -714,7 +714,7 @@ function AuditorQuestions2() {
       "qstatus6",
       qyesbuttonValue6 ? qyesbuttonValue6 : agentDetails?.qstatus6
     );
-    data.append("qcomment6", formData?.qcomment6);
+    data.append("qcomment6", formData?.qcomment6 ? formData?.qcomment6 : agentDetails?.qcomment6);
     data.append(
       "qdoc7",
       formData?.qfile7 ? formData?.qfile7 : agentDetails?.qdoc7
@@ -723,7 +723,7 @@ function AuditorQuestions2() {
       "qstatus7",
       qyesbuttonValue7 ? qyesbuttonValue7 : agentDetails?.qstatus7
     );
-    data.append("qcomment7", formData?.qcomment7);
+    data.append("qcomment7", formData?.qcomment7 ? formData?.qcomment7 : agentDetails?.qcomment7);
     axios
       .post(
         `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${id}`,
@@ -5545,7 +5545,7 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={13}
-                                                                onClick={qhandlePostComment1}
+                                                                onClick={qhandlePostComment6}
                                                               >
                                                                 Post
                                                               </button>

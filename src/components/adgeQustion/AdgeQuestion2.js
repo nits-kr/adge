@@ -549,7 +549,6 @@ function AdgeQuestions2() {
   const handleSaveChanges2 = () => {
     const data = new FormData();
     data.append("doc1", formData?.file1 ? formData?.file1 : "");
-    console.log("formData",formData);
     data.append("status1", yesbuttonValue1);
     data.append("comment1", formData?.comment1?.length ? formData?.comment1 : "");
     data.append("doc2", formData?.file2 ? formData?.file2 : "");
@@ -1012,103 +1011,7 @@ function AdgeQuestions2() {
                                             </div>
                                           </div>
                                           <div className="row">
-                                            {/* <ul id="list_comment" className="col-md-12">
-                          <li className="box_result row">
-                            <div className="avatar_comment col-md-1">
-                              <img
-                                src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                alt="avatar"
-                              />
-                            </div>
-                            <div className="result_comment col-md-11">
-                              <h4>Nath Ryuzaki</h4>
-                              <p>
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry. Lorem Ipsum has been
-                                the industry's.
-                              </p>
-                              <div className="tools_comment">
-                                <Link className="like" to="#">
-                                  Like
-                                </Link>
-                                <span aria-hidden="true"> · </span>
-                                <Link className="replay" to="#">
-                                  Reply
-                                </Link>
-                                <span aria-hidden="true"> · </span>
-                                <i className="fa fa-thumbs-o-up" />{" "}
-                                <span className="count">1</span>
-                                <span aria-hidden="true"> · </span>
-                                <span>26m</span>
-                              </div>
-                              <ul className="child_replay">
-                                <li className="box_reply row">
-                                  <div className="avatar_comment col-md-1">
-                                    <img
-                                      src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                      alt="avatar"
-                                    />
-                                  </div>
-                                  <div className="result_comment col-md-11">
-                                    <h4>Sugito</h4>
-                                    <p>
-                                      Lorem Ipsum is simply dummy text of the
-                                      printing and typesetting industry. Lorem
-                                      Ipsum has been the industry's.
-                                    </p>
-                                    <div className="tools_comment">
-                                      <Link className="like" to="#">
-                                        Like
-                                      </Link>
-                                      <span aria-hidden="true"> · </span>
-                                      <Link className="replay" to="#">
-                                        Reply
-                                      </Link>
-                                      <span aria-hidden="true"> · </span>
-                                      <i className="fa fa-thumbs-o-up" />{" "}
-                                      <span className="count">1</span>
-                                      <span aria-hidden="true"> · </span>
-                                      <span>26m</span>
-                                    </div>
-                                    <ul className="child_replay" />
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                          </li>
-
-                          <li className="box_result row">
-                            <div className="avatar_comment col-md-1">
-                              <img
-                                src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                alt="avatar"
-                              />
-                            </div>
-                            <div className="result_comment col-md-11">
-                              <h4>Gung Wah</h4>
-                              <p>
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry. Lorem Ipsum has been
-                                the industry's.
-                              </p>
-                              <div className="tools_comment">
-                                <Link className="like" to="#">
-                                  Like
-                                </Link>
-                                <span aria-hidden="true"> · </span>
-                                <Link className="replay" to="#">
-                                  Reply
-                                </Link>
-                                <span aria-hidden="true"> · </span>
-                                <i className="fa fa-thumbs-o-up" />{" "}
-                                <span className="count">1</span>
-                                <span aria-hidden="true"> · </span>
-                                <span>26m</span>
-                              </div>
-                              <ul className="child_replay" />
-                            </div>
-                          </li>
-                        </ul> */}
+                                            
                                           </div>
                                         </div>
                                       </div>
