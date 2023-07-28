@@ -71,6 +71,24 @@ function AdgeQuestions2() {
   const [qyesbuttonValue7, qsetYesbuttonValue7] = useState("");
   const [itemId, setItemId] = useState("");
   const [formData, setFormData] = useState([]);
+  console.log("form data 567", formData);
+  const [comments11, setComments11] = useState([]);
+  const [comments12, setComments12] = useState([]);
+  const [comments13, setComments13] = useState([]);
+  const [comments14, setComments14] = useState([]);
+  const [comments15, setComments15] = useState([]);
+  const [comments16, setComments16] = useState([]);
+  const [comments17, setComments17] = useState([]);
+  
+  const [qcomments11, qsetComments11] = useState([]);
+  console.log("qcomments11", qcomments11);
+  const [qcomments12, qsetComments12] = useState([]);
+  const [qcomments13, qsetComments13] = useState([]);
+  const [qcomments14, qsetComments14] = useState([]);
+  const [qcomments15, qsetComments15] = useState([]);
+  const [qcomments16, qsetComments16] = useState([]);
+  const [qcomments17, qsetComments17] = useState([]);
+  
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImage2, setSelectedImage2] = useState(null);
   const [selectedImage3, setSelectedImage3] = useState(null);
@@ -90,6 +108,93 @@ function AdgeQuestions2() {
   // console.log("blog list", blogList);
   console.log("form data new", formData);
   const navigate = useNavigate();
+
+  const handlePostComment1 = () => {
+    if (formData.comment1) {
+      setComments11([...comments11, formData.comment1]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment2 = () => {
+    if (formData.comment2) {
+      setComments12([...comments12, formData.comment2]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment3 = () => {
+    if (formData.comment3) {
+      setComments13([...comments13, formData.comment3]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment4 = () => {
+    if (formData.comment4) {
+      setComments14([...comments14, formData.comment4]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment5 = () => {
+    if (formData.comment5) {
+      setComments15([...comments15, formData.comment5]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment6 = () => {
+    if (formData.comment6) {
+      setComments16([...comments16, formData.comment6]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const handlePostComment7 = () => {
+    if (formData.comment7) {
+      setComments17([...comments17, formData.comment7]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment1 = () => {
+    if (formData.qcomment1) {
+      console.log("formData.qcomment1", formData.qcomment1);
+      qsetComments11([...qcomments11, formData.qcomment1]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment2 = () => {
+    if (formData.qcomment2) {
+      qsetComments12([...qcomments12, formData.qcomment2]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment3 = () => {
+    if (formData.qcomment3) {
+      qsetComments13([...qcomments13, formData.qcomment3]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment4 = () => {
+    if (formData.qcomment4) {
+      qsetComments14([...qcomments14, formData.qcomment4]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment5 = () => {
+    if (formData.qcomment5) {
+      qsetComments15([...qcomments15, formData.qcomment5]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment6 = () => {
+    if (formData.qcomment6) {
+      qsetComments16([...qcomments16, formData.qcomment6]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+  const qhandlePostComment7 = () => {
+    if (formData.qcomment7) {
+      qsetComments17([...qcomments17, formData.qcomment7]);
+      // setFormData({ ...formData, comment5: '' });
+    }
+  };
+
   const handlecolorchange2 = () => {
     setColorChange1(false);
     setColorChange2(true);
@@ -421,6 +526,7 @@ function AdgeQuestions2() {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleFileChange = (e, key) => {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -848,9 +954,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments11.length} {comments11.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments11.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -892,6 +1003,7 @@ function AdgeQuestions2() {
                                                   <button
                                                     type="button"
                                                     value={1}
+                                                    onClick={handlePostComment1}
                                                   >
                                                     Post
                                                   </button>
@@ -1141,9 +1253,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments12.length} {comments12.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments12.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -1185,7 +1302,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={2}
+                                                    onClick={handlePostComment2}
                                                   >
                                                     Post
                                                   </button>
@@ -1437,9 +1555,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments13.length} {comments13.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments13.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -1481,7 +1604,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={3}
+                                                    onClick={handlePostComment3}
                                                   >
                                                     Post
                                                   </button>
@@ -1747,9 +1871,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments14.length} {comments14.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments14.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -1790,7 +1919,8 @@ function AdgeQuestions2() {
                                                   </span>
                                                   <button
                                                     type="button"
-                                                    value={1}
+                                                    value={4}
+                                                    onClick={handlePostComment4}
                                                   >
                                                     Post
                                                   </button>
@@ -2036,9 +2166,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments15.length} {comments15.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments15.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -2078,9 +2213,10 @@ function AdgeQuestions2() {
                                                     <i className="fa fa-caret-down" />
                                                   </span>
                                                   <button
-                                                    // onclick="submit_comment()"
+                                                    
                                                     type="button"
-                                                    value={1}
+                                                    value={5}
+                                                    onClick={handlePostComment5}
                                                   >
                                                     Post
                                                   </button>
@@ -2330,9 +2466,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments16.length} {comments16.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments16.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -2374,7 +2515,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={6}
+                                                    onClick={handlePostComment6}
                                                   >
                                                     Post
                                                   </button>
@@ -2622,9 +2764,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {comments17.length} {comments17.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {comments17.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -2666,7 +2813,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={7}
+                                                    onClick={handlePostComment7}
                                                   >
                                                     Post
                                                   </button>
@@ -3050,9 +3198,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments11.length} {qcomments11.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments11.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -3078,8 +3231,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment1"
-                                                value={formData?.comment1}
+                                                name="qcomment1"
+                                                value={formData?.qcomment1}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3093,7 +3246,8 @@ function AdgeQuestions2() {
                                                   </span>
                                                   <button
                                                     type="button"
-                                                    value={1}
+                                                    value={8}
+                                                    onClick={qhandlePostComment1}
                                                   >
                                                     Post
                                                   </button>
@@ -3414,9 +3568,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments12.length} {qcomments12.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments12.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -3442,8 +3601,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment2"
-                                                value={formData?.comment2}
+                                                name="qcomment2"
+                                                value={formData?.qcomment2}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3458,7 +3617,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={9}
+                                                    onClick={qhandlePostComment2}
                                                   >
                                                     Post
                                                   </button>
@@ -3707,9 +3867,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments13.length} {qcomments13.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments13.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -3735,8 +3900,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment3"
-                                                value={formData?.comment3}
+                                                name="qcomment3"
+                                                value={formData?.qcomment3}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -3749,9 +3914,10 @@ function AdgeQuestions2() {
                                                     <i className="fa fa-caret-down" />
                                                   </span>
                                                   <button
-                                                    // onclick="submit_comment()"
+                                                   
                                                     type="button"
-                                                    value={1}
+                                                    value={10}
+                                                    onClick={qhandlePostComment3}
                                                   >
                                                     Post
                                                   </button>
@@ -4014,9 +4180,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments14.length} {qcomments14.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments14.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -4042,8 +4213,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment4"
-                                                value={formData?.comment4}
+                                                name="qcomment4"
+                                                value={formData?.qcomment4}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4057,7 +4228,8 @@ function AdgeQuestions2() {
                                                   </span>
                                                   <button
                                                     type="button"
-                                                    value={1}
+                                                    value={11}
+                                                    onClick={qhandlePostComment4}
                                                   >
                                                     Post
                                                   </button>
@@ -4300,9 +4472,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments15.length} {qcomments15.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments15.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -4328,8 +4505,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment5"
-                                                value={formData?.comment5}
+                                                name="qcomment5"
+                                                value={formData?.qcomment5}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4344,7 +4521,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={12}
+                                                    onClick={qhandlePostComment5}
                                                   >
                                                     Post
                                                   </button>
@@ -4591,9 +4769,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments16.length} {qcomments16.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments16.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -4619,8 +4802,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment6"
-                                                value={formData?.comment6}
+                                                name="qcomment6"
+                                                value={formData?.qcomment6}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4635,7 +4818,8 @@ function AdgeQuestions2() {
                                                   <button
                                                     // onclick="submit_comment()"
                                                     type="button"
-                                                    value={1}
+                                                    value={13}
+                                                    onClick={qhandlePostComment6}
                                                   >
                                                     Post
                                                   </button>
@@ -4880,9 +5064,14 @@ function AdgeQuestions2() {
                                         <div className="header_comment">
                                           <div className="">
                                             <div className="float-start">
-                                              <span className="count_comment">
-                                                264235 Comments
-                                              </span>
+                                            <span className="count_comment">
+                                               {qcomments17.length} {qcomments17.length === 1 ? 'comment' : 'comments'}
+                                                </span>
+                                                    <ul>
+                                                    {qcomments17.map((comment, index) => (
+                                                    <li key={index}>{comment}</li>
+                                                  ))}
+                                                        </ul>
                                             </div>
                                             <div className="float-end">
                                               <span className="sort_title">
@@ -4908,8 +5097,8 @@ function AdgeQuestions2() {
                                               <textarea
                                                 className="commentar"
                                                 placeholder="Add a comment..."
-                                                name="comment7"
-                                                value={formData?.comment7}
+                                                name="qcomment7"
+                                                value={formData?.qcomment7}
                                                 onChange={handleInputChange}
                                               />
                                               <div className="box_post">
@@ -4922,9 +5111,10 @@ function AdgeQuestions2() {
                                                     <i className="fa fa-caret-down" />
                                                   </span>
                                                   <button
-                                                    // onclick="submit_comment()"
+                                                    
                                                     type="button"
-                                                    value={1}
+                                                    value={14}
+                                                    onClick={qhandlePostComment7}
                                                   >
                                                     Post
                                                   </button>
