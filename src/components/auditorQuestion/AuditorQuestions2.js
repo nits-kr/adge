@@ -2621,7 +2621,7 @@ function AuditorQuestions2() {
                                                   type="button"
                                                   className={
                                                     colorChange10 ||
-                                                    agentDetails?.status6 ===
+                                                    agentDetails?.status5 ===
                                                       "no"
                                                       ? "btn btn-primary"
                                                       : "btn btn-secondary"
