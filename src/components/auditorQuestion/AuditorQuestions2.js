@@ -99,7 +99,7 @@ function AuditorQuestions2() {
   const [comments15, setComments15] = useState([]);
   const [comments16, setComments16] = useState([]);
   const [comments17, setComments17] = useState([]);
-  
+
   const [qcomments11, qsetComments11] = useState([]);
   const [qcomments12, qsetComments12] = useState([]);
   const [qcomments13, qsetComments13] = useState([]);
@@ -523,43 +523,64 @@ function AuditorQuestions2() {
       "status1",
       yesbuttonValue1 ? yesbuttonValue1 : agentDetails?.status1
     );
-    data.append("comment1", formData?.comment1 ? formData?.comment1 : agentDetails?.comment1);
+    data.append(
+      "comment1",
+      formData?.comment1 ? formData?.comment1 : agentDetails?.comment1
+    );
     data.append("doc2", formData?.file2 ? formData?.file2 : agentDetails?.doc2);
     data.append(
       "status2",
       yesbuttonValue2 ? yesbuttonValue2 : agentDetails?.status2
     );
-    data.append("comment2", formData?.comment2 ? formData?.comment2 : agentDetails?.comment2);
+    data.append(
+      "comment2",
+      formData?.comment2 ? formData?.comment2 : agentDetails?.comment2
+    );
     data.append("doc3", formData?.file3 ? formData?.file3 : agentDetails?.doc3);
     data.append(
       "status3",
       yesbuttonValue3 ? yesbuttonValue3 : agentDetails?.status3
     );
-    data.append("comment3", formData?.comment3 ? formData?.comment3 : agentDetails?.comment3);
+    data.append(
+      "comment3",
+      formData?.comment3 ? formData?.comment3 : agentDetails?.comment3
+    );
     data.append("doc4", formData?.file4 ? formData?.file4 : agentDetails?.doc4);
     data.append(
       "status4",
       yesbuttonValue4 ? yesbuttonValue4 : agentDetails?.status4
     );
-    data.append("comment4", formData?.comment4 ? formData?.comment4 : agentDetails?.comment4);
+    data.append(
+      "comment4",
+      formData?.comment4 ? formData?.comment4 : agentDetails?.comment4
+    );
     data.append("doc5", formData?.file5 ? formData?.file5 : agentDetails?.doc5);
     data.append(
       "status5",
       yesbuttonValue5 ? yesbuttonValue5 : agentDetails?.status5
     );
-    data.append("comment5", formData?.comment5 ? formData?.comment5 : agentDetails?.comment5);
+    data.append(
+      "comment5",
+      formData?.comment5 ? formData?.comment5 : agentDetails?.comment5
+    );
     data.append("doc6", formData?.file6 ? formData?.file6 : agentDetails?.doc6);
     data.append(
       "status6",
       yesbuttonValue6 ? yesbuttonValue6 : agentDetails?.status6
     );
-    data.append("comment6", formData?.comment6 ? formData?.comment6 : agentDetails?.comment6);
+    data.append(
+      "comment6",
+      formData?.comment6 ? formData?.comment6 : agentDetails?.comment6
+    );
     data.append("doc7", formData?.file7 ? formData?.file7 : agentDetails?.doc7);
     data.append(
       "status7",
       yesbuttonValue7 ? yesbuttonValue7 : agentDetails?.status7
     );
-    data.append("comment7", formData?.comment7 ? formData?.comment7 : agentDetails?.comment7);
+    data.append(
+      "comment7",
+      formData?.comment7 ? formData?.comment7 : agentDetails?.comment7
+    );
     data.append(
       "qdoc1",
       formData?.qfile1 ? formData?.qfile1 : agentDetails?.qdoc1
@@ -568,7 +589,10 @@ function AuditorQuestions2() {
       "qstatus1",
       qyesbuttonValue1 ? qyesbuttonValue1 : agentDetails?.qstatus1
     );
-    data.append("qcomment1", formData?.qcomment1 ? formData?.qcomment1 : agentDetails?.qcomment1);
+    data.append(
+      "qcomment1",
+      formData?.qcomment1 ? formData?.qcomment1 : agentDetails?.qcomment1
+    );
     data.append(
       "qdoc2",
       formData?.qfile2 ? formData?.qfile2 : agentDetails?.qdoc2
@@ -577,7 +601,10 @@ function AuditorQuestions2() {
       "qstatus2",
       qyesbuttonValue2 ? qyesbuttonValue2 : agentDetails?.qstatus2
     );
-    data.append("qcomment2", formData?.qcomment2 ? formData?.qcomment2 : agentDetails?.qcomment2);
+    data.append(
+      "qcomment2",
+      formData?.qcomment2 ? formData?.qcomment2 : agentDetails?.qcomment2
+    );
     data.append(
       "qdoc3",
       formData?.qfile3 ? formData?.qfile3 : agentDetails?.qdoc3
@@ -586,7 +613,10 @@ function AuditorQuestions2() {
       "qstatus3",
       qyesbuttonValue3 ? qyesbuttonValue3 : agentDetails?.qstatus3
     );
-    data.append("qcomment3", formData?.qcomment3 ? formData?.qcomment3 : agentDetails?.qcomment3);
+    data.append(
+      "qcomment3",
+      formData?.qcomment3 ? formData?.qcomment3 : agentDetails?.qcomment3
+    );
     data.append(
       "qdoc4",
       formData?.qfile4 ? formData?.qfile4 : agentDetails?.qdoc4
@@ -595,7 +625,10 @@ function AuditorQuestions2() {
       "qstatus4",
       qyesbuttonValue4 ? qyesbuttonValue4 : agentDetails?.qstatus4
     );
-    data.append("qcomment4", formData?.qcomment4 ? formData?.qcomment4 :agentDetails?.qcomment4);
+    data.append(
+      "qcomment4",
+      formData?.qcomment4 ? formData?.qcomment4 : agentDetails?.qcomment4
+    );
     data.append(
       "qdoc5",
       formData?.qfile5 ? formData?.qfile5 : agentDetails?.qdoc5
@@ -604,7 +637,10 @@ function AuditorQuestions2() {
       "qstatus5",
       qyesbuttonValue5 ? qyesbuttonValue5 : agentDetails?.qstatus5
     );
-    data.append("qcomment5", formData?.qcomment5 ? formData?.qcomment5 : agentDetails?.qcomment5);
+    data.append(
+      "qcomment5",
+      formData?.qcomment5 ? formData?.qcomment5 : agentDetails?.qcomment5
+    );
     data.append(
       "qdoc6",
       formData?.qfile6 ? formData?.qfile6 : agentDetails?.qdoc6
@@ -613,7 +649,10 @@ function AuditorQuestions2() {
       "qstatus6",
       qyesbuttonValue6 ? qyesbuttonValue6 : agentDetails?.qstatus6
     );
-    data.append("qcomment6", formData?.qcomment6 ? formData?.qcomment6 : agentDetails?.qcomment6);
+    data.append(
+      "qcomment6",
+      formData?.qcomment6 ? formData?.qcomment6 : agentDetails?.qcomment6
+    );
     data.append(
       "qdoc7",
       formData?.qfile7 ? formData?.qfile7 : agentDetails?.qdoc7
@@ -622,7 +661,10 @@ function AuditorQuestions2() {
       "qstatus7",
       qyesbuttonValue7 ? qyesbuttonValue7 : agentDetails?.qstatus7
     );
-    data.append("qcomment7", formData?.qcomment7 ? formData?.qcomment7 : agentDetails?.qcomment7);
+    data.append(
+      "qcomment7",
+      formData?.qcomment7 ? formData?.qcomment7 : agentDetails?.qcomment7
+    );
     axios
       .post(
         `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${id}`,
@@ -644,43 +686,64 @@ function AuditorQuestions2() {
       "status1",
       yesbuttonValue1 ? yesbuttonValue1 : agentDetails?.status1
     );
-    data.append("comment1", formData?.comment1 ? formData?.comment1 : agentDetails?.comment1);
+    data.append(
+      "comment1",
+      formData?.comment1 ? formData?.comment1 : agentDetails?.comment1
+    );
     data.append("doc2", formData?.file2 ? formData?.file2 : agentDetails?.doc2);
     data.append(
       "status2",
       yesbuttonValue2 ? yesbuttonValue2 : agentDetails?.status2
     );
-    data.append("comment2", formData?.comment2 ? formData?.comment2 : agentDetails?.comment2);
+    data.append(
+      "comment2",
+      formData?.comment2 ? formData?.comment2 : agentDetails?.comment2
+    );
     data.append("doc3", formData?.file3 ? formData?.file3 : agentDetails?.doc3);
     data.append(
       "status3",
       yesbuttonValue3 ? yesbuttonValue3 : agentDetails?.status3
     );
-    data.append("comment3", formData?.comment3 ? formData?.comment3 : agentDetails?.comment3);
+    data.append(
+      "comment3",
+      formData?.comment3 ? formData?.comment3 : agentDetails?.comment3
+    );
     data.append("doc4", formData?.file4 ? formData?.file4 : agentDetails?.doc4);
     data.append(
       "status4",
       yesbuttonValue4 ? yesbuttonValue4 : agentDetails?.status4
     );
-    data.append("comment4", formData?.comment4 ? formData?.comment4 : agentDetails?.comment4);
+    data.append(
+      "comment4",
+      formData?.comment4 ? formData?.comment4 : agentDetails?.comment4
+    );
     data.append("doc5", formData?.file5 ? formData?.file5 : agentDetails?.doc5);
     data.append(
       "status5",
       yesbuttonValue5 ? yesbuttonValue5 : agentDetails?.status5
     );
-    data.append("comment5", formData?.comment5 ? formData?.comment5 : agentDetails?.comment5);
+    data.append(
+      "comment5",
+      formData?.comment5 ? formData?.comment5 : agentDetails?.comment5
+    );
     data.append("doc6", formData?.file6 ? formData?.file6 : agentDetails?.doc6);
     data.append(
       "status6",
       yesbuttonValue6 ? yesbuttonValue6 : agentDetails?.status6
     );
-    data.append("comment6", formData?.comment6 ? formData?.comment6 : agentDetails?.comment6);
+    data.append(
+      "comment6",
+      formData?.comment6 ? formData?.comment6 : agentDetails?.comment6
+    );
     data.append("doc7", formData?.file7 ? formData?.file7 : agentDetails?.doc7);
     data.append(
       "status7",
       yesbuttonValue7 ? yesbuttonValue7 : agentDetails?.status7
     );
-    data.append("comment7", formData?.comment7 ? formData?.comment7 : agentDetails?.comment7);
+    data.append(
+      "comment7",
+      formData?.comment7 ? formData?.comment7 : agentDetails?.comment7
+    );
     data.append(
       "qdoc1",
       formData?.qfile1 ? formData?.qfile1 : agentDetails?.qdoc1
@@ -689,7 +752,10 @@ function AuditorQuestions2() {
       "qstatus1",
       qyesbuttonValue1 ? qyesbuttonValue1 : agentDetails?.qstatus1
     );
-    data.append("qcomment1", formData?.qcomment1 ? formData?.qcomment1 : agentDetails?.qcomment1);
+    data.append(
+      "qcomment1",
+      formData?.qcomment1 ? formData?.qcomment1 : agentDetails?.qcomment1
+    );
     data.append(
       "qdoc2",
       formData?.qfile2 ? formData?.qfile2 : agentDetails?.qdoc2
@@ -698,7 +764,10 @@ function AuditorQuestions2() {
       "qstatus2",
       qyesbuttonValue2 ? qyesbuttonValue2 : agentDetails?.qstatus2
     );
-    data.append("qcomment2", formData?.qcomment2 ? formData?.qcomment2 : agentDetails?.qcomment2);
+    data.append(
+      "qcomment2",
+      formData?.qcomment2 ? formData?.qcomment2 : agentDetails?.qcomment2
+    );
     data.append(
       "qdoc3",
       formData?.qfile3 ? formData?.qfile3 : agentDetails?.qdoc3
@@ -707,7 +776,10 @@ function AuditorQuestions2() {
       "qstatus3",
       qyesbuttonValue3 ? qyesbuttonValue3 : agentDetails?.qstatus3
     );
-    data.append("qcomment3", formData?.qcomment3 ? formData?.qcomment3 : agentDetails?.qcomment3);
+    data.append(
+      "qcomment3",
+      formData?.qcomment3 ? formData?.qcomment3 : agentDetails?.qcomment3
+    );
     data.append(
       "qdoc4",
       formData?.qfile4 ? formData?.qfile4 : agentDetails?.qdoc4
@@ -716,7 +788,10 @@ function AuditorQuestions2() {
       "qstatus4",
       qyesbuttonValue4 ? qyesbuttonValue4 : agentDetails?.qstatus4
     );
-    data.append("qcomment4", formData?.qcomment4 ? formData?.qcomment4 :agentDetails?.qcomment4);
+    data.append(
+      "qcomment4",
+      formData?.qcomment4 ? formData?.qcomment4 : agentDetails?.qcomment4
+    );
     data.append(
       "qdoc5",
       formData?.qfile5 ? formData?.qfile5 : agentDetails?.qdoc5
@@ -725,7 +800,10 @@ function AuditorQuestions2() {
       "qstatus5",
       qyesbuttonValue5 ? qyesbuttonValue5 : agentDetails?.qstatus5
     );
-    data.append("qcomment5", formData?.qcomment5 ? formData?.qcomment5 : agentDetails?.qcomment5);
+    data.append(
+      "qcomment5",
+      formData?.qcomment5 ? formData?.qcomment5 : agentDetails?.qcomment5
+    );
     data.append(
       "qdoc6",
       formData?.qfile6 ? formData?.qfile6 : agentDetails?.qdoc6
@@ -734,7 +812,10 @@ function AuditorQuestions2() {
       "qstatus6",
       qyesbuttonValue6 ? qyesbuttonValue6 : agentDetails?.qstatus6
     );
-    data.append("qcomment6", formData?.qcomment6 ? formData?.qcomment6 : agentDetails?.qcomment6);
+    data.append(
+      "qcomment6",
+      formData?.qcomment6 ? formData?.qcomment6 : agentDetails?.qcomment6
+    );
     data.append(
       "qdoc7",
       formData?.qfile7 ? formData?.qfile7 : agentDetails?.qdoc7
@@ -743,7 +824,10 @@ function AuditorQuestions2() {
       "qstatus7",
       qyesbuttonValue7 ? qyesbuttonValue7 : agentDetails?.qstatus7
     );
-    data.append("qcomment7", formData?.qcomment7 ? formData?.qcomment7 : agentDetails?.qcomment7);
+    data.append(
+      "qcomment7",
+      formData?.qcomment7 ? formData?.qcomment7 : agentDetails?.qcomment7
+    );
     axios
       .post(
         `http://ec2-65-2-108-172.ap-south-1.compute.amazonaws.com:5000/adda/submit-data/${id}`,
@@ -1126,53 +1210,49 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc1 ||
-                                      formData?.file1?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc1 === "" ||
-                                              agentDetails.doc1 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file1"
-                                                    type="file"
-                                                    id="file1"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file1")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.file1 && (
-                                                      selectedImage?.file1 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc1 === "" ||
+                                            agentDetails.doc1 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file1"
+                                                  type="file"
+                                                  id="file1"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file1")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file1
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc1}{" "}
-                                              <Link
-                                            to={agentDetails.doc1}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc1 ||
+                                            (formData?.file1?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc1 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc1 === "" ||
@@ -1186,92 +1266,47 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc1 === "" ||
-                                            agentDetails.doc1 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file1"
-                                                  type="file"
-                                                  id="file1"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file1")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file1 && (
-                                                    selectedImage?.file1 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc1}{" "}
-                                            <Link
-                                          to={agentDetails.doc1}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc1 === "" ||
-                                              agentDetails.doc1 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment1 === "" ||
-                                                  agentDetails.comment1 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment1 === "" ||
+                                                agentDetails.comment1 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments11.length} {comments11.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments11.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments11.length}{" "}
+                                                            {comments11.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments11.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -1298,8 +1333,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment1"
-                                                            value={formData?.comment1}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment1
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -1313,7 +1352,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={1}
-                                                                onClick={handlePostComment1}
+                                                                onClick={
+                                                                  handlePostComment1
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -1321,15 +1362,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment1}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment1
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -1473,91 +1513,20 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange3
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton2(true);
-                                            handlecolorchange3();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange4
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton2(false);
-                                            handlecolorchange4();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
                                     id="collapseExample2"
                                   >
-                                    {/* <form action="">
-                                      <div className="form">
-                                        <input
-                                          name="file"
-                                          id="entry_value2"
-                                          style={{
-                                            width: "10rem",
-                                            backgroundColor: "black",
-                                          }}
-                                          //   ref="fileInput"
-                                          type="file"
-                                          //   onchange="getFileName()"
-                                          onChange={
-                                            (e) => handleFileChange(e, "file2")
-                                            // alert("file")
-                                          }
-                                        />
-                                        <span
-                                          id="fileName2"
-                                          className="text-primary "
-                                        >
-                                          {" "}
-                                        </span>{" "}
-                                      </div>
-                                    </form> */}
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc2 ||
-                                      formData?.file2?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc2 === "" ||
-                                              agentDetails.doc2 === "undefined")
-                                              ?   <form action="">
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc2 === "" ||
+                                            agentDetails.doc2 ===
+                                              "undefined") ? (
+                                            <form action="">
                                               <div className="form">
                                                 <input
                                                   name="file2"
@@ -1568,26 +1537,32 @@ function AuditorQuestions2() {
                                                   }
                                                 />
                                                 <div>
-                                                  {selectedImage?.file2 && (
-                                                    selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
+                                                  {selectedImage?.file2
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
                                                   <button
                                                     className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
                                                   >
                                                     Browse
                                                   </button>
                                                 </div>
                                                 <span
                                                   id="fileName"
-                                                  className="text-primary "
+                                                  className="text-primary"
                                                 ></span>
                                               </div>
                                             </form>
-                                              : agentDetails.doc2}{" "}
-                                              <Link
-                                            to={agentDetails.doc2}
+                                          ) : (
+                                            agentDetails?.doc2 ||
+                                            (formData?.file2?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc2 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc2 === "" ||
@@ -1601,91 +1576,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc2 === "" ||
-                                              agentDetails.doc2 === "undefined")
-                                              ?   <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file2"
-                                                  type="file"
-                                                  id="file2"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file2")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file2 && (
-                                                    selectedImage?.file2 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                              : agentDetails.doc2}{" "}
-                                              <Link
-                                            to={agentDetails.doc2}
-                                            className={
-                                              agentDetails &&
-                                              (agentDetails.doc2 === "" ||
-                                                agentDetails.doc2 ===
-                                                  "undefined")
-                                                ? "d-none"
-                                                : "mx-2"
-                                            }
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                          >
-                                            View Document
-                                          </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      )}
+                                        </p>
+                                      </div>
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment2 === "" ||
-                                                  agentDetails.comment2 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment2 === "" ||
+                                                agentDetails.comment2 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments12.length} {comments12.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments12.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments12.length}{" "}
+                                                            {comments12.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments12.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -1712,8 +1644,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment2"
-                                                            value={formData?.comment2}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment2
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -1727,7 +1663,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={2}
-                                                                onClick={handlePostComment2}
+                                                                onClick={
+                                                                  handlePostComment2
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -1735,15 +1673,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment2}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment2
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -1888,44 +1825,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange5
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton3(true);
-                                            handlecolorchange5();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange6
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton3(false);
-                                            handlecolorchange6();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -1933,53 +1832,49 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc3 ||
-                                      formData?.file3?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc3 === "" ||
-                                              agentDetails.doc3 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file3"
-                                                    type="file"
-                                                    id="file3"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file3")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    { (
-                                                      selectedImage?.file3 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc3 === "" ||
+                                            agentDetails.doc3 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file3"
+                                                  type="file"
+                                                  id="file3"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file3")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file3
+                                                    ? "File Uploaded Successfully!"
+                                                    : "Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc3}{" "}
-                                              <Link
-                                            to={agentDetails.doc3}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc3 ||
+                                            (formData?.file3?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc3 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc3 === "" ||
@@ -1993,93 +1888,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc3 === "" ||
-                                            agentDetails.doc3 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file3"
-                                                  type="file"
-                                                  id="file3"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file3")
-                                                  }
-                                                />
-                                                <div>
-                                                  { (
-                                                    selectedImage?.file3 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc3}{" "}
-                                            <Link
-                                          to={agentDetails.doc3}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc3 === "" ||
-                                              agentDetails.doc3 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment3 === "" ||
-                                                  agentDetails.comment3 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment3 === "" ||
+                                                agentDetails.comment3 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments13.length} {comments13.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments13.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments13.length}{" "}
+                                                            {comments13.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments13.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -2106,8 +1956,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment3"
-                                                            value={formData?.comment3}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment3
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -2121,7 +1975,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={3}
-                                                                onClick={handlePostComment3}
+                                                                onClick={
+                                                                  handlePostComment3
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -2129,15 +1985,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment3}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment3
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -2297,44 +2152,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange7
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton4(true);
-                                            handlecolorchange7();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange8
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton4(false);
-                                            handlecolorchange8();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -2342,53 +2159,49 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc4 ||
-                                      formData?.file4?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc4 === "" ||
-                                              agentDetails.doc4 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file4"
-                                                    type="file"
-                                                    id="file4"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file4")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.file4 && (
-                                                      selectedImage?.file4 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc4 === "" ||
+                                            agentDetails.doc4 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file4"
+                                                  type="file"
+                                                  id="file4"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file4")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file4
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc4}{" "}
-                                              <Link
-                                            to={agentDetails.doc4}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc4 ||
+                                            (formData?.file4?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc4 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc4 === "" ||
@@ -2402,93 +2215,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc4 === "" ||
-                                            agentDetails.doc4 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file4"
-                                                  type="file"
-                                                  id="file4"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file4")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file4 && (
-                                                    selectedImage?.file4 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc4}{" "}
-                                            <Link
-                                          to={agentDetails.doc4}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc4 === "" ||
-                                              agentDetails.doc4 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment4 === "" ||
-                                                  agentDetails.comment4 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment4 === "" ||
+                                                agentDetails.comment4 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments14.length} {comments14.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments14.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments14.length}{" "}
+                                                            {comments14.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments14.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -2515,8 +2283,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment4"
-                                                            value={formData?.comment4}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment4
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -2530,7 +2302,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={4}
-                                                                onClick={handlePostComment4}
+                                                                onClick={
+                                                                  handlePostComment4
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -2538,15 +2312,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment4}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment4
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -2686,98 +2459,56 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange9
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton5(true);
-                                            handlecolorchange9();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange10
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton5(false);
-                                            handlecolorchange10();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
                                     id="collapseExample5"
                                   >
-                                   <div>
+                                    <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc5 ||
-                                      formData?.file5?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc5 === "" ||
-                                              agentDetails.doc5 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file5"
-                                                    type="file"
-                                                    id="file5"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file5")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.file5 && (
-                                                      selectedImage?.file5 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc5 === "" ||
+                                            agentDetails.doc5 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file5"
+                                                  type="file"
+                                                  id="file5"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file5")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file5
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc5}{" "}
-                                              <Link
-                                            to={agentDetails.doc5}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc5 ||
+                                            (formData?.file5?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc5 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc5 === "" ||
@@ -2791,93 +2522,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc5 === "" ||
-                                            agentDetails.doc5 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file5"
-                                                  type="file"
-                                                  id="file5"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file5")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file5 && (
-                                                    selectedImage?.file5 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc5}{" "}
-                                            <Link
-                                          to={agentDetails.doc5}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc5 === "" ||
-                                              agentDetails.doc5 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment5 === "" ||
-                                                  agentDetails.comment5 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment5 === "" ||
+                                                agentDetails.comment5 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments15.length} {comments15.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments15.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments15.length}{" "}
+                                                            {comments15.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments15.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -2904,8 +2590,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment5"
-                                                            value={formData?.comment5}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment5
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -2919,7 +2609,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={5}
-                                                                onClick={handlePostComment5}
+                                                                onClick={
+                                                                  handlePostComment5
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -2927,15 +2619,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment5}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment5
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -3079,44 +2770,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange11
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton6(true);
-                                            handlecolorchange11();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange12
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton6(false);
-                                            handlecolorchange12();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -3124,53 +2777,49 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc6 ||
-                                      formData?.file6?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc6 === "" ||
-                                              agentDetails.doc6 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file6"
-                                                    type="file"
-                                                    id="file6"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file6")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.file6 && (
-                                                      selectedImage?.file6 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc6 === "" ||
+                                            agentDetails.doc6 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file6"
+                                                  type="file"
+                                                  id="file6"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file6")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file6
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc6}{" "}
-                                              <Link
-                                            to={agentDetails.doc6}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc6 ||
+                                            (formData?.file6?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc6 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc6 === "" ||
@@ -3184,93 +2833,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc6 === "" ||
-                                            agentDetails.doc6 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file6"
-                                                  type="file"
-                                                  id="file6"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file6")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file6 && (
-                                                    selectedImage?.file6 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc6}{" "}
-                                            <Link
-                                          to={agentDetails.doc6}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc6 === "" ||
-                                              agentDetails.doc6 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment6 === "" ||
-                                                  agentDetails.comment6 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment6 === "" ||
+                                                agentDetails.comment6 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments16.length} {comments16.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments16.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments16.length}{" "}
+                                                            {comments16.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments16.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -3297,8 +2901,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment6"
-                                                            value={formData?.comment6}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment6
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -3312,7 +2920,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={6}
-                                                                onClick={handlePostComment6}
+                                                                onClick={
+                                                                  handlePostComment6
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -3320,15 +2930,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment6}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment6
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -3470,98 +3079,56 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange13
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton7(true);
-                                            handlecolorchange13();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            colorChange14
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            setAcceptbutton7(false);
-                                            handlecolorchange14();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
                                     id="collapseExample7"
                                   >
-                                   <div>
+                                    <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.doc7 ||
-                                      formData?.file7?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.doc7 === "" ||
-                                              agentDetails.doc7 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="file7"
-                                                    type="file"
-                                                    id="file7"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "file7")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.file7 && (
-                                                      selectedImage?.file7 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.doc7 === "" ||
+                                            agentDetails.doc7 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="file7"
+                                                  type="file"
+                                                  id="file7"
+                                                  onChange={(e) =>
+                                                    handleFileChange(e, "file7")
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.file7
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.doc7}{" "}
-                                              <Link
-                                            to={agentDetails.doc7}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.doc7 ||
+                                            (formData?.file7?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.doc7 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.doc7 === "" ||
@@ -3575,92 +3142,47 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.doc7 === "" ||
-                                            agentDetails.doc7 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="file7"
-                                                  type="file"
-                                                  id="file7"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "file7")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.file7 && (
-                                                    selectedImage?.file7 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.doc7}{" "}
-                                            <Link
-                                          to={agentDetails.doc7}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.doc7 === "" ||
-                                              agentDetails.doc7 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.comment7 === "" ||
-                                                  agentDetails.comment7 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.comment7 === "" ||
+                                                agentDetails.comment7 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {comments17.length} {comments17.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {comments17.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {comments17.length}{" "}
+                                                            {comments17.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {comments17.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -3687,8 +3209,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="comment7"
-                                                            value={formData?.comment7}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.comment7
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -3702,7 +3228,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={7}
-                                                                onClick={handlePostComment7}
+                                                                onClick={
+                                                                  handlePostComment7
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -3710,15 +3238,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.comment7}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.comment7
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -3982,44 +3509,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange1
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton1(true);
-                                            qhandlecolorchange1();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange2
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton1(false);
-                                            qhandlecolorchange2();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -4027,53 +3516,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc1 ||
-                                      formData?.qfile1?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc1 === "" ||
-                                              agentDetails.qdoc1 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile1"
-                                                    type="file"
-                                                    id="qfile1"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile1")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile1 && (
-                                                      selectedImage?.qfile1 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc1 === "" ||
+                                            agentDetails.qdoc1 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile1"
+                                                  type="file"
+                                                  id="qfile1"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile1"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile1
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc1}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc1}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc1 ||
+                                            (formData?.qfile1?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc1 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc1 === "" ||
@@ -4087,92 +3575,47 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc1 === "" ||
-                                            agentDetails.qdoc1 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile1"
-                                                  type="file"
-                                                  id="qfile1"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile1")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile1 && (
-                                                    selectedImage?.qfile1 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc1}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc1}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc1 === "" ||
-                                              agentDetails.qdoc1 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment1 === "" ||
-                                                  agentDetails.qcomment1 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment1 === "" ||
+                                                agentDetails.qcomment1 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments11.length} {qcomments11.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments11.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments11.length}{" "}
+                                                            {qcomments11.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments11.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -4199,8 +3642,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment1"
-                                                            value={formData?.qcomment1}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment1
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -4214,7 +3661,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={8}
-                                                                onClick={qhandlePostComment1}
+                                                                onClick={
+                                                                  qhandlePostComment1
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -4222,15 +3671,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment1}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment1
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -4448,44 +3896,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange3
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton2(true);
-                                            qhandlecolorchange3();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange4
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton2(false);
-                                            qhandlecolorchange4();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -4493,53 +3903,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc2 ||
-                                      formData?.qfile2?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc2 === "" ||
-                                              agentDetails.qdoc2 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile2"
-                                                    type="file"
-                                                    id="qfile2"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile2")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile2 && (
-                                                      selectedImage?.qfile2 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc2 === "" ||
+                                            agentDetails.qdoc2 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile2"
+                                                  type="file"
+                                                  id="qfile2"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile2"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile2
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc2}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc2}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc2 ||
+                                            (formData?.qfile2?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc2 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc2 === "" ||
@@ -4553,93 +3962,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc2 === "" ||
-                                            agentDetails.qdoc2 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile2"
-                                                  type="file"
-                                                  id="qfile2"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile2")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile2 && (
-                                                    selectedImage?.qfile2 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc2}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc2}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc2 === "" ||
-                                              agentDetails.qdoc2 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment2 === "" ||
-                                                  agentDetails.qcomment2 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment2 === "" ||
+                                                agentDetails.qcomment2 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments12.length} {qcomments12.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments12.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments12.length}{" "}
+                                                            {qcomments12.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments12.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -4666,8 +4030,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment2"
-                                                            value={formData?.qcomment2}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment2
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -4681,7 +4049,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={9}
-                                                                onClick={qhandlePostComment2}
+                                                                onClick={
+                                                                  qhandlePostComment2
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -4689,15 +4059,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment2}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment2
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -4842,44 +4211,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange5
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton3(true);
-                                            qhandlecolorchange5();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange6
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton3(false);
-                                            qhandlecolorchange6();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -4887,53 +4218,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc3 ||
-                                      formData?.qfile3?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc3 === "" ||
-                                              agentDetails.qdoc3 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile3"
-                                                    type="file"
-                                                    id="qfile3"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile3")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile3 && (
-                                                      selectedImage?.qfile3 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc3 === "" ||
+                                            agentDetails.qdoc3 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile3"
+                                                  type="file"
+                                                  id="qfile3"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile3"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile3
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc3}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc3}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc3 ||
+                                            (formData?.qfile3?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc3 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc3 === "" ||
@@ -4947,93 +4277,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc3 === "" ||
-                                            agentDetails.qdoc3 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile3"
-                                                  type="file"
-                                                  id="qfile3"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile3")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile3 && (
-                                                    selectedImage?.qfile3 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc3}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc3}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc3 === "" ||
-                                              agentDetails.qdoc3 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment3 === "" ||
-                                                  agentDetails.qcomment3 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment3 === "" ||
+                                                agentDetails.qcomment3 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments13.length} {qcomments13.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments13.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments13.length}{" "}
+                                                            {qcomments13.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments13.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -5060,8 +4345,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment3"
-                                                            value={formData?.qcomment3}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment3
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -5075,7 +4364,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={10}
-                                                                onClick={qhandlePostComment3}
+                                                                onClick={
+                                                                  qhandlePostComment3
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -5083,15 +4374,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment3}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment3
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -5251,44 +4541,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange7
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton4(true);
-                                            qhandlecolorchange7();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange8
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton4(false);
-                                            qhandlecolorchange8();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -5296,53 +4548,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc4 ||
-                                      formData?.qfile4?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc4 === "" ||
-                                              agentDetails.qdoc4 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile4"
-                                                    type="file"
-                                                    id="qfile4"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile4")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile4 && (
-                                                      selectedImage?.qfile4 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc4 === "" ||
+                                            agentDetails.qdoc4 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile4"
+                                                  type="file"
+                                                  id="qfile4"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile4"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile4
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc4}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc4}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc4 ||
+                                            (formData?.qfile4?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc4 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc4 === "" ||
@@ -5356,93 +4607,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc4 === "" ||
-                                            agentDetails.qdoc4 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile4"
-                                                  type="file"
-                                                  id="qfile4"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile4")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile4 && (
-                                                    selectedImage?.qfile4 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc4}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc4}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc4 === "" ||
-                                              agentDetails.qdoc4 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment4 === "" ||
-                                                  agentDetails.qcomment4 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment4 === "" ||
+                                                agentDetails.qcomment4 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments14.length} {qcomments14.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments14.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments14.length}{" "}
+                                                            {qcomments14.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments14.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -5469,8 +4675,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment4"
-                                                            value={formData?.qcomment4}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment4
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -5484,7 +4694,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={11}
-                                                                onClick={qhandlePostComment4}
+                                                                onClick={
+                                                                  qhandlePostComment4
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -5492,15 +4704,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment4}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment4
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -5640,43 +4851,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange9
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton5(true);
-                                            qhandlecolorchange9();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange10
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton5(false);
-                                            qhandlecolorchange10();
-                                          }}
-                                        >
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -5684,53 +4858,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc5 ||
-                                      formData?.qfile5?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc5 === "" ||
-                                              agentDetails.qdoc5 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile5"
-                                                    type="file"
-                                                    id="qfile5"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile5")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile5 && (
-                                                      selectedImage?.qfile5 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc5 === "" ||
+                                            agentDetails.qdoc5 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile5"
+                                                  type="file"
+                                                  id="qfile5"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile5"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile5
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc5}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc5}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc5 ||
+                                            (formData?.qfile5?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc5 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc5 === "" ||
@@ -5744,93 +4917,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc5 === "" ||
-                                            agentDetails.qdoc5 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile5"
-                                                  type="file"
-                                                  id="qfile5"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile5")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile5 && (
-                                                    selectedImage?.qfile5 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc5}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc5}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc5 === "" ||
-                                              agentDetails.qdoc5 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment5 === "" ||
-                                                  agentDetails.qcomment5 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment5 === "" ||
+                                                agentDetails.qcomment5 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments15.length} {qcomments15.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments15.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments15.length}{" "}
+                                                            {qcomments15.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments15.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -5857,8 +4985,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment5"
-                                                            value={formData?.qcomment5}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment5
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -5872,7 +5004,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={12}
-                                                                onClick={qhandlePostComment5}
+                                                                onClick={
+                                                                  qhandlePostComment5
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -5880,15 +5014,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment5}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment5
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -6032,44 +5165,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange11
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton6(true);
-                                            qhandlecolorchange11();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faCheck} />{" "}
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange12
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton6(false);
-                                            qhandlecolorchange12();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -6077,53 +5172,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc6 ||
-                                      formData?.qfile6?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc6 === "" ||
-                                              agentDetails.qdoc6 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile6"
-                                                    type="file"
-                                                    id="qfile6"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile6")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile6 && (
-                                                      selectedImage?.qfile6 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc6 === "" ||
+                                            agentDetails.qdoc6 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile6"
+                                                  type="file"
+                                                  id="qfile6"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile6"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile6
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc6}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc6}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc6 ||
+                                            (formData?.qfile6?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc6 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc6 === "" ||
@@ -6137,93 +5231,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc6 === "" ||
-                                            agentDetails.qdoc6 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile6"
-                                                  type="file"
-                                                  id="qfile6"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile6")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile6 && (
-                                                    selectedImage?.qfile6 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc6}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc6}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc6 === "" ||
-                                              agentDetails.qdoc6 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment6 === "" ||
-                                                  agentDetails.qcomment6 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment6 === "" ||
+                                                agentDetails.qcomment6 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments16.length} {qcomments16.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments16.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments16.length}{" "}
+                                                            {qcomments16.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments16.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -6250,8 +5299,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment6"
-                                                            value={formData?.qcomment6}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment6
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -6265,7 +5318,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={13}
-                                                                onClick={qhandlePostComment6}
+                                                                onClick={
+                                                                  qhandlePostComment6
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -6273,15 +5328,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment6}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment6
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
@@ -6423,43 +5477,6 @@ function AuditorQuestions2() {
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
-                                    {/* <div className="col-lg-3 mt-4 text-end">
-                                      <div
-                                        className="btn-group CustomBtnGroup2"
-                                        role="group"
-                                        aria-label="Basic example"
-                                      >
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange13
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton7(true);
-                                            qhandlecolorchange13();
-                                          }}
-                                        >
-                                          Accept
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className={
-                                            qcolorChange14
-                                              ? "btn btn-primary"
-                                              : "btn btn-secondary"
-                                          }
-                                          onClick={() => {
-                                            qsetAcceptbutton7(false);
-                                            qhandlecolorchange14();
-                                          }}
-                                        >
-                                          <FontAwesomeIcon icon={faXmark} />{" "}
-                                          Reject
-                                        </button>
-                                      </div>
-                                    </div> */}
                                   </div>
                                   <div
                                     className="collapse AttachDiv"
@@ -6467,53 +5484,52 @@ function AuditorQuestions2() {
                                   >
                                     <div>
                                       {" "}
-                                      {/* <img
-                                            src={agentDetails?.doc1}
-                                            alt="Not Uploaded..."
-                                            width="4%"
-                                            className=""
-                                          />{" "} */}
-                                      {agentDetails?.qdoc7 ||
-                                      formData?.qfile7?.length ? (
-                                        <div className="d-flex justify-content-center w-100">
-                                          <p className="w-100">
-                                            {" "}
-                                            {agentDetails &&
-                                            (agentDetails.qdoc7 === "" ||
-                                              agentDetails.qdoc7 === "undefined")
-                                              ? (
-                                                <form action="">
-                                                <div className="form">
-                                                  <input
-                                                    name="qfile7"
-                                                    type="file"
-                                                    id="qfile7"
-                                                    onChange={(e) =>
-                                                      handleFileChange(e, "qfile7")
-                                                    }
-                                                  />
-                                                  <div>
-                                                    {selectedImage?.qfile7 && (
-                                                      selectedImage?.qfile7 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                    )}
-                                                   
-                                                    <button
-                                                      className="btn bg-color-dblue btn-primary"
-                                                      style={{ marginLeft: "5px" }}
-                                                    >
-                                                      Browse
-                                                    </button>
-                                                  </div>
-                                                  <span
-                                                    id="fileName"
-                                                    className="text-primary "
-                                                  ></span>
+                                      <div className="d-flex justify-content-center w-100">
+                                        <p className="w-100">
+                                          {agentDetails &&
+                                          (agentDetails.qdoc7 === "" ||
+                                            agentDetails.qdoc7 ===
+                                              "undefined") ? (
+                                            <form action="">
+                                              <div className="form">
+                                                <input
+                                                  name="qfile7"
+                                                  type="file"
+                                                  id="qfile7"
+                                                  onChange={(e) =>
+                                                    handleFileChange(
+                                                      e,
+                                                      "qfile7"
+                                                    )
+                                                  }
+                                                />
+                                                <div>
+                                                  {selectedImage?.qfile7
+                                                    ? "File Uploaded Successfully!"
+                                                    : " Upload your files here.."}
+                                                  <button
+                                                    className="btn bg-color-dblue btn-primary"
+                                                    style={{
+                                                      marginLeft: "5px",
+                                                    }}
+                                                  >
+                                                    Browse
+                                                  </button>
                                                 </div>
-                                              </form>
-                                              )
-                                              : agentDetails.qdoc7}{" "}
-                                              <Link
-                                            to={agentDetails.qdoc7}
+                                                <span
+                                                  id="fileName"
+                                                  className="text-primary"
+                                                ></span>
+                                              </div>
+                                            </form>
+                                          ) : (
+                                            agentDetails?.qdoc7 ||
+                                            (formData?.qfile7?.length
+                                              ? ""
+                                              : "No document uploaded.")
+                                          )}
+                                          <Link
+                                            to={agentDetails?.qdoc7 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
                                               (agentDetails.qdoc7 === "" ||
@@ -6527,93 +5543,48 @@ function AuditorQuestions2() {
                                           >
                                             View Document
                                           </Link>
-                                          </p>
-                                          
-                                        </div>
-                                      ) : (
-                                        <div className="d-flex justify-content-center w-100">
-                                        <p className="w-100">
-                                          {" "}
-                                          {agentDetails &&
-                                          (agentDetails.qdoc7 === "" ||
-                                            agentDetails.qdoc7 === "undefined")
-                                            ? (
-                                              <form action="">
-                                              <div className="form">
-                                                <input
-                                                  name="qfile7"
-                                                  type="file"
-                                                  id="qfile7"
-                                                  onChange={(e) =>
-                                                    handleFileChange(e, "qfile7")
-                                                  }
-                                                />
-                                                <div>
-                                                  {selectedImage?.qfile7 && (
-                                                    selectedImage?.qfile7 ? "File Uploaded Successfully!" : " Upload your files here.."
-                                                  )}
-                                                 
-                                                  <button
-                                                    className="btn bg-color-dblue btn-primary"
-                                                    style={{ marginLeft: "5px" }}
-                                                  >
-                                                    Browse
-                                                  </button>
-                                                </div>
-                                                <span
-                                                  id="fileName"
-                                                  className="text-primary "
-                                                ></span>
-                                              </div>
-                                            </form>
-                                            )
-                                            : agentDetails.qdoc7}{" "}
-                                            <Link
-                                          to={agentDetails.qdoc7}
-                                          className={
-                                            agentDetails &&
-                                            (agentDetails.qdoc7 === "" ||
-                                              agentDetails.qdoc7 ===
-                                                "undefined")
-                                              ? "d-none"
-                                              : "mx-2"
-                                          }
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          View Document
-                                        </Link>
                                         </p>
-                                        
                                       </div>
-                                      )}
                                     </div>
                                     <div className="SmallHead">Comments</div>
 
                                     <div className="container">
                                       <div className="col-md-12" id="fbcomment">
                                         <div className="header_comment">
-                                            <div className="float-start w-100">
-                                              {" "}
-                                              <span className="count_comment">
-                                                {agentDetails &&
-                                                (agentDetails.qcomment7 === "" ||
-                                                  agentDetails.qcomment7 ===
-                                                    "undefined")
-                                                  ? (  
-                                                  <div className="container">
-                                                  <div className="col-md-12" id="fbcomment">
+                                          <div className="float-start w-100">
+                                            {" "}
+                                            <span className="count_comment">
+                                              {agentDetails &&
+                                              (agentDetails.qcomment7 === "" ||
+                                                agentDetails.qcomment7 ===
+                                                  "undefined") ? (
+                                                <div className="container">
+                                                  <div
+                                                    className="col-md-12"
+                                                    id="fbcomment"
+                                                  >
                                                     <div className="header_comment">
                                                       <div className="">
                                                         <div className="float-start">
-                                                        <span className="count_comment">
-                                                           {qcomments17.length} {qcomments17.length === 1 ? 'comment' : 'comments'}
-                                                            </span>
-                                                                <ul>
-                                                                {qcomments17.map((comment, index) => (
-                                                                <li key={index}>{comment}</li>
-                                                              ))}
-                                                                    </ul>
+                                                          <span className="count_comment">
+                                                            {qcomments17.length}{" "}
+                                                            {qcomments17.length ===
+                                                            1
+                                                              ? "comment"
+                                                              : "comments"}
+                                                          </span>
+                                                          <ul>
+                                                            {qcomments17.map(
+                                                              (
+                                                                comment,
+                                                                index
+                                                              ) => (
+                                                                <li key={index}>
+                                                                  {comment}
+                                                                </li>
+                                                              )
+                                                            )}
+                                                          </ul>
                                                         </div>
                                                         {/* <div className="float-end">
                                                           <span className="sort_title">
@@ -6640,8 +5611,12 @@ function AuditorQuestions2() {
                                                             className="commentar"
                                                             placeholder="Add a comment..."
                                                             name="qcomment7"
-                                                            value={formData?.qcomment7}
-                                                            onChange={handleInputChange}
+                                                            value={
+                                                              formData?.qcomment7
+                                                            }
+                                                            onChange={
+                                                              handleInputChange
+                                                            }
                                                           />
                                                           <div className="box_post">
                                                             <div className="pull-right">
@@ -6655,7 +5630,9 @@ function AuditorQuestions2() {
                                                               <button
                                                                 type="button"
                                                                 value={14}
-                                                                onClick={qhandlePostComment7}
+                                                                onClick={
+                                                                  qhandlePostComment7
+                                                                }
                                                               >
                                                                 Post
                                                               </button>
@@ -6663,15 +5640,14 @@ function AuditorQuestions2() {
                                                           </div>
                                                         </div>
                                                       </div>
-                                                      <div className="row">
-                                                        
-                                                      </div>
+                                                      <div className="row"></div>
                                                     </div>
                                                   </div>
                                                 </div>
-                                                )
-                                                  : agentDetails?.qcomment7}
-                                              </span>{" "}
+                                              ) : (
+                                                agentDetails?.qcomment7
+                                              )}
+                                            </span>{" "}
                                           </div>
                                         </div>
                                       </div>
