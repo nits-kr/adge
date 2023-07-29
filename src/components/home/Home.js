@@ -489,7 +489,7 @@ function Home() {
                                 </button>
                                 <Link
                                   type="button"
-                                  to={`/adge/auditior-question/${currentItem._id}`}
+                                  to={`/adge/auditior-questionview/${currentItem._id}`}
                                   className="btn btn-sm tableBtn-blue mx-1"
                                   onClick={() => {
                                     setItemId3(currentItem?._id);

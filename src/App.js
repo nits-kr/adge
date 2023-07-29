@@ -12,6 +12,7 @@ import ActionPlan from "./components/ActionPlan";
 import History from "./components/History";
 import AdgeQuestions2 from "./components/adgeQustion/AdgeQuestion2";
 import AuditorQuestions2 from "./components/auditorQuestion/AuditorQuestions2";
+import AuditorQuestionViewOnly from "./components/auditorQuestion/AuditorQuestionViewOnly";
 
 function App() {
   return (
@@ -42,6 +43,12 @@ function App() {
             className="active"
             path="/adge/auditior-question/:id"
             element={<AuditorQuestions2/>}
+          />
+          <Route
+            
+            className="active"
+            path="/adge/auditior-questionview/:id"
+            element={<AuditorQuestionViewOnly/>}
           />
           
           <Route
