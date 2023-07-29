@@ -6,6 +6,7 @@ import {
   faComment,
   faCheck,
   faXmark,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
@@ -5730,7 +5731,7 @@ function AuditorQuestionViewOnly() {
                             navigate("/adge/home")
                           }}
                         >
-                          Reject
+                          <FontAwesomeIcon icon={faArrowRight} /> {" "}Home
                         </button>
                       </div>
                     ) : (
