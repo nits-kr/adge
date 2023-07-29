@@ -5707,7 +5707,7 @@ function AuditorQuestionViewOnly() {
                     </button>
                     {page === 10 ? (
                       <div>
-                        <button
+                        {/* <button
                           type="button"
                           className="active"
                           name="next"
@@ -5719,7 +5719,7 @@ function AuditorQuestionViewOnly() {
                           }}
                         >
                           Submit
-                        </button>
+                        </button> */}
                         <button
                           type="button"
                           className="active bg-danger ms-2"
@@ -5727,6 +5727,7 @@ function AuditorQuestionViewOnly() {
                           onClick={() => {
                             page === 10 ? setPage(10) : setPage(page + 1);
                             // handleSaveChanges2();
+                            navigate("/adge/home")
                           }}
                         >
                           Reject

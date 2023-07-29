@@ -838,14 +838,13 @@ function AuditorQuestions2() {
         await handleSetData(response?.data?.results?.data);
         console.log(response?.data?.results?.data);
         Swal.fire({
-          title: "Question Saved!",
-          text: "Your question has been created successfully.",
+          title: "Form Data Saved!",
+          text: "Your Form has been created successfully.",
           icon: "success",
           confirmButtonColor: "#3085d6",
           confirmButtonText: "OK",
         }).then((result) => {
           if (result.isConfirmed) {
-            // window.location.reload(); // refresh the page after success message is closed
             navigate("/adge/home");
             window.location.reload();
           }
