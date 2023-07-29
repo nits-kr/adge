@@ -1213,35 +1213,6 @@ function AuditorQuestionViewOnly() {
                                           (agentDetails.doc1 === "" ||
                                             agentDetails.doc1 ===
                                               "undefined") ? (
-                                            // <form action="">
-                                            //   <div className="form">
-                                            //     <input
-                                            //       name="file1"
-                                            //       type="file"
-                                            //       id="file1"
-                                            //       onChange={(e) =>
-                                            //         handleFileChange(e, "file1")
-                                            //       }
-                                            //     />
-                                            //     <div>
-                                            //       {selectedImage?.file1
-                                            //         ? "File Uploaded Successfully!"
-                                            //         : " Upload your files here.."}
-                                            //       <button
-                                            //         className="btn bg-color-dblue btn-primary"
-                                            //         style={{
-                                            //           marginLeft: "5px",
-                                            //         }}
-                                            //       >
-                                            //         Browse
-                                            //       </button>
-                                            //     </div>
-                                            //     <span
-                                            //       id="fileName"
-                                            //       className="text-primary"
-                                            //     ></span>
-                                            //   </div>
-                                            // </form>
                                             "File Not Uploaded"
                                           ) : (
                                             agentDetails?.doc1 ||
