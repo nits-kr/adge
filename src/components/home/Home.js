@@ -41,13 +41,18 @@ function Home() {
   const [title, setTitle] = useState("");
   const [itemId, setItemId] = useState("");
   const [title2, setTitle2] = useState("");
+  const [title5, setTitle5] = useState("");
   const [itemId2, setItemId2] = useState("");
+  console.log("itemId2", itemId2);
   const [itemId3, setItemId3] = useState("");
   const [titleError, setTitleError] = useState("");
   const [userNameError, setUserNameError] = useState("");
 
   const [userName, setUserName] = useState("");
   const [scheduledList, setScheduledList] = useState();
+  const handleEdit = (currentItem) => {
+    setTitle5(currentItem?.title || "");
+  };
   useEffect(() => {
     if (blog?.data?.results) {
       setScheduledList(blog?.data?.results);
@@ -147,6 +152,7 @@ function Home() {
       title: title2,
     };
     updateDuplicate(editDuplicate);
+    window.location.reload();
   };
 
   return (
@@ -483,7 +489,10 @@ function Home() {
                                   data-bs-toggle="modal"
                                   data-bs-target="#ExtralargeModal"
                                   fdprocessedid="8wai4"
-                                  onClick={() => setItemId2(currentItem?._id)}
+                                  onClick={() => {
+                                    setItemId2(currentItem?._id);
+                                    handleEdit(currentItem);
+                                  }}
                                 >
                                   <FontAwesomeIcon icon={faCopy} /> Duplicate
                                 </button>
@@ -550,7 +559,7 @@ function Home() {
                 aria-label="Close"
               />
             </div>
-            <div className="modal-body">
+            <div className="modal-body" style={{marginTop:"35px"}}>
               <form>
                 <div className="row mb-3">
                   <label
@@ -565,7 +574,8 @@ function Home() {
                       type="text"
                       className="form-control"
                       id="inputText"
-                      placeholder="Data Management Audit-June2023"
+                      // placeholder="Data Management Audit-June2023"
+                      defaultValue={title5}
                       onChange={(e) => setTitle2(e.target.value)}
                     />
                   </div>
