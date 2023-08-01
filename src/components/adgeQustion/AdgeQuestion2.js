@@ -723,7 +723,7 @@ function AdgeQuestions2() {
       <Navbar />
       <main id="main" className="main pb-5">
         <div className="container-fluid">
-          <div className="card  StaticCard" >
+          <div className="card  StaticCard">
             <div className="card-body">
               <div className="step-progress">
                 <div className="StepsHeader">
