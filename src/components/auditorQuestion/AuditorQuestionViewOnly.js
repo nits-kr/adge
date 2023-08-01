@@ -3194,6 +3194,28 @@ function AuditorQuestionViewOnly() {
                                               ) : (
                                                 agentDetails?.qcomment1
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment7 === "" ||
+                                                agentDetails.addaComment7 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment7
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment7 === "" ||
+                                                agentDetails.auditorComment7 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment7
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -3498,100 +3520,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment2 === "" ||
                                                 agentDetails.qcomment2 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments12.length}{" "}
-                                                //             {qcomments12.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments12.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment2"
-                                                //             value={
-                                                //               formData?.qcomment2
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={9}
-                                                //                 onClick={
-                                                //                   qhandlePostComment2
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment2
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment8 === "" ||
+                                                agentDetails.addaComment8 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment8
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment8 === "" ||
+                                                agentDetails.auditorComment8 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment8
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -3823,100 +3782,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment3 === "" ||
                                                 agentDetails.qcomment3 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments13.length}{" "}
-                                                //             {qcomments13.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments13.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment3"
-                                                //             value={
-                                                //               formData?.qcomment3
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={10}
-                                                //                 onClick={
-                                                //                   qhandlePostComment3
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment3
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment9 === "" ||
+                                                agentDetails.addaComment9 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment9
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment9 === "" ||
+                                                agentDetails.auditorComment9 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment9
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -4163,100 +4059,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment4 === "" ||
                                                 agentDetails.qcomment4 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments14.length}{" "}
-                                                //             {qcomments14.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments14.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment4"
-                                                //             value={
-                                                //               formData?.qcomment4
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={11}
-                                                //                 onClick={
-                                                //                   qhandlePostComment4
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment4
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment10 === "" ||
+                                                agentDetails.addaComment10 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment10
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment10 === "" ||
+                                                agentDetails.auditorComment10 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment10
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -4483,100 +4316,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment5 === "" ||
                                                 agentDetails.qcomment5 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments15.length}{" "}
-                                                //             {qcomments15.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments15.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment5"
-                                                //             value={
-                                                //               formData?.qcomment5
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={12}
-                                                //                 onClick={
-                                                //                   qhandlePostComment5
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment5
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment11 === "" ||
+                                                agentDetails.addaComment11 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment11
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment11 === "" ||
+                                                agentDetails.auditorComment11 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment11
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -4807,100 +4577,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment6 === "" ||
                                                 agentDetails.qcomment6 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments16.length}{" "}
-                                                //             {qcomments16.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments16.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment6"
-                                                //             value={
-                                                //               formData?.qcomment6
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={13}
-                                                //                 onClick={
-                                                //                   qhandlePostComment6
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment6
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment13 === "" ||
+                                                agentDetails.addaComment13 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment13
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment13 === "" ||
+                                                agentDetails.auditorComment13 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment13
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
@@ -5129,100 +4836,37 @@ function AuditorQuestionViewOnly() {
                                           <div className="float-start w-100">
                                             {" "}
                                             <span className="count_comment">
+                                            <span style={{color:"#5058dd"}}>ADGE: {" "} </span>
                                               {agentDetails &&
                                               (agentDetails.qcomment7 === "" ||
                                                 agentDetails.qcomment7 ===
                                                   "undefined") ? (
-                                                // <div className="container">
-                                                //   <div
-                                                //     className="col-md-12"
-                                                //     id="fbcomment"
-                                                //   >
-                                                //     <div className="header_comment">
-                                                //       <div className="">
-                                                //         <div className="float-start">
-                                                //           <span className="count_comment">
-                                                //             {qcomments17.length}{" "}
-                                                //             {qcomments17.length ===
-                                                //             1
-                                                //               ? "comment"
-                                                //               : "comments"}
-                                                //           </span>
-                                                //           <ul>
-                                                //             {qcomments17.map(
-                                                //               (
-                                                //                 comment,
-                                                //                 index
-                                                //               ) => (
-                                                //                 <li key={index}>
-                                                //                   {comment}
-                                                //                 </li>
-                                                //               )
-                                                //             )}
-                                                //           </ul>
-                                                //         </div>
-                                                //         {/* <div className="float-end">
-                                                //           <span className="sort_title">
-                                                //             Sort by
-                                                //           </span>
-                                                //           <select className="sort_by">
-                                                //             <option>Top</option>
-                                                //             <option>Newest</option>
-                                                //             <option>Oldest</option>
-                                                //           </select>
-                                                //         </div> */}
-                                                //       </div>
-                                                //     </div>
-                                                //     <div className="body_comment">
-                                                //       <div className="row">
-                                                //         <div className="avatar_comment col-md-1">
-                                                //           <img
-                                                //             src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //             alt="avatar"
-                                                //           />
-                                                //         </div>
-                                                //         <div className="box_comment col-md-11">
-                                                //           <textarea
-                                                //             className="commentar"
-                                                //             placeholder="Add a comment..."
-                                                //             name="qcomment7"
-                                                //             value={
-                                                //               formData?.qcomment7
-                                                //             }
-                                                //             onChange={
-                                                //               handleInputChange
-                                                //             }
-                                                //           />
-                                                //           <div className="box_post">
-                                                //             <div className="pull-right">
-                                                //               <span>
-                                                //                 <img
-                                                //                   src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg"
-                                                //                   alt="avatar"
-                                                //                 />
-                                                //                 <i className="fa fa-caret-down" />
-                                                //               </span>
-                                                //               <button
-                                                //                 type="button"
-                                                //                 value={14}
-                                                //                 onClick={
-                                                //                   qhandlePostComment7
-                                                //                 }
-                                                //               >
-                                                //                 Post
-                                                //               </button>
-                                                //             </div>
-                                                //           </div>
-                                                //         </div>
-                                                //       </div>
-                                                //       <div className="row"></div>
-                                                //     </div>
-                                                //   </div>
-                                                // </div>
                                                 "No Comment"
                                               ) : (
                                                 agentDetails?.qcomment7
                                               )}
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>ADDA: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.addaComment14 === "" ||
+                                                agentDetails.addaComment14 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.addaComment14
+                                              )}
+                                              </div>
+                                              <div>
+                                            <span style={{color:"#5058dd"}}>Auditor: {" "} </span>
+                                              {agentDetails &&
+                                              (agentDetails.auditorComment14 === "" ||
+                                                agentDetails.auditorComment14 ===
+                                                  "undefined") ? (
+                                                "No Comment"
+                                              ) : (
+                                                agentDetails?.auditorComment14
+                                              )}
+                                              </div>
                                             </span>{" "}
                                           </div>
                                         </div>
