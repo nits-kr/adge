@@ -696,17 +696,26 @@ function AdgeQuestions2() {
       id: generatedId,
     };
     reject(editAddress);
-
+  
     Swal.fire({
       icon: "success",
       title: "Rejected",
-      text: "Your have been Rejected.",
+      text: "Form has been Rejected.",
       // timer: 10000,
       // timerProgressBar: true,
+      showCancelButton: false,
+      confirmButtonText: "OK",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/adge/home");
+        window.location.reload();
+        // setTimeout(() => {
+        //   window.location.reload();
+        // }, 1000);
+      }
     });
-    // window.location.href = "/adge/home";
-    navigate("/adge/home")
   };
+  
   return (
     <>
       {/* ======= Header ======= */}
@@ -714,7 +723,7 @@ function AdgeQuestions2() {
       <Navbar />
       <main id="main" className="main pb-5">
         <div className="container-fluid">
-          <div className="card  StaticCard">
+          <div className="card  StaticCard" >
             <div className="card-body">
               <div className="step-progress">
                 <div className="StepsHeader">

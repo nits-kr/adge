@@ -1170,11 +1170,15 @@ function AuditorQuestionViewOnly() {
                                         <span className="badge badge-number">
                                           {" "}
                                           {/* {array?.length} */}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc1 === "" ||
                                             agentDetails.doc1 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc1].length}
+                                            : [agentDetails?.doc1].length} */}
+                                            {
+                                          !agentDetails?.doc1?.length
+                                            ? 0
+                                            : agentDetails?.doc1?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -1191,12 +1195,10 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
-                                          (agentDetails.comment1 === "" ||
-                                            agentDetails.comment1 ===
-                                              "undefined")
+                                          {
+                                          !agentDetails?.comment1?.length
                                             ? 0
-                                            : [agentDetails?.comment1].length}
+                                            : agentDetails?.comment1?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -1220,7 +1222,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc1 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -1234,7 +1236,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -1453,11 +1455,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc2 === "" ||
                                             agentDetails.doc2 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc2].length}
+                                            : [agentDetails?.doc2].length} */}
+                                            {
+                                          !agentDetails?.doc2?.length
+                                            ? 0
+                                            : agentDetails?.doc2?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -1474,12 +1480,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment2 === "" ||
                                             agentDetails.comment2 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment2].length}
+                                            : [agentDetails?.comment2].length} */}
+                                            {
+                                          !agentDetails?.comment2?.length
+                                            ? 0
+                                            : agentDetails?.comment2?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -1532,7 +1542,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc2 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -1546,7 +1556,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -1681,11 +1691,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc3 === "" ||
                                             agentDetails.doc3 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc3].length}
+                                            : [agentDetails?.doc3].length} */}
+                                            {
+                                          !agentDetails?.doc3?.length
+                                            ? 0
+                                            : agentDetails?.doc3?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -1702,12 +1716,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment3 === "" ||
                                             agentDetails.comment3 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment3].length}
+                                            : [agentDetails?.comment3].length} */}
+                                            {
+                                          !agentDetails?.comment3?.length
+                                            ? 0
+                                            : agentDetails?.comment3?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -1760,7 +1778,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc3 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -1774,7 +1792,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -2010,11 +2028,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc4 === "" ||
                                             agentDetails.doc4 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc4].length}
+                                            : [agentDetails?.doc4].length} */}
+                                            {
+                                          !agentDetails?.doc4?.length
+                                            ? 0
+                                            : agentDetails?.doc4?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2031,12 +2053,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment4 === "" ||
                                             agentDetails.comment4 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment4].length}
+                                            : [agentDetails?.comment4].length} */}
+                                            {
+                                          !agentDetails?.comment4?.length
+                                            ? 0
+                                            : agentDetails?.comment4?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -2089,7 +2115,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc4 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -2103,7 +2129,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -2319,11 +2345,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc5 === "" ||
                                             agentDetails.doc5 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc5].length}
+                                            : [agentDetails?.doc5].length} */}
+                                            {
+                                          !agentDetails?.doc5?.length
+                                            ? 0
+                                            : agentDetails?.doc5?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2340,12 +2370,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment5 === "" ||
                                             agentDetails.comment5 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment5].length}
+                                            : [agentDetails?.comment5].length} */}
+                                            {
+                                          !agentDetails?.comment5?.length
+                                            ? 0
+                                            : agentDetails?.comment5?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -2398,7 +2432,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc5 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -2412,7 +2446,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -2632,11 +2666,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc6 === "" ||
                                             agentDetails.doc6 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc6].length}
+                                            : [agentDetails?.doc6].length} */}
+                                            {
+                                          !agentDetails?.doc6?.length
+                                            ? 0
+                                            : agentDetails?.doc6?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2653,12 +2691,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment6 === "" ||
                                             agentDetails.comment6 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment6].length}
+                                            : [agentDetails?.comment6].length} */}
+                                            {
+                                          !agentDetails?.comment6?.length
+                                            ? 0
+                                            : agentDetails?.comment6?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -2711,7 +2753,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc6 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -2725,7 +2767,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -2943,11 +2985,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.doc7 === "" ||
                                             agentDetails.doc7 === "undefined")
                                             ? 0
-                                            : [agentDetails?.doc7].length}
+                                            : [agentDetails?.doc7].length} */}
+                                            {
+                                          !agentDetails?.doc7?.length
+                                            ? 0
+                                            : agentDetails?.doc7?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -2964,12 +3010,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.comment7 === "" ||
                                             agentDetails.comment7 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.comment7].length}
+                                            : [agentDetails?.comment7].length} */}
+                                            {
+                                          !agentDetails?.comment7?.length
+                                            ? 0
+                                            : agentDetails?.comment7?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3022,7 +3072,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.doc7 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -3036,7 +3086,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -3375,11 +3425,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc1 === "" ||
                                             agentDetails.qdoc1 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc1].length}
+                                            : [agentDetails?.qdoc1].length} */}
+                                            {
+                                          !agentDetails?.qdoc1?.length
+                                            ? 0
+                                            : agentDetails?.qdoc1?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -3396,12 +3450,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment1 === "" ||
                                             agentDetails.qcomment1 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment1].length}
+                                            : [agentDetails?.qcomment1].length} */}
+                                             {
+                                          !agentDetails?.qcomment1?.length
+                                            ? 0
+                                            : agentDetails?.qcomment1?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3457,7 +3515,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc1 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -3471,7 +3529,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -3764,11 +3822,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc2 === "" ||
                                             agentDetails.qdoc2 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc2].length}
+                                            : [agentDetails?.qdoc2].length} */}
+                                             {
+                                          !agentDetails?.qdoc2?.length
+                                            ? 0
+                                            : agentDetails?.qdoc2?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -3785,12 +3847,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment2 === "" ||
                                             agentDetails.qcomment2 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment2].length}
+                                            : [agentDetails?.qcomment2].length} */}
+                                             {
+                                          !agentDetails?.qcomment2?.length
+                                            ? 0
+                                            : agentDetails?.qcomment2?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -3846,7 +3912,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc2 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -3860,7 +3926,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -4081,11 +4147,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc3 === "" ||
                                             agentDetails.qdoc3 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc3].length}
+                                            : [agentDetails?.qdoc3].length} */}
+                                             {
+                                          !agentDetails?.qdoc3?.length
+                                            ? 0
+                                            : agentDetails?.qdoc3?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -4102,12 +4172,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment3 === "" ||
                                             agentDetails.qcomment3 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment3].length}
+                                            : [agentDetails?.qcomment3].length} */}
+                                             {
+                                          !agentDetails?.qcomment3?.length
+                                            ? 0
+                                            : agentDetails?.qcomment3?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -4163,7 +4237,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc3 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -4177,7 +4251,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -4413,11 +4487,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc4 === "" ||
                                             agentDetails.qdoc4 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc4].length}
+                                            : [agentDetails?.qdoc4].length} */}
+                                             {
+                                          !agentDetails?.qdoc4?.length
+                                            ? 0
+                                            : agentDetails?.qdoc4?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -4434,12 +4512,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment4 === "" ||
                                             agentDetails.qcomment4 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment4].length}
+                                            : [agentDetails?.qcomment4].length} */}
+                                             {
+                                          !agentDetails?.qcomment4?.length
+                                            ? 0
+                                            : agentDetails?.qcomment4?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -4495,7 +4577,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc4 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -4509,7 +4591,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -4725,11 +4807,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc5 === "" ||
                                             agentDetails.qdoc5 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc5].length}
+                                            : [agentDetails?.qdoc5].length} */}
+                                             {
+                                          !agentDetails?.qdoc5?.length
+                                            ? 0
+                                            : agentDetails?.qdoc5?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -4746,12 +4832,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment5 === "" ||
                                             agentDetails.qcomment5 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment5].length}
+                                            : [agentDetails?.qcomment5].length} */}
+                                             {
+                                          !agentDetails?.qcomment5?.length
+                                            ? 0
+                                            : agentDetails?.qcomment5?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -4807,7 +4897,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc5 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -4821,7 +4911,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -5041,11 +5131,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc6 === "" ||
                                             agentDetails.qdoc6 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc6].length}
+                                            : [agentDetails?.qdoc6].length} */}
+                                             {
+                                          !agentDetails?.qdoc6?.length
+                                            ? 0
+                                            : agentDetails?.qdoc6?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -5062,12 +5156,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment6 === "" ||
                                             agentDetails.qcomment6 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment6].length}
+                                            : [agentDetails?.qcomment6].length} */}
+                                             {
+                                          !agentDetails?.qcomment6?.length
+                                            ? 0
+                                            : agentDetails?.qcomment6?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -5123,7 +5221,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc6 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -5137,7 +5235,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
@@ -5355,11 +5453,15 @@ function AuditorQuestionViewOnly() {
                                         />{" "}
                                         <span className="badge badge-number">
                                           {" "}
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qdoc7 === "" ||
                                             agentDetails.qdoc7 === "undefined")
                                             ? 0
-                                            : [agentDetails?.qdoc7].length}
+                                            : [agentDetails?.qdoc7].length} */}
+                                             {
+                                          !agentDetails?.qdoc7?.length
+                                            ? 0
+                                            : agentDetails?.qdoc7?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                       <Link
@@ -5376,12 +5478,16 @@ function AuditorQuestionViewOnly() {
                                           style={{ color: "#005cfa" }}
                                         />{" "}
                                         <span className="badge badge-number">
-                                          {agentDetails &&
+                                          {/* {agentDetails &&
                                           (agentDetails.qcomment7 === "" ||
                                             agentDetails.qcomment7 ===
                                               "undefined")
                                             ? 0
-                                            : [agentDetails?.qcomment7].length}
+                                            : [agentDetails?.qcomment7].length} */}
+                                             {
+                                          !agentDetails?.qcomment7?.length
+                                            ? 0
+                                            : agentDetails?.qcomment7?.length}
                                         </span>{" "}
                                       </Link>{" "}
                                     </div>
@@ -5437,7 +5543,7 @@ function AuditorQuestionViewOnly() {
                                               ? ""
                                               : "No document uploaded.")
                                           )}
-                                          <Link
+                                          {/* <Link
                                             to={agentDetails?.qdoc7 || "#"} // Replace "#" with the default link if needed.
                                             className={
                                               agentDetails &&
@@ -5451,7 +5557,7 @@ function AuditorQuestionViewOnly() {
                                             rel="noopener noreferrer"
                                           >
                                             View Document
-                                          </Link>
+                                          </Link> */}
                                         </p>
                                       </div>
                                     </div>
