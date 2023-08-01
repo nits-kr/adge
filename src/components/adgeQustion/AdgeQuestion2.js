@@ -5185,10 +5185,8 @@ function AdgeQuestions2() {
                           type="button"
                           className="active mx-2"
                           name="draft"
-                          
                           onClick={() => {
                             handleSaveChanges2();
-                            // handle saving as draft logic here
                           }}
                         >
                           Save as Draft
@@ -5202,7 +5200,6 @@ function AdgeQuestions2() {
                           name="next"
                           onClick={() => {
                             setPage(10);
-                            // handle submission logic here
                             handleOnSave();
                           }}
                         >
@@ -5214,9 +5211,9 @@ function AdgeQuestions2() {
                           name="next"
                           onClick={() => {
                             setPage(10);
-                            // handle submission logic here
                             // handleOnSave();
-                            window.location.href = "/adge/home";
+                            // window.location.href = "/adge/home";
+                            navigate("/adge/home")
                           }}
                         >
                           Reject
@@ -5258,10 +5255,10 @@ function AdgeQuestions2() {
                       type="button"
                       className="active out bg-danger"
                       name="finish"
-                      onClick={() => {
+                      // onClick={() => {
                         // navigate to home page logic here
-                        window.location.href = "/adge/home";
-                      }}
+                        // window.location.href = "/adge/home";
+                      // }}
                     >
                       Reject
                     </button>
