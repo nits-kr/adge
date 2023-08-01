@@ -150,6 +150,16 @@ export const PostApi = createApi({
         method: "post",
       }),
     }),
+    addReject: builder.mutation({
+      query: (body) => {
+        const { id } = body;
+        console.log("viewDetails id", id);
+        return {
+          url: `/adda/auditor-rejected/${id}`,
+          method: "post",
+        };
+      },
+    }),
   }),
 });
 
@@ -171,4 +181,5 @@ export const {
   useQuestionListMutation,
   useUpdateQuestionListMutation,
   useDeleteHomeFormMutation,
+  useAddRejectMutation,
 } = PostApi;

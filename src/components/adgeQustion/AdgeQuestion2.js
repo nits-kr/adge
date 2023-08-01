@@ -7,10 +7,12 @@ import { faUpload, faComment } from "@fortawesome/free-solid-svg-icons";
 import { useSaveDraftMutation } from "../../services/Post";
 import Header from "../Header";
 import Navbar from "../Navbar";
+import { useAddRejectMutation } from "../../services/Post";
 
 function AdgeQuestions2() {
   const [page, setPage] = useState(1);
   const [saveDraft, res] = useSaveDraftMutation();
+  const [reject, r] = useAddRejectMutation();
 
   const [generatedId, setGeneratedId] = useState("");
   const [yesbutton1, setYesbutton1] = useState();
@@ -688,6 +690,22 @@ function AdgeQuestions2() {
       .catch((error) => {
         console.log(error.response.data);
       });
+  };
+  const handleSaveChanges4 = () => {
+    const editAddress = {
+      id: generatedId,
+    };
+    reject(editAddress);
+
+    Swal.fire({
+      icon: "success",
+      title: "Rejected",
+      text: "Your have been Rejected.",
+      // timer: 10000,
+      // timerProgressBar: true,
+    });
+    // window.location.href = "/adge/home";
+    navigate("/adge/home")
   };
   return (
     <>
@@ -5213,7 +5231,8 @@ function AdgeQuestions2() {
                             setPage(10);
                             // handleOnSave();
                             // window.location.href = "/adge/home";
-                            navigate("/adge/home")
+                            // navigate("/adge/home")
+                            handleSaveChanges4();
                           }}
                         >
                           Reject
